@@ -1,12 +1,26 @@
-# React + Vite
+# My portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Stef Bekaert** – Software Developer
 
-Currently, two official plugins are available:
+## 📌 About Me
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I’m a software developer based in Belgium, who loves working on both the back and frontend. The main languages/frameworks I am working with currently are React and Flutter. I love building tools I would use myself and solving real-world problems with code. This portfolio showcases my work, contributions, and experiments.
 
-## Expanding the ESLint configuration
+📧 [Email](your-email)
+💼 [LinkedIn](https://www.linkedin.com/in/stef-bekaert/)
+🐙 [GitHub](https://github.com/Stefdev13)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ This portfolio
+
+This portfolio is hosted on: 🔗 [Portfolio Website]([URL])
+
+### 🛠️ Tech Stack
+
+| Category       | Technologies          |
+| -------------- | --------------------- |
+| **Languages**  | Javascript, HTML, CSS |
+| **Frameworks** | React                 |
+| **Databases**  | Firebase Firestore    |
+| **API's**      | Faker                 |
+| **Libraries**  | React Router,         |
+| **Tools**      | Git, VS code          |
