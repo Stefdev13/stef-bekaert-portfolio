@@ -2,7 +2,7 @@
 
 **Stef Bekaert** – Software Developer
 
-\
+&nbsp;
 
 ## 📌 About Me
 
@@ -12,7 +12,7 @@ I’m a software developer based in Belgium, who loves working on both the back 
 💼 [LinkedIn](https://www.linkedin.com/in/stef-bekaert/)
 🐙 [GitHub](https://github.com/Stefdev13)
 
-\
+&nbsp;
 
 ## 🛠️ This portfolio
 
