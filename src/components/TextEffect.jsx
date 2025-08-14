@@ -17,23 +17,61 @@ function TextEffect(props) {
     function doEffect() {
         let i = 0;
 
+        //Used to determine which word is the longer and to add extra letters if the next word is longer to smoothe out the animation
+        let differenceInLetters;
+
         const interval = setInterval(() => {
             let originalText = textEffectValue;
             let nextWord = words[currentIndex + 1 <= words.length - 1 ? currentIndex + 1 : 0];
+            let newLetter = '';
 
-            setTextEffectValue(
-                textEffectValue
-                    .split("")
-                    .map((letter, index) => {
-                        if (index < i) {
-                            return nextWord[index];
-                            //   return originalText[index];
-                        }
+            //Check if the difference in letters has been set, and set it if it hasnt
+            if (differenceInLetters === undefined) {
+                differenceInLetters = textEffectValue.length - nextWord.length;
+            }
 
-                        return letters[Math.floor(Math.random() * 26)];
-                    })
-                    .join("")
-            );
+            //Get a new letter to add to the end of the textEffectValue if the difference in letters is negative (To smoothe out the animation)
+            if (differenceInLetters < 0) {
+                //Add a random letter from the array of letters to the textEffectValue
+                newLetter = letters[Math.floor(Math.random() * letters.length)];
+                differenceInLetters++;
+            } else {
+                newLetter = '';
+            }
+
+            let newTextEffectValue = textEffectValue
+                .split("")
+                .map((letter, index) => {
+                    if (index < i) {
+                        return nextWord[index];
+                    }
+
+                    return letters[Math.floor(Math.random() * letters.length)];
+                })
+                .join("").concat(newLetter);
+
+            console.log(`newTextEffectValue: ${newTextEffectValue}`);
+
+            setTextEffectValue(newTextEffectValue);
+
+            //Randomize the letters and progressively reveal letters from the new word starting from the left-most letter
+            // setTextEffectValue(
+            //     textEffectValue
+            //         .split("")
+            //         .map((letter, index) => {
+            //             if (index < i) {
+            //                 return nextWord[index];
+            //             }
+
+            //             return letters[Math.floor(Math.random() * letters.length)];
+            //         })
+            //         .join("")
+            // );
+
+            // console.log(`textEffectValue: ${textEffectValue}`);
+            // console.log(`newLetter: ${newLetter}`);
+
+            // setTextEffectValue(textEffectValue => textEffectValue + newLetter);
 
             if (i >= originalText.length) {
                 //Set the new index. If we are at the end of the array, set the newIndex to 0
@@ -49,7 +87,7 @@ function TextEffect(props) {
             }
 
             i += 1 / 2;
-        }, 20);
+        }, 100);
     }
 
     return (
