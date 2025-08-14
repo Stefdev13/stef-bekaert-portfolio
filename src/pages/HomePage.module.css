@@ -1,0 +1,32 @@
+.heading {
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-family: 'Bricolage_Grotesque';
+  color: black;
+}
+
+.name {
+  font-size: 2.7rem;
+  font-weight: 500;
+  font-family: 'Pacifico';
+  color: green;
+}
+
+.comment {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: 'IBM_Plex_Mono_Regular';
+  color: black;
+}
+
+.textEffect {
+  font-size: 2.5rem;
+  font-weight: 400;
+  font-family: 'IBM_Plex_Mono_Regular';
+  color: black;
+}
+
+.main {
+    margin: auto;
+    text-align: center;
+}
