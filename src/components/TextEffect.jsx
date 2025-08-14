@@ -17,8 +17,10 @@ function TextEffect(props) {
     function doEffect() {
         let i = 0;
 
+        //2 variables 
         //Used to determine which word is the longer and to add extra letters if the next word is longer to smoothe out the animation
         let differenceInLetters;
+        let newTextEffectValue;
 
         const interval = setInterval(() => {
             let originalText = textEffectValue;
@@ -30,6 +32,11 @@ function TextEffect(props) {
                 differenceInLetters = textEffectValue.length - nextWord.length;
             }
 
+            //Check if the difference in letters has been set, and set it if it hasnt
+            if (newTextEffectValue === undefined) {
+                newTextEffectValue = textEffectValue;
+            }
+
             //Get a new letter to add to the end of the textEffectValue if the difference in letters is negative (To smoothe out the animation)
             if (differenceInLetters < 0) {
                 //Add a random letter from the array of letters to the textEffectValue
@@ -39,7 +46,7 @@ function TextEffect(props) {
                 newLetter = '';
             }
 
-            let newTextEffectValue = textEffectValue
+            newTextEffectValue = newTextEffectValue
                 .split("")
                 .map((letter, index) => {
                     if (index < i) {
@@ -53,25 +60,6 @@ function TextEffect(props) {
             console.log(`newTextEffectValue: ${newTextEffectValue}`);
 
             setTextEffectValue(newTextEffectValue);
-
-            //Randomize the letters and progressively reveal letters from the new word starting from the left-most letter
-            // setTextEffectValue(
-            //     textEffectValue
-            //         .split("")
-            //         .map((letter, index) => {
-            //             if (index < i) {
-            //                 return nextWord[index];
-            //             }
-
-            //             return letters[Math.floor(Math.random() * letters.length)];
-            //         })
-            //         .join("")
-            // );
-
-            // console.log(`textEffectValue: ${textEffectValue}`);
-            // console.log(`newLetter: ${newLetter}`);
-
-            // setTextEffectValue(textEffectValue => textEffectValue + newLetter);
 
             if (i >= originalText.length) {
                 //Set the new index. If we are at the end of the array, set the newIndex to 0
@@ -87,7 +75,7 @@ function TextEffect(props) {
             }
 
             i += 1 / 2;
-        }, 100);
+        }, 20);
     }
 
     return (
