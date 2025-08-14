@@ -10,7 +10,11 @@ function HomePage() {
         Hi, <span className={styles.name}>I'm Stef,</span>
       </h1>
       <h1 className={styles.heading}>
-        I <span>design</span> and build <TextEffect></TextEffect>
+        I <span>design</span> and build{" "}
+        <TextEffect
+          letters={"ABCDEFGHIJKLMNOPQRSTUVWXYZ"}
+          words={["Websites", "Mobile apps", "API's", "Backends", "Things"]}
+        ></TextEffect>
       </h1>
 
       <p className={styles.comment}>//and I enjoy doing it :)</p>
