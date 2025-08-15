@@ -3,7 +3,21 @@
   line-height: 1.5;
   font-weight: 400;
 
-  /*Colour constants*/
+  /* colour variable (use these for things that will change between light (default) and dark mode) */
+  --var-colour-bg-l1: #FFFFFF;
+  --var-colour-bg-l2: #FAF9F5;
+  --var-colour-bg-l3: #EEEBDD;
+  --var-colour-border: #DED8BA;
+  --var-colour-text-heading: #333333;
+  --var-colour-text-muted: #4D4D4D;
+
+  --var-colour-primary: #2E6B6B;
+  --var-colour-danger: #AD1F1F;
+  --var-colour-warning: #EC9213;
+  --var-colour-success: #1F7A3D;
+  --var-colour-info: #4D4DB2;
+
+  /*Colour constants (use these if they should not change between light and dark mode)*/
   --colour-dark-bg-l1: #000000;
   --colour-dark-bg-l2: #1A1A1A;
   --colour-dark-bg-l3: #333333;
@@ -45,8 +59,8 @@
   --font-fancy: "Pacifico";
 
   color-scheme: light dark;
-  color: rgba(0, 0, 0);
-  background-color: white;
+  color: var(--var-colour-text-heading);
+  background-color: var(--var-colour-bg-l1);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -59,21 +73,20 @@
   font-size: 3.5rem;
   font-weight: 700;
   font-family: var(--font-heading);
-  color: var(--colour-light-text-heading);
+  color: var(--var-colour-text-heading);
 }
 
 .comment {
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: .95rem;
   font-family: var(--font-comment);
-  color: var(--colour-light-text-muted);
+  color: var(--var-colour-text-muted);
 }
 
 .text {
   font-size: 1.2rem;
   font-weight: 450;
   font-family: var(--font-text);
-  color: var(--colour-light-text-muted);
+  color: var(--var-colour-text-muted);
 }
 
 body {
@@ -106,7 +119,7 @@ body {
 
 @font-face {
   font-family: "IBM_Plex_Mono_Regular";
-  src: url("fonts/IBM_Plex_Mono/IBMPlexMono-Medium.ttf") format("truetype");
+  src: url("fonts/IBM_Plex_Mono/IBMPlexMono-SemiBold.ttf") format("truetype");
 }
 
 @font-face {

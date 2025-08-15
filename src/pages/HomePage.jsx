@@ -2,12 +2,23 @@ import React from "react";
 import { useState } from "react";
 import styles from "./HomePage.module.css";
 import TextEffect from "../components/TextEffect";
+import { useChangeTheme } from "../context/ThemeProvider.jsx";
 
 function HomePage() {
+  const dispatch = useChangeTheme();
+
   return (
     <div className={styles.main}>
       <h1 className="heading">
-        Hi, <span className={styles.name}>I'm Stef,</span>
+        Hi,{" "}
+        <span
+          className={styles.name}
+          onClick={() => {
+            dispatch();
+          }}
+        >
+          I'm Stef,
+        </span>
       </h1>
       <h1 className="heading">
         I <span className={styles.designTag}>design</span> and build{" "}

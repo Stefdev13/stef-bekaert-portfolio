@@ -6,6 +6,7 @@ import HomePage from "./pages/Homepage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 import WorkPage from "./pages/WorkPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
+import { ThemeProvider } from "./context/ThemeProvider.jsx";
 
 let router = createBrowserRouter([
   {
@@ -28,6 +29,8 @@ let router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </StrictMode>
 );

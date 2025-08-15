@@ -2,5 +2,5 @@
   font-size: 2.5rem;
   font-weight: 400;
   font-family: 'IBM_Plex_Mono_Regular';
-  color: var(--colour-light-text-heading);
+  color: var(--var-colour-text-heading);
 }
