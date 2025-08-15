@@ -80,7 +80,7 @@ function TextEffect(props) {
 
     return (
         <div className={styles.textEffect} onMouseEnter={doEffect}>
-            {textEffectValue}
+            &lt;{textEffectValue}&gt;
         </div>
     );
 }

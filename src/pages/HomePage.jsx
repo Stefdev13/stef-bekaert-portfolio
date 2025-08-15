@@ -6,18 +6,18 @@ import TextEffect from "../components/TextEffect";
 function HomePage() {
   return (
     <div className={styles.main}>
-      <h1 className={styles.heading}>
+      <h1 className="heading">
         Hi, <span className={styles.name}>I'm Stef,</span>
       </h1>
-      <h1 className={styles.heading}>
-        I <span>design</span> and build{" "}
+      <h1 className="heading">
+        I <span className={styles.designTag}>design</span> and build{" "}
         <TextEffect
           letters={"ABCDEFGHIJKLMNOPQRSTUVWXYZ"}
           words={["Websites", "Mobile apps", "API's", "Backends", "Things"]}
         ></TextEffect>
       </h1>
 
-      <p className={styles.comment}>//and I enjoy doing it :)</p>
+      <p className="comment">//and I enjoy doing it :)</p>
     </div>
   );
 }
