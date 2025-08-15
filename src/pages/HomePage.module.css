@@ -1,25 +1,25 @@
 .heading {
   font-size: 3.5rem;
   font-weight: 700;
-  font-family: 'Bricolage_Grotesque';
-  color: black;
+  font-family: var(--font-heading);
+  color: var(--colour-light-text-heading);
 }
 
 .name {
   font-size: 2.7rem;
   font-weight: 500;
-  font-family: 'Pacifico';
-  color: green;
+  font-family: var(--font-fancy);
+  color: var(--colour-primary-dark);
 }
 
 .comment {
   font-size: 1rem;
   font-weight: 400;
-  font-family: 'IBM_Plex_Mono_Regular';
-  color: black;
+  font-family: var(--font-comment);
+  color: var(--colour-light-text-muted);
 }
 
 .main {
-    margin: auto;
-    text-align: center;
+  margin: auto;
+  text-align: center;
 }
