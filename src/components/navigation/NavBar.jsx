@@ -14,7 +14,7 @@ function NavBar() {
       <NavLink to="/work" className={styles.navLink}>
         Work
       </NavLink>
-      <NavLink to="/contact" className={styles.navLink}>
+      <NavLink to="/contact" className={styles.contactBtn}>
         Contact me
       </NavLink>
     </div>
