@@ -80,7 +80,7 @@ function Logo() {
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      &lt;{text}&gt;
+      &lt;{text}/&gt;
     </div>
   );
 }

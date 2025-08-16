@@ -2,4 +2,10 @@
     font-size: 1.2rem;
     font-family: var(--font-comment);
     color: var(--var-colour-text-heading);
+    background-color: var(--var-colour-bg-l2);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 12px;
+    padding: 8px 12px 8px 12px;
+    width: 12rem;
 }
