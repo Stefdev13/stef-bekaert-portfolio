@@ -93,9 +93,9 @@
 }
 
 body {
-  margin: auto;
   place-items: center;
   min-height: 100vh;
+  padding: 0px;
   display: flex;
   justify-content: center;
 }
