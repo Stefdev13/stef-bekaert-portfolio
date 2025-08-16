@@ -18,11 +18,11 @@ let router = createBrowserRouter([
     Component: AboutPage,
   },
   {
-    path: "/Work",
+    path: "/work",
     Component: WorkPage,
   },
   {
-    path: "/Contact",
+    path: "/contact",
     Component: ContactPage,
   },
 ]);

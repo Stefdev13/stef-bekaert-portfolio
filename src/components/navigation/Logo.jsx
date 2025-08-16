@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../components/Logo.module.css";
+import styles from "./Logo.module.css";
 
 function Logo() {
   const [text, setText] = useState("stef.bekaert");

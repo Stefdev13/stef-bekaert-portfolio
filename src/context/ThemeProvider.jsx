@@ -68,6 +68,10 @@ function setToLightMode() {
     "--var-colour-glass-bg",
     Constants.LIGHT_GLASS_BG
   );
+  document.documentElement.style.setProperty(
+    "--var-colour-shadow",
+    Constants.LIGHT_SHADOW
+  );
 
   //Change the accent colours
   document.documentElement.style.setProperty(
@@ -125,6 +129,10 @@ function setToDarkMode() {
   document.documentElement.style.setProperty(
     "--var-colour-glass-bg",
     Constants.DARK_GLASS_BG
+  );
+  document.documentElement.style.setProperty(
+    "--var-colour-shadow",
+    Constants.DARK_SHADOW
   );
 
   //Change the accent colours
