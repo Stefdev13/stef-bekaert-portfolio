@@ -1,4 +1,12 @@
-.navbar {    
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 5px;
+}
+
+.navbar {
     background-color: var(--var-colour-glass-bg);
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
