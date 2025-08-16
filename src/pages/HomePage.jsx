@@ -3,12 +3,14 @@ import { useState } from "react";
 import styles from "./HomePage.module.css";
 import TextEffect from "../components/TextEffect";
 import { useChangeTheme } from "../context/ThemeProvider.jsx";
+import Logo from "../components/logo.jsx";
 
 function HomePage() {
   const dispatch = useChangeTheme();
 
   return (
     <div className={styles.main}>
+      <Logo/>
       <h1 className="heading">
         Hi,{" "}
         <span

@@ -3,86 +3,86 @@ import { useState } from "react";
 import styles from "../components/TextEffect.module.css";
 
 function TextEffect(props) {
-    const letters = props.letters;
-    const words = props.words;
-    const [textEffectValue, setTextEffectValue] = useState("Frontend stuff");
-    const [currentIndex, setCurrentIndex] = useState(0);
+  const letters = props.letters;
+  const words = props.words;
+  const [textEffectValue, setTextEffectValue] = useState("Frontend stuff");
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-    //Set the textEffectValue to the first word in the words property, only run on first render
-    useEffect(() => {
-        setTextEffectValue(words[currentIndex]);
-    }, []);
+  //Set the textEffectValue to the first word in the words property, only run on first render
+  useEffect(() => {
+    setTextEffectValue(words[currentIndex]);
+  }, []);
 
-    //Function to create the effect
-    function doEffect() {
-        let i = 0;
+  //Function to create the effect
+  function doEffect() {
+    let i = 0;
 
-        //2 variables 
-        //Used to determine which word is the longer and to add extra letters if the next word is longer to smoothe out the animation
-        let differenceInLetters;
-        let newTextEffectValue;
+    //2 variables
+    //Used to determine which word is the longer and to add extra letters if the next word is longer to smoothe out the animation
+    let differenceInLetters;
+    let newTextEffectValue;
 
-        const interval = setInterval(() => {
-            let originalText = textEffectValue;
-            let nextWord = words[currentIndex + 1 <= words.length - 1 ? currentIndex + 1 : 0];
-            let newLetter = '';
+    const interval = setInterval(() => {
+      let originalText = textEffectValue;
+      let nextWord =
+        words[currentIndex + 1 <= words.length - 1 ? currentIndex + 1 : 0];
+      let newLetter = "";
 
-            //Check if the difference in letters has been set, and set it if it hasnt
-            if (differenceInLetters === undefined) {
-                differenceInLetters = textEffectValue.length - nextWord.length;
-            }
+      //Check if the difference in letters has been set, and set it if it hasnt
+      if (differenceInLetters === undefined) {
+        differenceInLetters = textEffectValue.length - nextWord.length;
+      }
 
-            //Check if the difference in letters has been set, and set it if it hasnt
-            if (newTextEffectValue === undefined) {
-                newTextEffectValue = textEffectValue;
-            }
+      //Check if the difference in letters has been set, and set it if it hasnt
+      if (newTextEffectValue === undefined) {
+        newTextEffectValue = textEffectValue;
+      }
 
-            //Get a new letter to add to the end of the textEffectValue if the difference in letters is negative (To smoothe out the animation)
-            if (differenceInLetters < 0) {
-                //Add a random letter from the array of letters to the textEffectValue
-                newLetter = letters[Math.floor(Math.random() * letters.length)];
-                differenceInLetters++;
-            } else {
-                newLetter = '';
-            }
+      //Get a new letter to add to the end of the textEffectValue if the difference in letters is negative (To smoothe out the animation)
+      if (differenceInLetters < 0) {
+        //Add a random letter from the array of letters to the textEffectValue
+        newLetter = letters[Math.floor(Math.random() * letters.length)];
+        differenceInLetters++;
+      } else {
+        newLetter = "";
+      }
 
-            newTextEffectValue = newTextEffectValue
-                .split("")
-                .map((letter, index) => {
-                    if (index < i) {
-                        return nextWord[index];
-                    }
+      newTextEffectValue = newTextEffectValue
+        .split("")
+        .map((letter, index) => {
+          if (index < i) {
+            return nextWord[index];
+          }
 
-                    return letters[Math.floor(Math.random() * letters.length)];
-                })
-                .join("").concat(newLetter);
+          return letters[Math.floor(Math.random() * letters.length)];
+        })
+        .join("")
+        .concat(newLetter);
 
-            console.log(`newTextEffectValue: ${newTextEffectValue}`);
+      setTextEffectValue(newTextEffectValue);
 
-            setTextEffectValue(newTextEffectValue);
+      if (i >= originalText.length) {
+        //Set the new index. If we are at the end of the array, set the newIndex to 0
+        const newIndex =
+          currentIndex + 1 <= words.length - 1 ? currentIndex + 1 : 0;
 
-            if (i >= originalText.length) {
-                //Set the new index. If we are at the end of the array, set the newIndex to 0
-                const newIndex =
-                    currentIndex + 1 <= words.length - 1 ? currentIndex + 1 : 0;
+        //Update the state
+        setCurrentIndex(newIndex);
+        setTextEffectValue(words[newIndex]);
 
-                //Update the state
-                setCurrentIndex(newIndex);
-                setTextEffectValue(words[newIndex]);
+        //Clear the interval
+        clearInterval(interval);
+      }
 
-                //Clear the interval
-                clearInterval(interval);
-            }
+      i += 1 / 2;
+    }, 20);
+  }
 
-            i += 1 / 2;
-        }, 20);
-    }
-
-    return (
-        <div className={styles.textEffect} onMouseEnter={doEffect}>
-            &lt;{textEffectValue}&gt;
-        </div>
-    );
+  return (
+    <div className={styles.textEffect} onMouseEnter={doEffect}>
+      &lt;{textEffectValue}&gt;
+    </div>
+  );
 }
 
 export default TextEffect;
