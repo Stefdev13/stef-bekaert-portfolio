@@ -60,6 +60,14 @@ function setToLightMode() {
     "--var-colour-text-muted",
     Constants.LIGHT_TEXT_MUTED
   );
+  document.documentElement.style.setProperty(
+    "--var-colour-glass-bg-logo",
+    Constants.LIGHT_GLASS_BG_LOGO
+  );
+  document.documentElement.style.setProperty(
+    "--var-colour-glass-bg",
+    Constants.LIGHT_GLASS_BG
+  );
 
   //Change the accent colours
   document.documentElement.style.setProperty(
@@ -109,6 +117,14 @@ function setToDarkMode() {
   document.documentElement.style.setProperty(
     "--var-colour-text-muted",
     Constants.DARK_TEXT_MUTED
+  );
+  document.documentElement.style.setProperty(
+    "--var-colour-glass-bg-logo",
+    Constants.DARK_GLASS_BG_LOGO
+  );
+  document.documentElement.style.setProperty(
+    "--var-colour-glass-bg",
+    Constants.DARK_GLASS_BG
   );
 
   //Change the accent colours
