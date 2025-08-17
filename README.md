@@ -23,7 +23,7 @@ This portfolio is hosted on: 🔗 [Portfolio Website]([URL])
 | Category       | Technologies          |
 | -------------- | --------------------- |
 | **Languages**  | Javascript, HTML, CSS |
-| **Frameworks** | React                 |
+| **Frameworks** | React (Vite)              |
 | **Databases**  | Firebase Firestore    |
 | **API's**      | Faker                 |
 | **Libraries**  | React Router,         |
