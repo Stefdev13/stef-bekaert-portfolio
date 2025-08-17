@@ -15,6 +15,13 @@
   cursor: default;
 }
 
+.textSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .name {
   font-size: 2.7rem;
   font-weight: 500;
@@ -30,4 +37,8 @@
   --webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+.lessLineHeight {
+  line-height: .5;
 }
