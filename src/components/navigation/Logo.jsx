@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import styles from "./Logo.module.css";
+import { useNavigate } from "react-router";
 
 function Logo() {
+  let navigate = useNavigate();
+
   const [text, setText] = useState("stef.bekaert");
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -79,6 +82,9 @@ function Logo() {
       className={styles.logo}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      onClick={() => {
+        navigate("/");
+      }}
     >
       &lt;{text}/&gt;
     </div>
