@@ -87,7 +87,7 @@ function TextEffect(props) {
     }, 20);
   }
 
-  return <div className={styles.textEffect}>&lt;{textEffectValue}&gt;</div>;
+  return <div className={styles.textEffect}>&lt;{textEffectValue}/&gt;</div>;
 }
 
 export default TextEffect;

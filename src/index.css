@@ -73,20 +73,20 @@
 
 /* Standard classes */
 .heading {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
   font-family: var(--font-heading);
   color: var(--var-colour-text-heading);
 }
 
 .comment {
-  font-size: .95rem;
+  font-size: .9rem;
   font-family: var(--font-comment);
   color: var(--var-colour-text-muted);
 }
 
 .text {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 450;
   font-family: var(--font-text);
   color: var(--var-colour-text-muted);

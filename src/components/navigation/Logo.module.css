@@ -1,5 +1,5 @@
 .logo {
-    font-size: 1.2rem;
+    font-size: .95rem;
     font-family: var(--font-comment);
     color: var(--var-colour-text-heading);
     background-color: var(--var-colour-glass-bg-logo);
@@ -7,8 +7,8 @@
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     border-radius: 12px;
     padding: 8px 12px 8px 12px;
-    margin-left: 30px;
-    width: 11rem;
+    margin-left: 20px;
+    width: 9rem;
 }
 
 .logo:hover {

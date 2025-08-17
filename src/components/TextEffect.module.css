@@ -1,9 +1,9 @@
 .textEffect {
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-family: var(--font-comment);
   color: var(--var-colour-text-heading);
 
-  padding: 3px 30px 3px 30px;
+  padding: 5px 20px 5px 20px;
   width: fit-content;
 
   border: 1px solid var(--var-colour-border);

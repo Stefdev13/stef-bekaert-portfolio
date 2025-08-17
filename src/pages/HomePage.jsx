@@ -13,13 +13,16 @@ function HomePage() {
         <h1 className="heading">
           Hi, <span className={styles.name}>I'm Stef,</span>
         </h1>
-        <h1 className={`heading ${styles.lessLineHeight}`}>
-          I <span className={styles.designTag}>design</span> and build{" "}
-        </h1>
-        <TextEffect
-          letters={"ABCDEFGHIJKLMNOPQRSTUVWXYZ"}
-          words={["Websites", "Mobile apps", "API's", "Backends", "Things"]}
-        ></TextEffect>
+        <div className={styles.mainLine}>
+          <h1 className={`heading ${styles.lessLineHeight}`}>
+            I <span className={styles.designTag}>design</span> and build{" "}
+          </h1>
+          <TextEffect
+            letters={"ABCDEFGHIJKLMNOPQRSTUVWXYZ"}
+            words={["Websites", "Mobile apps", "API's", "Backends", "Things"]}
+          ></TextEffect>
+        </div>
+
         <p className="comment">//and I enjoy doing it :)</p>
       </div>
 
