@@ -1,6 +1,7 @@
 .btnBox {
     background-color: var(--var-colour-text-heading);
     box-shadow: 3px 3px 12px 2px var(--var-colour-shadow);
+    transition: box-shadow 0.2s ease-in-out;
     border: none;
 
     font-family: var(--font-text);
@@ -20,7 +21,7 @@
     border-radius: 12px;
 }
 
-.btnBox:hover{
+.btnBox:hover {
     box-shadow: 3px 3px 40px 15px var(--var-colour-shadow);
     cursor: pointer;
 }
