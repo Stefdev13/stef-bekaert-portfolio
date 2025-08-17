@@ -22,6 +22,7 @@
 
 .btnBox:hover{
     box-shadow: 3px 3px 40px 15px var(--var-colour-shadow);
+    cursor: pointer;
 }
 
 .image {

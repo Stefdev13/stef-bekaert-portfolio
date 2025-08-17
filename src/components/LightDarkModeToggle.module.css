@@ -16,6 +16,10 @@
     align-items: center;
 }
 
+.toggleBtn:hover {
+    cursor: pointer;
+}
+
 .image {
     height: 22px;
     width: 22px;

@@ -92,14 +92,6 @@
   color: var(--var-colour-text-muted);
 }
 
-body {
-  place-items: center;
-  min-height: 100vh;
-  padding: 0px;
-  display: flex;
-  justify-content: center;
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

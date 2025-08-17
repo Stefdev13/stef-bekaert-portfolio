@@ -49,6 +49,8 @@
     color: var(--var-colour-text-heading);
 
     background-color: transparent;
+
+    cursor: pointer;
 }
 
 .contactBtn {
@@ -71,4 +73,6 @@
 .contactBtn:hover {
     font-size: .83rem;
     font-weight: 800;
+    
+    cursor: pointer;
 }
