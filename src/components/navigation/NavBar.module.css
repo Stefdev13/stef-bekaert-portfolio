@@ -16,9 +16,9 @@
     box-shadow: 4px 4px 10px 0px var(--var-colour-shadow);
 
     height: 40px;
-    border-radius: 50px;
     max-width: fit-content;
     padding: 2px 2px 2px 2px;
+    border-radius: 50px;
 
     display: flex;
     flex-direction: row;
@@ -32,10 +32,13 @@
     font-family: var(--font-text);
     font-weight: 450;
     color: var(--var-colour-text-muted);
-    background-color: transparent;
     text-decoration-line: none;
-    height: 40px;
+
+    background-color: transparent;
+
     align-content: center;
+    
+    height: 40px;
     padding: 0px 20px 0px 20px;
 }
 
@@ -44,6 +47,7 @@
     font-family: var(--font-text);
     font-weight: 550;
     color: var(--var-colour-text-heading);
+
     background-color: transparent;
 }
 
@@ -52,13 +56,16 @@
     font-family: var(--font-text);
     font-weight: 600;
     color: var(--var-colour-bg-l2);
-    background-color: var(--var-colour-primary);
     text-decoration-line: none;
-    height: 40px;
+
+    background-color: var(--var-colour-primary);
+
     align-content: center;
-    border-radius: 50px;
+
+    height: 40px;
     padding: 0px 20px 0px 20px;
     margin-left: 10px;
+    border-radius: 50px;
 }
 
 .contactBtn:hover {

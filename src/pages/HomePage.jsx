@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./HomePage.module.css";
 import TextEffect from "../components/TextEffect";
 import Header from "../components/navigation/Header";
+import CtaBtn from "../components/CtaBtn";
 
 function HomePage() {
   return (
@@ -19,6 +20,13 @@ function HomePage() {
       </h1>
 
       <p className="comment">//and I enjoy doing it :)</p>
+
+      <CtaBtn btnType="contact" btnText="Contact Me"></CtaBtn>
+
+      {/* <CtaBtn>
+        <p>Contact me</p>
+        {getImageForBtn()}
+      </CtaBtn> */}
     </div>
   );
 }

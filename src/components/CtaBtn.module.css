@@ -1,0 +1,30 @@
+.btnBox {
+    background-color: var(--var-colour-text-heading);
+    box-shadow: 3px 3px 12px 2px var(--var-colour-shadow);
+    border: none;
+
+    font-family: var(--font-text);
+    font-weight: 800;
+    font-size: .85rem;
+    color: var(--var-colour-bg-l2);
+    text-decoration-line: none;
+
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+
+    height: 45px;
+    width: fit-content;
+    padding: 0px 20px 0px 20px;
+    border-radius: 12px;
+}
+
+.btnBox:hover{
+    box-shadow: 3px 3px 40px 15px var(--var-colour-shadow);
+}
+
+.image {
+    height: 18px;
+    width: 18px;
+}
