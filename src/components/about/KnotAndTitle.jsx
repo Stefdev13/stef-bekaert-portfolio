@@ -10,7 +10,7 @@ const useStyles = createUseStyles({
     flexDirection: "column",
     justifyItems: "end",
 
-    paddingLeft: "50px",
+    paddingLeft: "120px",
     paddingRight: "30px",
   },
   topLine: {
