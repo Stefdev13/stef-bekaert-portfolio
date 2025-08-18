@@ -80,7 +80,7 @@
 }
 
 .sectionHeading {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
   font-family: var(--font-heading);
   color: var(--var-colour-text-heading);
@@ -88,7 +88,7 @@
 }
 
 .comment {
-  font-size: .9rem;
+  font-size: .8rem;
   font-family: var(--font-comment);
   color: var(--var-colour-text-muted);
   margin: 0px
