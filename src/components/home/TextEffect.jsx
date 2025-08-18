@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import styles from "../components/TextEffect.module.css";
+import styles from "./TextEffect.module.css";
 
 function TextEffect(props) {
   const letters = props.letters;
