@@ -12,11 +12,22 @@
 }
 
 .topSectionWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+
   width: 100vw;
 
   padding-top: 200px;
+  padding-right: 50px;
 
   background-color: var(--var-colour-bg-l2);
+}
+
+.aboutImg {
+  width: 100%;
+  max-width: 500px;
+  height: max-content;
 }
 
 .sectionContent {

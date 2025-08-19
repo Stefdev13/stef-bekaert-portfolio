@@ -15,7 +15,7 @@ export const DARK_TEXT_HEADER = '#F2F2F2'
 export const DARK_TEXT_MUTED = '#D9D9D9'
 export const DARK_GLASS_BG_LOGO = "#1a1a1a80"
 export const DARK_GLASS_BG = "#4d4d4d59"
-export const DARK_SHADOW = "#fff3"
+export const DARK_SHADOW = "#ffffff1a"
 
 //Light mode
 export const LIGHT_BG_L1 = '#FFFFFF'
