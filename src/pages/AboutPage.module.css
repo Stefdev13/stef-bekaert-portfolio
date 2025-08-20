@@ -1,6 +1,5 @@
 .main {
     margin: 0;
-    width: 100%;
     height: 100vh;
     text-align: start;
   
@@ -8,7 +7,7 @@
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    gap: 70px;
+    gap: 0px;
 }
 
 .topSectionWrapper {
@@ -18,23 +17,34 @@
 
   width: 100vw;
 
-  padding-top: 200px;
+  padding-top: 400px;
 
   background-color: var(--var-colour-bg-l2);
 }
 
+.sectionWrapper {
+  display: flex;
+  flex-direction: column;
+
+  width: 100vw;
+
+  background-color: var(--var-colour-bg-l1);
+}
+
 .aboutImg {
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
   height: max-content;
 }
 
 .sectionContent {
+  flex-grow: 1;
+
   display: flex;
   flex-direction: column;
   gap: 30px;
 
-  max-width: 45vw;
+  max-width: 85vw;
   border-left: 3px solid var(--var-colour-primary);
 
   padding-top: 20px;
@@ -44,4 +54,3 @@
 
   text-align: start;
 }
-

@@ -16,6 +16,7 @@ export const DARK_TEXT_MUTED = '#D9D9D9'
 export const DARK_GLASS_BG_LOGO = "#1a1a1a80"
 export const DARK_GLASS_BG = "#4d4d4d59"
 export const DARK_SHADOW = "#ffffff1a"
+export const DARK_SHADOW_PRIMARY = "#39c6c640"
 
 //Light mode
 export const LIGHT_BG_L1 = '#FFFFFF'
@@ -27,6 +28,7 @@ export const LIGHT_TEXT_MUTED = '#4D4D4D'
 export const LIGHT_GLASS_BG_LOGO = "#faf9f5bf"
 export const LIGHT_GLASS_BG = "#ffffff40"
 export const LIGHT_SHADOW = "#00000026"
+export const LIGHT_SHADOW_PRIMARY = "#39c6c640"
 
 //Accent & other colours
 export const ACCENT_PRIMARY_LIGHT = '#E2F3F3'
