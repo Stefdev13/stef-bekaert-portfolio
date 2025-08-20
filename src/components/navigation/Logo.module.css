@@ -1,6 +1,6 @@
 .logo {
-    font-size: .95rem;
-    font-family: var(--font-comment);
+    font-size: 1rem;
+    font-family: var(--font-comment-semibold);
     color: var(--var-colour-text-heading);
     background-color: var(--var-colour-glass-bg-logo);
     backdrop-filter: blur(16px) saturate(180%);

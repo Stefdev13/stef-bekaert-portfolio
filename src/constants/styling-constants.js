@@ -4,7 +4,7 @@ export const FONT_BRICOLAGE_GROTESQUE = "Bricolage_Grotesque"
 export const FONT_QUICKSAND = "Quicksand"
 export const FONT_IBM_PLEX_MONO = "IBM_Plex_Mono_Regular"
 export const FONT_IBM_PLEX_MONO_SEMIBOLD = "IBM_Plex_Mono_SemiBold"
-export const PACIFICO = "Pacifico"
+export const FONT_PACIFICO = "Pacifico"
 
 //===== Colours =====
 //Dark mode
@@ -49,5 +49,5 @@ export const ACCENT_SUCCESS = '#40BF6A'
 export const ACCENT_SUCCESS_DARK = '#1F7A3D'
 
 export const ACCENT_INFO_LIGHT = '#EEEEFC'
-export const ACCENT_INFO = '#6666CC'
+export const ACCENT_INFO = '#6666FF'
 export const ACCENT_INFO_DARK = '#4D4DB2'

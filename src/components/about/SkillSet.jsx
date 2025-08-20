@@ -4,6 +4,8 @@ import styles from "./SkillSet.module.css";
 
 function SkillSet(props) {
   const skillSet = props.skillSet;
+  const colours = props.colours;
+
   return (
     <div className={styles.skillSet}>
       <div className={styles.header}>
@@ -15,6 +17,7 @@ function SkillSet(props) {
           key={list.title}
           title={list.title}
           listOfChipValues={list.list}
+          colours={colours}
         />
       ))}
     </div>

@@ -10,6 +10,7 @@ function SkillsSection() {
       <KnotAndTitle title="My Skills" location="middle" />
       <div className={styles.sectionContent}>
         <SkillsList technical={true} skills={Constants.SKILLS_TECHNICAL} />
+        <SkillsList technical={false} skills={Constants.SKILLS_OTHER} />
       </div>
     </div>
   );
