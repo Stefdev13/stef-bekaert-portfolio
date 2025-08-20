@@ -1,0 +1,14 @@
+.chipList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    max-width: 18vw;
+}

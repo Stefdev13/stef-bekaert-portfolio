@@ -1,6 +1,5 @@
 .main {
     margin: 0;
-    height: 100vh;
     text-align: start;
   
     display: flex;
@@ -17,7 +16,7 @@
 
   width: 100vw;
 
-  padding-top: 400px;
+  padding-top: 200px;
 
   background-color: var(--var-colour-bg-l2);
 }

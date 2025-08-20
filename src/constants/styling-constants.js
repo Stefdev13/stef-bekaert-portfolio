@@ -3,6 +3,7 @@
 export const FONT_BRICOLAGE_GROTESQUE = "Bricolage_Grotesque"
 export const FONT_QUICKSAND = "Quicksand"
 export const FONT_IBM_PLEX_MONO = "IBM_Plex_Mono_Regular"
+export const FONT_IBM_PLEX_MONO_SEMIBOLD = "IBM_Plex_Mono_SemiBold"
 export const PACIFICO = "Pacifico"
 
 //===== Colours =====

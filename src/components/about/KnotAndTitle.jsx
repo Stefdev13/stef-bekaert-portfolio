@@ -88,7 +88,7 @@ const useStyles = createUseStyles({
       props.theme ? Constants.ACCENT_PRIMARY_DARK : Constants.ACCENT_PRIMARY,
   },
   title: {
-    fontFamily: Constants.FONT_IBM_PLEX_MONO,
+    fontFamily: Constants.FONT_IBM_PLEX_MONO_SEMIBOLD,
     color: (props) =>
       props.theme ? Constants.ACCENT_INFO_DARK : Constants.ACCENT_INFO,
 

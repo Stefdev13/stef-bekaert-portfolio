@@ -24,8 +24,10 @@
 .skillsetsWrapper {
     display: flex;
     flex-direction: row;
-    gap: 30px;
+    gap: 50px;
     flex-wrap: wrap;
+
+    margin-top: 40px;
 }
 
 .headerCTAWrapper {
