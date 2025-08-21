@@ -1,4 +1,3 @@
-import React from "react";
 import KnotAndTitle from "./KnotAndTitle";
 import SkillsList from "./SkillsList";
 import * as Constants from "../../constants/skills-constants";

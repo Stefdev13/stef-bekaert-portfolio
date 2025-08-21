@@ -3,6 +3,7 @@ import styles from "./AboutPage.module.css";
 import Header from "../components/navigation/Header";
 import AboutMeSection from "../components/about/aboutMeSection";
 import SkillsSection from "../components/about/SkillsSection";
+import TestimonialsSection from "../components/about/TestimonialsSection";
 
 function AboutPage() {
   return (
@@ -11,6 +12,7 @@ function AboutPage() {
 
       <AboutMeSection />
       <SkillsSection />
+      <TestimonialsSection />
     </div>
   );
 }
