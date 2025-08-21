@@ -7,7 +7,7 @@ function TestimonialsSection() {
     <div className={styles.bottomSectionWrapper}>
       <KnotAndTitle title="Testimonials" location="bottom" />
       <div className={styles.bottomSectionContent}>
-        <div>
+        <div className={styles.bottomHeader}>
           <h1 className="sectionHeading">What others said about me</h1>
           <p className="comment">//Totally not made up testimonials</p>
         </div>

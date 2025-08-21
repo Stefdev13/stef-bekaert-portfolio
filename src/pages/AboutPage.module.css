@@ -61,8 +61,6 @@
 
   border-left: 3px solid var(--var-colour-primary);
 
-  /* background-color: var(--var-colour-primary); */
-
   margin-left: 4.5px;
 }
 
@@ -87,11 +85,11 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
-
-  max-width: 83vw;
-
-  padding-top: 20px;
-  padding-left: 200px;
+  overflow: hidden;
 
   text-align: start;
+}
+
+.bottomHeader {
+  padding-left: 8.2vw;
 }

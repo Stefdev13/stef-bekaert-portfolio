@@ -12,7 +12,7 @@ const useStyles = createUseStyles({
     gap: "10px",
 
     height: "200px",
-    width: "400px",
+    minWidth: "250px",
 
     padding: {
       top: "20px",
@@ -31,6 +31,11 @@ const useStyles = createUseStyles({
     },
     borderColor: (props) =>
       props.theme ? Constants.LIGHT_BORDER : Constants.DARK_BORDER,
+
+    boxShadow: (props) =>
+      `3px 3px 12px 2px ${
+        props.theme ? Constants.LIGHT_SHADOW : Constants.DARK_SHADOW
+      }`,
 
     "& p": {
       fontFamily: Constants.FONT_QUICKSAND,
