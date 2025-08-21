@@ -10,7 +10,7 @@ const useStyles = createUseStyles({
     flexDirection: "column",
     justifyItems: "end",
 
-    paddingLeft: "120px",
+    paddingLeft: "8vw",
     paddingRight: "30px",
   },
   topLine: {
@@ -37,7 +37,7 @@ const useStyles = createUseStyles({
     display: "flex",
     flexDirection: "row",
     gap: "20px",
-    alignContent: "center",
+    alignItems: "center",
   },
   knotUpperLine: {
     height: "10px",

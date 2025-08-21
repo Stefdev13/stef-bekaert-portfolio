@@ -24,9 +24,14 @@
 .btnBox:hover {
     box-shadow: 3px 3px 40px 15px var(--var-colour-shadow);
     cursor: pointer;
+
+    .image {
+        transform: rotate(-20deg);
+    }
 }
 
 .image {
     height: 18px;
     width: 18px;
+    transition: .25s ease-in-out;
 }

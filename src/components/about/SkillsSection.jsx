@@ -8,9 +8,12 @@ function SkillsSection() {
   return (
     <div className={styles.sectionWrapper}>
       <KnotAndTitle title="My Skills" location="middle" />
-      <div className={styles.sectionContent}>
-        <SkillsList technical={true} skills={Constants.SKILLS_TECHNICAL} />
-        <SkillsList technical={false} skills={Constants.SKILLS_OTHER} />
+      <div className={styles.contentAndLineWrapper}>
+        <div className={styles.line} />
+        <div className={styles.sectionContent}>
+          <SkillsList technical={true} skills={Constants.SKILLS_TECHNICAL} />
+          <SkillsList technical={false} skills={Constants.SKILLS_OTHER} />
+        </div>
       </div>
     </div>
   );
