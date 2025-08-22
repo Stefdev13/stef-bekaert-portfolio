@@ -1,13 +1,6 @@
 .btnBox {
-    background-color: var(--var-colour-text-heading);
-    box-shadow: 3px 3px 12px 2px var(--var-colour-shadow);
-    transition: box-shadow 0.2s ease-in-out;
-    border: none;
-
     font-family: var(--font-text);
-    font-weight: 800;
     font-size: .85rem;
-    color: var(--var-colour-bg-l2);
     text-decoration-line: none;
 
     display: flex;
@@ -22,12 +15,44 @@
 }
 
 .btnBox:hover {
-    box-shadow: 3px 3px 40px 15px var(--var-colour-shadow);
     cursor: pointer;
+}
+
+.btnBox.standard {
+    color: var(--var-colour-bg-l2);
+
+    font-weight: 800;
+
+    background-color: var(--var-colour-text-heading);
+
+    box-shadow: 3px 3px 12px 2px var(--var-colour-shadow);
+    transition: box-shadow 0.2s ease-in-out;
+
+    border: none;
+}
+
+.btnBox.standard:hover {
+    box-shadow: 3px 3px 40px 15px var(--var-colour-shadow);
 
     .image {
         transform: rotate(-20deg);
     }
+}
+
+.btnBox.hollow {
+    color: var(--var-colour-info);
+    
+    font-weight: 700;
+
+    background-color: transparent;
+
+    border: 2px solid var(--var-colour-info);
+}
+
+.btnBox.hollow:hover {
+    background-color: var(--colour-info-light);
+
+    border: 2px solid var(--var-colour-info);
 }
 
 .image {

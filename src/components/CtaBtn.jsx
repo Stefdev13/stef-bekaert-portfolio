@@ -6,6 +6,8 @@ import arrowImgLight from "../assets/images/arrow-light-bg.png";
 import arrowImgDark from "../assets/images/arrow-dark-bg.png";
 import linkLight from "../assets/images/link-light-bg.png";
 import linkDark from "../assets/images/link-dark-bg.png";
+import linkLightInfo from "../assets/images/link-light-info.png";
+import linkDarkInfo from "../assets/images/link-dark-info.png";
 
 function CtaBtn(props) {
   const theme = useTheme();
@@ -21,6 +23,8 @@ function CtaBtn(props) {
         return theme ? arrowImgLight : arrowImgDark;
       case "project link":
         return theme ? linkLight : linkDark;
+      case "project source":
+        return theme ? linkDarkInfo : linkLightInfo;
       default:
         return null;
     }
@@ -52,8 +56,21 @@ function CtaBtn(props) {
     }
   }
 
+  function getBtnStyle() {
+    switch (btnType) {
+      case "contact":
+        return `${styles.btnBox} ${styles.standard}`;
+      case "project link":
+        return `${styles.btnBox} ${styles.standard}`;
+      case "project source":
+        return `${styles.btnBox} ${styles.hollow}`;
+      default:
+        return null;
+    }
+  }
+
   return (
-    <button type="button" onClick={onClick} className={styles.btnBox}>
+    <button type="button" onClick={onClick} className={getBtnStyle()}>
       {btnText}
       {getImageSource() && (
         <img
