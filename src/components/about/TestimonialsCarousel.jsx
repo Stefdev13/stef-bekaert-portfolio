@@ -7,7 +7,7 @@ function TestimonialsCarousel() {
     <div className={styles.carouselWrapper}>
       <div className={styles.carousel}>
         {Constants.TESTIMONIALS.map((testimonial) => (
-          <Testimonial testimonial={testimonial} />
+          <Testimonial testimonial={testimonial} key={testimonial.name} />
         ))}
       </div>
     </div>
