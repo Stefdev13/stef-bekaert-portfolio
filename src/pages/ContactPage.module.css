@@ -1,12 +1,42 @@
 .main {
-    margin: 0;
-    width: 100%;
-    height: 100vh;
-    text-align: center;
-  
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 70px;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+
+  background-color: var(--var-colour-bg-l2);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 80vw;
+  height: 75vh;
+}
+
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.textBlock {
+  width: 30vw;
+
+  h1 {
+    margin: 0px
   }
+
+  p {
+    margin-top: 0px;
+    margin-bottom: 25px
+  }
+}
