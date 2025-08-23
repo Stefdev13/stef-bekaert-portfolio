@@ -19,7 +19,15 @@ function ContactPage() {
             </p>
             <p className="comment">//Unless I’m on vacation...</p>
           </div>
-          <DialogBox />
+          <DialogBox
+            title="Buy me a beer"
+            text="This is really just here to show that I can integrate a payment processor, but feel free to buy me a beer anyway."
+            dialogType=""
+            primaryBtn={{
+              btnText: "Buy me a beer",
+              onClick: () => buyMeABeerFunction(),
+            }}
+          />
         </div>
         <ContactForm />
       </div>
