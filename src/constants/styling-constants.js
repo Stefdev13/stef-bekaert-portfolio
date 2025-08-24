@@ -29,7 +29,7 @@ export const LIGHT_TEXT_MUTED = '#4D4D4D'
 export const LIGHT_GLASS_BG_LOGO = "#faf9f5bf"
 export const LIGHT_GLASS_BG = "#ffffff40"
 export const LIGHT_SHADOW = "#00000026"
-export const LIGHT_SHADOW_PRIMARY = "#39c6c640"
+export const LIGHT_SHADOW_PRIMARY = "#2e6b6b33"
 
 //Accent & other colours
 export const ACCENT_PRIMARY_LIGHT = '#E2F3F3'
