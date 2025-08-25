@@ -1,4 +1,5 @@
 import React, { useId, useState } from "react";
+import { useFormStatus } from "react-dom";
 import styles from "./ContactForm.module.css";
 import { send } from "@emailjs/browser";
 
@@ -97,10 +98,22 @@ function ContactForm() {
         <label htmlFor="">I'm not a robot</label>
       </section>
 
-      <button type="submit" className={styles.submitBtn}>
-        Send message
-      </button>
+      <SubmitSection />
     </form>
+  );
+}
+
+function SubmitSection() {
+  const status = useFormStatus();
+
+  return (
+    <button
+      type="submit"
+      className={styles.submitBtn}
+      disabled={status.pending}
+    >
+      {status.pending ? "sending message..." : "Send message"}
+    </button>
   );
 }
 
