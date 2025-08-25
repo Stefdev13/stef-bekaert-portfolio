@@ -1,5 +1,6 @@
 import React, { useId, useState } from "react";
 import styles from "./ContactForm.module.css";
+import { send } from "@emailjs/browser";
 
 function ContactForm() {
   const [name, setName] = useState("");
@@ -14,7 +15,25 @@ function ContactForm() {
   const messageInputId = useId();
   const captchaInputId = useId();
 
-  function submitForm() {}
+  function submitForm() {
+    let emailObject = {
+      name: name,
+      email: email,
+      subject: subject,
+      message: message,
+    };
+
+    send("service_1gn0yoe", "template_rygw2vd", emailObject, {
+      publicKey: "EH1YPyY4Qz8gyA_sY",
+    }).then(
+      (response) => {
+        console.log("SUCCESS!", response.status, response.text);
+      },
+      (error) => {
+        console.log("FAILED...", error);
+      }
+    );
+  }
 
   return (
     <form action={submitForm} className={styles.form}>
