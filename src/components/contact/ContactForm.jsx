@@ -1,7 +1,7 @@
 import React, { useId, useState } from "react";
 import { useFormStatus } from "react-dom";
 import styles from "./ContactForm.module.css";
-import { send } from "@emailjs/browser";
+import { sendMessage } from "../../services/message-service";
 
 function ContactForm() {
   const [name, setName] = useState("");
@@ -24,9 +24,7 @@ function ContactForm() {
       message: message,
     };
 
-    send("service_1gn0yoe", "template_rygw2vd", emailObject, {
-      publicKey: "EH1YPyY4Qz8gyA_sY",
-    }).then(
+    sendMessage(emailObject).then(
       (response) => {
         console.log("SUCCESS!", response.status, response.text);
       },
