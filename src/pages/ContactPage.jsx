@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./ContactPage.module.css";
 import Header from "../components/navigation/Header";
 import ContactForm from "../components/contact/ContactForm";
 import DialogBox from "../components/DialogBox";
+import PopupMessage from "../components/PopupMessage";
 
 function ContactPage() {
+  const [showDialog, setShowDialog] = useState(false);
+
+  const popupDurationInMs = 5000;
+
   return (
     <div className={styles.main}>
       <Header />
@@ -29,8 +34,18 @@ function ContactPage() {
             }}
           />
         </div>
-        <ContactForm />
+        <ContactForm
+          setShowDialog={setShowDialog}
+          popupDurationInMs={popupDurationInMs}
+        />
       </div>
+
+      <PopupMessage
+        message="Message sent"
+        type="success"
+        show={showDialog}
+        popupDurationInMs={popupDurationInMs}
+      />
     </div>
   );
 }

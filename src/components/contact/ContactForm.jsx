@@ -3,7 +3,10 @@ import { useFormStatus } from "react-dom";
 import styles from "./ContactForm.module.css";
 import { sendMessage } from "../../services/message-service";
 
-function ContactForm() {
+function ContactForm(props) {
+  const setShowDialog = props.setShowDialog;
+  const popupDurationInMs = props.popupDurationInMs;
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -17,6 +20,10 @@ function ContactForm() {
   const captchaInputId = useId();
 
   function submitForm() {
+    setShowDialog(true);
+
+    console.log("triggered");
+
     let emailObject = {
       name: name,
       email: email,
@@ -32,6 +39,11 @@ function ContactForm() {
         console.log("FAILED...", error);
       }
     );
+
+    setTimeout(() => {
+      setShowDialog(false);
+      console.log("ended");
+    }, popupDurationInMs);
   }
 
   return (
