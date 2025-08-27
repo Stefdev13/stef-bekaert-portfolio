@@ -8,10 +8,10 @@ const useStyles = createUseStyles({
     width: "350px",
 
     padding: {
-      top: "15px",
-      bottom: "25px",
-      right: "25px",
-      left: "25px",
+      top: "12px",
+      bottom: "20px",
+      right: "20px",
+      left: "20px",
     },
 
     background: (props) =>
@@ -31,14 +31,14 @@ const useStyles = createUseStyles({
       props.theme ? Constants.LIGHT_BORDER : Constants.DARK_BORDER,
 
     "& h2": {
-      fontSize: "1.7rem",
+      fontSize: "1.3rem",
       margin: "0px",
 
       color: (props) => props.primaryBtnColour,
     },
 
     "& p": {
-      fontSize: "1rem",
+      fontSize: ".9rem",
       lineHeight: 1.2,
     },
   },
@@ -60,7 +60,7 @@ const useStyles = createUseStyles({
       borderRadius: "12px",
 
       fontFamily: Constants.FONT_QUICKSAND,
-      fontSize: ".95rem",
+      fontSize: ".85rem",
       fontWeight: "600",
     },
 
@@ -72,7 +72,7 @@ const useStyles = createUseStyles({
     background: "transparent",
 
     border: {
-      width: "2px",
+      width: "1px",
       style: "solid",
     },
     borderColor: (props) => props.primaryBtnColour,

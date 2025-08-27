@@ -21,7 +21,7 @@ section {
 
 label {
     font-family: var(--font-text);
-    font-size: .9rem;
+    font-size: .85rem;
 }
 
 input {
@@ -36,7 +36,7 @@ input {
     padding: 0px 10px 0px 10px;
 
     font-family: var(--font-text);
-    font-size: .9rem;
+    font-size: .8rem;
     font-weight: 500;
     color: var(--var-colour-text-header);
 }
@@ -60,7 +60,7 @@ textarea {
     padding: 10px 10px 10px 10px;
 
     font-family: var(--font-text);
-    font-size: .9rem;
+    font-size: .8rem;
     font-weight: 500;
     color: var(--var-colour-text-header);
 }
