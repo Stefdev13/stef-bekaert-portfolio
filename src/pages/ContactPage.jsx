@@ -1,20 +1,31 @@
 import React, { useState } from "react";
+import { useTheme } from "../context/ThemeProvider";
 import styles from "./ContactPage.module.css";
 import Header from "../components/navigation/Header";
 import ContactForm from "../components/contact/ContactForm";
 import DialogBox from "../components/DialogBox";
 import PopupMessage from "../components/PopupMessage";
+import bgImgLight from "../assets/images/contact-bg-light.png";
+import bgImgDark from "../assets/images/contact-bg-dark.png";
 
 function ContactPage() {
   const [showDialog, setShowDialog] = useState(false);
   const [dialogMessage, setDialogMessage] = useState("");
   const [dialogType, setDialogType] = useState("");
 
+  const theme = useTheme();
+
   const popupDurationInMs = 5000;
 
   return (
     <div className={styles.main}>
       <Header />
+
+      <img
+        src={theme ? bgImgLight : bgImgDark}
+        alt="a backgroud image with a paper plane"
+        className={styles.bgImage}
+      />
 
       <div className={styles.wrapper}>
         <div className={styles.leftSide}>
