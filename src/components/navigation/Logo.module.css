@@ -2,12 +2,16 @@
     font-size: 1rem;
     font-family: var(--font-comment-semibold);
     color: var(--var-colour-text-heading);
+
     background-color: var(--var-colour-glass-bg-logo);
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
+
     border-radius: 12px;
+
     padding: 8px 12px 8px 12px;
     margin-left: 20px;
+
     width: 9rem;
 }
 

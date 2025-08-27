@@ -6,18 +6,40 @@ function Logo() {
   let navigate = useNavigate();
   const location = useLocation();
 
-  const [text, setText] = useState("stef.bekaert");
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+  // const baseText = screen.width >= 992 ? "stef.bekaert" : "s.b";
+  // const hoverText = screen.width >= 992 ? "homepage" : "home";
+
+  const [baseText, setBaseText] = useState(
+    screen.width >= 992 ? "stef.bekaert" : "s.b"
+  );
+  const [hoverText, setHoverText] = useState(
+    screen.width >= 992 ? "homepage" : "home"
+  );
+  const [text, setText] = useState(
+    screen.width >= 992 ? "stef.bekaert" : "s.b"
+  );
+
+  window.addEventListener(
+    "resize",
+    function () {
+      setBaseText(screen.width >= 992 ? "stef.bekaert" : "s.b");
+      setHoverText(screen.width >= 992 ? "homepage" : "home");
+      setText(baseText);
+    },
+    true
+  );
+
   function onMouseEnter() {
-    if (text !== "homepage") {
-      doEffect("homepage");
+    if (text !== hoverText) {
+      doEffect(hoverText);
     }
   }
 
   function onMouseLeave() {
-    if (text !== "stef.bekaert") {
-      doEffect("stef.bekaert");
+    if (text !== baseText) {
+      doEffect(baseText);
     }
   }
 
