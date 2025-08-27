@@ -5,7 +5,7 @@ import * as Constants from "../constants/styling-constants.js";
 
 const useStyles = createUseStyles({
   box: {
-    width: "350px",
+    // width: "350px",
 
     padding: {
       top: "12px",

@@ -132,3 +132,16 @@ input[type="checkbox"]:checked {
 
     box-shadow: 3px 3px 40px 15px var(--var-colour-shadow-primary);
 }
+
+/* mobile */
+@media screen and (width < 992px) {
+    input{
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    textArea{
+        box-sizing: border-box;
+        width: 100%;
+    }
+}

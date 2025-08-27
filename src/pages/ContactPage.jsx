@@ -28,15 +28,15 @@ function ContactPage() {
       />
 
       <div className={styles.wrapper}>
-        <div className={styles.leftSide}>
-          <div className={styles.textBlock}>
-            <h1 className="heading">Contact me</h1>
-            <p className="text">
-              Enter your contact details and a message, and I will get back to
-              you.
-            </p>
-            <p className="comment">//Unless I’m on vacation...</p>
-          </div>
+        <div className={styles.textBlock}>
+          <h1 className="heading">Contact me</h1>
+          <p className="text">
+            Enter your contact details and a message, and I will get back to
+            you.
+          </p>
+          <p className="comment">//Unless I’m on vacation...</p>
+        </div>
+        <div className={styles.dialogBox}>
           <DialogBox
             title="Buy me a beer"
             text="This is really just here to show that I can integrate a payment processor, but feel free to buy me a beer anyway."
@@ -47,12 +47,14 @@ function ContactPage() {
             }}
           />
         </div>
-        <ContactForm
-          setShowDialog={setShowDialog}
-          setDialogMessage={setDialogMessage}
-          setDialogType={setDialogType}
-          popupDurationInMs={popupDurationInMs}
-        />
+        <div className={styles.contactForm}>
+          <ContactForm
+            setShowDialog={setShowDialog}
+            setDialogMessage={setDialogMessage}
+            setDialogType={setDialogType}
+            popupDurationInMs={popupDurationInMs}
+          />
+        </div>
       </div>
 
       <PopupMessage
