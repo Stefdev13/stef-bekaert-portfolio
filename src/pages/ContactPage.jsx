@@ -7,6 +7,8 @@ import PopupMessage from "../components/PopupMessage";
 
 function ContactPage() {
   const [showDialog, setShowDialog] = useState(false);
+  const [dialogMessage, setDialogMessage] = useState("");
+  const [dialogType, setDialogType] = useState("");
 
   const popupDurationInMs = 5000;
 
@@ -36,14 +38,17 @@ function ContactPage() {
         </div>
         <ContactForm
           setShowDialog={setShowDialog}
+          setDialogMessage={setDialogMessage}
+          setDialogType={setDialogType}
           popupDurationInMs={popupDurationInMs}
         />
       </div>
 
       <PopupMessage
         message="Message sent"
-        type="success"
+        type={dialogType}
         show={showDialog}
+        dialogMessage={dialogMessage}
         popupDurationInMs={popupDurationInMs}
       />
     </div>

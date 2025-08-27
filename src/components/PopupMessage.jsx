@@ -87,9 +87,9 @@ const useStyles = createUseStyles({
 });
 
 function PopupMessage(props) {
-  const message = props.message;
   const type = props.type;
   const show = props.show;
+  const dialogMessage = props.dialogMessage;
   const popupDurationInMs = props.popupDurationInMs;
 
   const theme = useTheme();
@@ -150,8 +150,8 @@ function PopupMessage(props) {
 
   return (
     <div className={`${classes.successMessage} ${show ? classes.drop : ""}`}>
-      <img src={getIcon()} alt="success icon" />
-      {message}
+      <img src={getIcon()} alt="icon for popup message" />
+      {dialogMessage}
     </div>
   );
 }

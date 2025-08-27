@@ -5,6 +5,8 @@ import { sendMessage } from "../../services/message-service";
 
 function ContactForm(props) {
   const setShowDialog = props.setShowDialog;
+  const setDialogMessage = props.setDialogMessage;
+  const setDialogType = props.setDialogType;
   const popupDurationInMs = props.popupDurationInMs;
 
   const [name, setName] = useState("");
@@ -20,8 +22,6 @@ function ContactForm(props) {
   const captchaInputId = useId();
 
   function submitForm() {
-    setShowDialog(true);
-
     console.log("triggered");
 
     let emailObject = {
@@ -33,17 +33,34 @@ function ContactForm(props) {
 
     sendMessage(emailObject).then(
       (response) => {
-        console.log("SUCCESS!", response.status, response.text);
+        //On success
+        setDialogMessage("Message sent");
+        setDialogType("success");
+        setShowDialog(true);
+
+        setTimeout(() => {
+          setShowDialog(false);
+          console.log("ended");
+        }, popupDurationInMs);
+
+        setDialogMessage("");
+        setDialogType("");
       },
       (error) => {
-        console.log("FAILED...", error);
+        //On error
+        setDialogMessage("An error occured");
+        setDialogType("danger");
+        setShowDialog(true);
+
+        setTimeout(() => {
+          setShowDialog(false);
+          console.log("ended");
+        }, popupDurationInMs);
+
+        setDialogMessage("");
+        setDialogType("");
       }
     );
-
-    setTimeout(() => {
-      setShowDialog(false);
-      console.log("ended");
-    }, popupDurationInMs);
   }
 
   return (
