@@ -1,7 +1,7 @@
 .main {
   margin: 0;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
 
   display: flex;
   flex-direction: column;
@@ -17,8 +17,7 @@
   flex-direction: row;
   justify-content: space-between;
 
-  width: 80vw;
-  height: 75vh;
+  width: 85vw;
 }
 
 .leftSide {

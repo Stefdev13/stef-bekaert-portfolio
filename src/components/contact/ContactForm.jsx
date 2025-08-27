@@ -65,52 +65,60 @@ function ContactForm(props) {
 
   return (
     <form action={submitForm} className={styles.form}>
-      <label htmlFor="">Name</label>
-      <input
-        type="text"
-        name="name"
-        id={nameInputId}
-        required={true}
-        placeholder="Enter your name"
-        onChange={(e) => {
-          setName(e.target.value);
-        }}
-      />
+      <section>
+        <label htmlFor="">Name</label>
+        <input
+          type="text"
+          name="name"
+          id={nameInputId}
+          required={true}
+          placeholder="Enter your name"
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
+        />
+      </section>
 
-      <label htmlFor="">Email</label>
-      <input
-        type="email"
-        name="email"
-        id={emailInputId}
-        required={true}
-        placeholder="Enter your email address"
-        onChange={(e) => {
-          setEmail(e.target.value);
-        }}
-      />
+      <section>
+        <label htmlFor="">Email</label>
+        <input
+          type="email"
+          name="email"
+          id={emailInputId}
+          required={true}
+          placeholder="Enter your email address"
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        />
+      </section>
 
-      <label htmlFor="">Subject</label>
-      <input
-        type="text"
-        name="subject"
-        id={subjectInputId}
-        required={true}
-        placeholder="Why are you contacting me"
-        onChange={(e) => {
-          setSubject(e.target.value);
-        }}
-      />
+      <section>
+        <label htmlFor="">Subject</label>
+        <input
+          type="text"
+          name="subject"
+          id={subjectInputId}
+          required={true}
+          placeholder="Why are you contacting me"
+          onChange={(e) => {
+            setSubject(e.target.value);
+          }}
+        />
+      </section>
 
-      <label htmlFor="">Message</label>
-      <textarea
-        name="message"
-        id={messageInputId}
-        required={true}
-        placeholder="Type your message"
-        onChange={(e) => {
-          setMessage(e.target.value);
-        }}
-      ></textarea>
+      <section>
+        <label htmlFor="">Message</label>
+        <textarea
+          name="message"
+          id={messageInputId}
+          required={true}
+          placeholder="Type your message"
+          onChange={(e) => {
+            setMessage(e.target.value);
+          }}
+        ></textarea>
+      </section>
 
       <section className={styles.captcha}>
         <input

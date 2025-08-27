@@ -36,6 +36,11 @@ const useStyles = createUseStyles({
 
       color: (props) => props.primaryBtnColour,
     },
+
+    "& p": {
+      fontSize: "1rem",
+      lineHeight: 1.2,
+    },
   },
   btnRow: {
     marginTop: "35px",
@@ -45,7 +50,7 @@ const useStyles = createUseStyles({
     gap: "15px",
 
     "& button": {
-      height: "45px",
+      height: "40px",
 
       padding: {
         right: "20px",
