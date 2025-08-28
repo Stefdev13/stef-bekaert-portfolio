@@ -10,7 +10,21 @@ import arrowImgDark from "../../assets/images/arrow-dark-bg.png";
 
 function NavBar() {
   const theme = useTheme();
-  const [isNavbarUnfurled, setIsNavbarUnfurled] = useState(false);
+  const [displayState, setDisplayState] = useState("");
+
+  function handleNavbarToggleOnClick() {
+    if (displayState !== styles.slideOut) {
+      if (displayState === "") {
+        setDisplayState(styles.unfurled);
+      } else {
+        setDisplayState(styles.slideOut);
+
+        setTimeout(() => {
+          setDisplayState("");
+        }, 200);
+      }
+    }
+  }
 
   return (
     <div className={styles.row}>
@@ -19,7 +33,7 @@ function NavBar() {
         <div
           className={styles.navbarToggle}
           onClick={() => {
-            setIsNavbarUnfurled(!isNavbarUnfurled);
+            handleNavbarToggleOnClick();
           }}
         >
           <img src={theme ? menuBurgerDark : menuBurgerLight} alt="menu icon" />
@@ -27,35 +41,18 @@ function NavBar() {
       </div>
 
       <div className={styles.navbar}>
-        <NavLink
-          to="/"
-          className={`${styles.navLink} ${
-            isNavbarUnfurled ? styles.unfurled : ""
-          }`}
-        >
+        <NavLink to="/" className={`${styles.navLink} ${displayState}`}>
           Home
         </NavLink>
-        <NavLink
-          to="/about"
-          className={`${styles.navLink} ${
-            isNavbarUnfurled ? styles.unfurled : ""
-          }`}
-        >
+        <NavLink to="/about" className={`${styles.navLink} ${displayState}`}>
           About Me
         </NavLink>
-        <NavLink
-          to="/work"
-          className={`${styles.navLink} ${
-            isNavbarUnfurled ? styles.unfurled : ""
-          }`}
-        >
+        <NavLink to="/work" className={`${styles.navLink} ${displayState}`}>
           Work
         </NavLink>
         <NavLink
           to="/contact"
-          className={`${styles.contactBtn} ${
-            isNavbarUnfurled ? styles.unfurled : ""
-          }`}
+          className={`${styles.contactBtn} ${displayState}`}
         >
           Contact me <img src={theme ? arrowImgLight : arrowImgDark} alt="" />
         </NavLink>
