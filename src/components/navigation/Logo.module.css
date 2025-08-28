@@ -10,11 +10,24 @@
     border-radius: 12px;
 
     padding: 8px 12px 8px 12px;
-    margin-left: 20px;
+    margin-left: 2vw;
 
-    width: 9rem;
 }
 
 .logo:hover {
     cursor: pointer;
+}
+
+/* mobile & portrait tablet */
+@media screen and (width < 992px), (orientation: portrait) {
+    .logo {
+        width: 15vw;
+    }
+}
+
+/* desktop */
+@media only screen and (width >= 992px) {
+    .logo {
+        width: 15vw;
+    }
 }

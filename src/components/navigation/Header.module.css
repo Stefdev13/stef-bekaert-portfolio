@@ -10,7 +10,21 @@
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 3vh;
 
     width: 100vw;
+}
+
+/* desktop */
+@media only screen and (width >= 992px) {
+
+}
+
+/* mobile & portrait tablet */
+@media screen and (width < 992px), (orientation: portrait) {
+    .header {
+        align-items: start;
+
+        margin-top: 2vh;
+    }
 }
