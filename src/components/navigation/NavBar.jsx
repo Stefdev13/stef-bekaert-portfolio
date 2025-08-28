@@ -5,6 +5,8 @@ import LightDarkModeToggle from "../LightDarkModeToggle";
 import { useTheme } from "../../context/ThemeProvider";
 import menuBurgerDark from "../../assets/images/menu-burger-dark.png";
 import menuBurgerLight from "../../assets/images/menu-burger-light.png";
+import arrowImgLight from "../../assets/images/arrow-light-bg.png";
+import arrowImgDark from "../../assets/images/arrow-dark-bg.png";
 
 function NavBar() {
   const theme = useTheme();
@@ -51,11 +53,11 @@ function NavBar() {
         </NavLink>
         <NavLink
           to="/contact"
-          className={`${styles.navLink} ${
+          className={`${styles.contactBtn} ${
             isNavbarUnfurled ? styles.unfurled : ""
           }`}
         >
-          Contact me
+          Contact me <img src={theme ? arrowImgLight : arrowImgDark} alt="" />
         </NavLink>
       </div>
     </div>

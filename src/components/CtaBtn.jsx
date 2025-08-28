@@ -21,6 +21,8 @@ function CtaBtn(props) {
     switch (btnType) {
       case "contact":
         return theme ? arrowImgLight : arrowImgDark;
+      case "contact rounded green":
+        return theme ? arrowImgLight : arrowImgDark;
       case "project link":
         return theme ? linkLight : linkDark;
       case "project source":
@@ -33,6 +35,8 @@ function CtaBtn(props) {
   function getImageAlt() {
     switch (btnType) {
       case "contact":
+        return "arrow image";
+      case "contact rounded green":
         return "arrow image";
       case "project link":
         return "arrow image";
@@ -49,6 +53,9 @@ function CtaBtn(props) {
         case "contact":
           navigate("/contact");
           break;
+        case "contact rounded green":
+          navigate("/contact");
+          break;
         default:
           //Do nothing
           break;
@@ -60,6 +67,8 @@ function CtaBtn(props) {
     switch (btnType) {
       case "contact":
         return `${styles.btnBox} ${styles.standard}`;
+      case "contact rounded green":
+        return `${styles.btnBox} ${styles.rounded} ${styles.green}`;
       case "project link":
         return `${styles.btnBox} ${styles.standard}`;
       case "project source":

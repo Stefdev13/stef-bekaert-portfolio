@@ -55,6 +55,19 @@
     border: 2px solid var(--var-colour-info);
 }
 
+.rounded {
+    border-radius: 50px;
+    border: none;
+}
+
+.green {
+    background-color: var(--var-colour-primary);
+}
+
+.green:hover {
+    box-shadow: 3px 3px 40px 15px var(--var-colour-shadow-primary);
+}
+
 .image {
     height: 18px;
     width: 18px;

@@ -41,6 +41,12 @@
     color: var(--var-colour-bg-l2);
     text-decoration-line: none;
 
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: end;
+
     background-color: var(--var-colour-primary);
 
     align-content: center;
@@ -48,6 +54,15 @@
     height: 35px;
     padding: 0px 20px 0px 20px;
     border-radius: 50px;
+
+    transition: box-shadow 0.2s ease-in-out;
+
+    img {
+        height: 15px;
+        width: 15px;
+
+        transition: .25s ease-in-out;
+    }
 }
 
 .contactBtn:hover {
@@ -55,6 +70,12 @@
     font-weight: 800;
     
     cursor: pointer;
+
+    box-shadow: 3px 3px 40px 15px var(--var-colour-shadow-primary);
+
+    img {
+        transform: rotate(-20deg);
+    }
 }
 
 /* desktop */
@@ -80,28 +101,6 @@
         justify-content: space-between;
         align-items: center;
         gap: 5px;
-    }
-    
-    .navLink {
-        font-size: .8rem;
-        font-weight: 450;
-    }
-    
-    .navLink:hover {
-        font-size: .79rem;
-        font-weight: 550;
-    }
-    
-    .contactBtn {
-        font-size: .8rem;
-        font-weight: 600;
-
-        margin-left: 10px;
-    }
-    
-    .contactBtn:hover {
-        font-size: .79rem;
-        font-weight: 800;
     }
 }
 
@@ -179,22 +178,51 @@
         text-align: end;
     }
 
-    .unfurled {
-        display: block;
-    }
-    
-    .navLink:hover {
-        font-size: .79rem;
-        font-weight: 550;
-    }
-    
     .contactBtn {
-        font-size: .8rem;
-        font-weight: 600;
+        display: none;
     }
-    
-    .contactBtn:hover {
-        font-size: .79rem;
-        font-weight: 800;
+
+    .unfurled {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        justify-content: end;
+
+        position: relative;
+
+        animation-name: slideIn;
+        animation-timing-function: ease-in-out;
+    }
+
+    .unfurled:nth-child(1) {
+        animation-duration: 100ms;
+    }
+
+    .unfurled:nth-child(2) {
+        animation-duration: 200ms;
+    }
+
+    .unfurled:nth-child(3) {
+        animation-duration: 300ms;
+    }
+
+    .unfurled:nth-child(4) {
+        animation-duration: 400ms;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        left: 20vw;
+    }
+    5% {
+        opacity: 0;
+        left: 20vw;
+    }
+    100% {
+        opacity: 1;
+        left: 0vw;
     }
 }
