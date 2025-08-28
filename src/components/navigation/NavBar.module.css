@@ -207,7 +207,10 @@
 
         animation-name: slideOut;
         animation-timing-function: ease-in-out;
-        animation-duration: 200ms;
+
+        /* To avoid a gitter happening: keep this duration slightly higher than the delay of the setTimeout function in handleNavbarToggleOnClick,
+            otherwise the duration could complete a fraction of a second faster than the delay in the setTimout function */
+        animation-duration: 250ms;
     }
 
     .unfurled:nth-child(1) {
