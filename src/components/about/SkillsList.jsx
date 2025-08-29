@@ -47,8 +47,10 @@ function SkillsList(props) {
     <div>
       <div className={styles.header}>
         <div>
-          <h1>{isTechnical ? "My Technical Skills" : "My Other Skills"}</h1>
-          <p>
+          <h1 className="sectionHeading">
+            {isTechnical ? "My Technical Skills" : "My Other Skills"}
+          </h1>
+          <p className="comment">
             {isTechnical
               ? "//A forever expanding list"
               : "//Also forever expanding"}

@@ -12,14 +12,16 @@ function SkillSet(props) {
         <h2>{skillSet.title}</h2>
         {skillSet.subTitle && <p>{skillSet.subTitle}</p>}
       </div>
-      {skillSet.lists.map((list) => (
-        <ChipList
-          key={list.title}
-          title={list.title}
-          listOfChipValues={list.list}
-          colours={colours}
-        />
-      ))}
+      <div className={styles.chipsLists}>
+        {skillSet.lists.map((list) => (
+          <ChipList
+            key={list.title}
+            title={list.title}
+            listOfChipValues={list.list}
+            colours={colours}
+          />
+        ))}
+      </div>
     </div>
   );
 }

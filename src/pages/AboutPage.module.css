@@ -74,9 +74,13 @@
   max-width: 83vw;
 
   padding-top: 20px;
-  padding-bottom: 150px;
+  padding-bottom: 110px;
 
   text-align: start;
+}
+
+.extraPadding {
+    gap: 12vh;
 }
 
 .bottomSectionContent {
@@ -113,6 +117,10 @@
     padding-bottom: 6vh;
 
     gap: 2vh;
+  }
+
+  .extraPadding {
+      gap: 10vh;
   }
 
   .aboutImg {

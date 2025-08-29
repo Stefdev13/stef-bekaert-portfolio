@@ -5,18 +5,10 @@
     justify-content: start;
 
     h1 {
-        font-family: var(--font-heading);
-        font-size: 2rem;
-        color: var(--var-colour-text-heading);
-
         margin: 0px;
     }
 
     p {
-        font-family: var(--font-comment);
-        font-size: .8rem;
-        color: var(--var-colour-text-muted);
-
         margin: 0px;
     }
 }
@@ -28,6 +20,10 @@
     flex-wrap: wrap;
 
     margin-top: 40px;
+}
+
+.extraPadding {
+    gap: 8vh;
 }
 
 .headerCTAWrapper {
@@ -44,7 +40,7 @@
 
         height: 2px;
 
-        border-radius: 100%;
+        border-radius: 10px;
 
         background-color: var(--var-colour-border);
     }
@@ -90,5 +86,18 @@
             
             transform: rotate(-30deg);
         }
+    }
+}
+
+@media only screen and (width < 992px), (orientation: portrait) {
+    .header {
+        flex-direction: column;
+        gap: 1vh;
+    }
+
+    .skillsetsWrapper {
+        flex-direction: column;
+
+        margin-top: 1vh;
     }
 }

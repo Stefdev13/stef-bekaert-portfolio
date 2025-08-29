@@ -9,7 +9,7 @@ function SkillsSection() {
       <KnotAndTitle title="My Skills" location="middle" />
       <div className={styles.contentAndLineWrapper}>
         <div className={styles.line} />
-        <div className={styles.sectionContent}>
+        <div className={`${styles.sectionContent} ${styles.extraPadding}`}>
           <SkillsList technical={true} skills={Constants.SKILLS_TECHNICAL} />
           <SkillsList technical={false} skills={Constants.SKILLS_OTHER} />
         </div>

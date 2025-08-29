@@ -1,7 +1,6 @@
 .skillSet {
     display: flex;
     flex-direction: column;
-    gap: 25px;
     
     h2 {
         font-family: var(--font-heading);
@@ -21,4 +20,29 @@
 
 .header {
     margin-bottom: 10px;
+}
+
+.chipsLists {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+@media only screen and (width < 992px), (orientation: portrait) {
+    .skillSet {
+        gap: 0;
+        h2 {
+            font-size: 1.4rem;
+        }
+    }
+
+    .chipsLists {
+        display: flex;
+        flex-direction: column;
+        gap: 3vh;
+    }
+
+    .header {
+        margin-bottom: 0;
+    }
 }

@@ -12,3 +12,9 @@
 
     max-width: 18vw;
 }
+
+@media only screen and (width < 992px), (orientation: portrait) {
+    .wrapper {
+        max-width: none;
+    }
+}
