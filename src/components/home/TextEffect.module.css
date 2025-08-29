@@ -1,6 +1,6 @@
 .textEffect {
   font-size: 1.7rem;
-  font-family: var(--font-comment);
+  font-family: var(--font-comment-semibold);
   color: var(--var-colour-text-heading);
 
   padding: 5px 20px 5px 20px;
@@ -13,4 +13,10 @@
   box-shadow: 4px 4px 10px 0px var(--var-colour-shadow);
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
+}
+
+@media only screen and (width < 992), (orientation: portrait) {
+  .textEffect {
+    font-size: 6vw
+  }
 }
