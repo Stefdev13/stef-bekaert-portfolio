@@ -105,7 +105,7 @@
 }
 
 /* mobile & portrait tablet */
-@media screen and (width < 992px), (orientation: portrait) {
+@media only screen and (width < 992px), (orientation: portrait) {
     .row {
         display: flex;
         flex-direction: column;
@@ -208,8 +208,8 @@
         animation-name: slideOut;
         animation-timing-function: ease-in-out;
 
-        /* To avoid a gitter happening: keep this duration slightly higher than the delay of the setTimeout function in handleNavbarToggleOnClick,
-            otherwise the duration could complete a fraction of a second faster than the delay in the setTimout function */
+        /* To avoid a stutter happening: keep this duration slightly higher than the delay of the setTimeout function in handleNavbarToggleOnClick,
+            otherwise the animation could complete a fraction of a second faster than the delay in the setTimout function */
         animation-duration: 250ms;
     }
 

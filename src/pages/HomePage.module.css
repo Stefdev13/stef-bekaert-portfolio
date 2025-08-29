@@ -50,3 +50,45 @@
 .lessLineHeight {
   line-height: .5;
 }
+
+/* mobile & portrait tablet */
+@media only screen and (width < 992px), (orientation: portrait) {
+  .main {
+    text-align: start;
+
+    align-items: start;
+
+    padding-left: 8vw;
+  }
+
+  .textSection {
+    align-items: start;
+    gap: 4vh;
+
+    h1 {
+      margin-bottom: 5vh;
+
+      font-size: 8vw;
+    }
+
+    span {
+      font-size: 8vw;
+    }
+  }
+  
+  .mainLine {
+    flex-direction: column;
+    align-items: start;
+    gap: 3vh;
+
+    h1 {
+      font-size: 8vw;
+
+      margin: 0;
+    }
+
+    span {
+      font-size: 8vw;
+    }
+  }
+}

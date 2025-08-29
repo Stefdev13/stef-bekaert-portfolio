@@ -23,7 +23,7 @@ function HomePage() {
           ></TextEffect>
         </div>
 
-        <p className="comment">//and I enjoy doing it :)</p>
+        <p className="commentSemibold">//and I enjoy doing it :)</p>
       </div>
 
       <CtaBtn btnType="contact" btnText="Contact Me"></CtaBtn>
