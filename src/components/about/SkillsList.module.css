@@ -22,10 +22,6 @@
     margin-top: 40px;
 }
 
-.extraPadding {
-    gap: 8vh;
-}
-
 .headerCTAWrapper {
     flex-grow: 1;
 

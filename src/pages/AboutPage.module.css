@@ -127,4 +127,8 @@
     height: auto;
     width: 70vw;
   }
+
+  .skillsSection {
+    background-image: linear-gradient(to bottom, var(--var-colour-bg-l1), var(--var-colour-bg-l1) 50%, var(--var-colour-info));
+  }
 }
