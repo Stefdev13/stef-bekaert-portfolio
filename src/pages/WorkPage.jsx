@@ -8,6 +8,7 @@ function WorkPage() {
   return (
     <div className={styles.main}>
       <Header />
+      <div className={styles.backgroundColouredBlur} />
       <div className={styles.pageHeader}>
         <h1 className="heading">My work</h1>
         <p className="comment">//A selection of projects I have worked on.</p>

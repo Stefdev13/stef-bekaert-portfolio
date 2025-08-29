@@ -63,7 +63,7 @@ function Project(props) {
     >
       <img
         src={project.projectImg}
-        alt={`Image of the project ${project.name}`}
+        alt={`Image of the project: ${project.name}`}
         className={styles.image}
       />
       <div className={`${styles.projectDetails}`}>
