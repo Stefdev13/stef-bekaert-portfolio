@@ -16,7 +16,7 @@
 
   width: 100vw;
 
-  padding-top: 200px;
+  padding-top: 20vh;
 
   background-color: var(--var-colour-bg-l2);
 }
@@ -69,7 +69,7 @@
 
   display: flex;
   flex-direction: column;
-  gap: 90px;
+  gap: 5vh;
 
   max-width: 83vw;
 
@@ -92,4 +92,31 @@
 
 .bottomHeader {
   padding-left: 8.2vw;
+}
+
+@media only screen and (width < 992px), (orientation: portrait) {
+  .topSectionWrapper {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 8vh;
+
+    padding-top: 12vh;
+  }
+
+  .contentAndLineWrapper {
+    gap: 6vw;
+  }
+
+  .sectionContent {
+    padding-top: 0;
+    padding-right: 5vw;
+    padding-bottom: 6vh;
+
+    gap: 2vh;
+  }
+
+  .aboutImg {
+    height: auto;
+    width: 70vw;
+  }
 }

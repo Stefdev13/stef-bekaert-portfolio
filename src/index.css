@@ -132,7 +132,8 @@ body {
   }
   
   .text {
-    font-size: 2vw;
+    font-size: 4vw;
+    line-height: 1.2;
   }
 }
 
