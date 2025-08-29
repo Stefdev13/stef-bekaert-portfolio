@@ -73,3 +73,22 @@
     width: 18px;
     transition: .25s ease-in-out;
 }
+
+/* mobile & portrait tablet */
+@media only screen and (width < 992px), (orientation: portrait) {
+    .btnBox {
+        height: 40px;
+
+        font-size: 3vw;
+
+        gap: 3vw;
+
+        padding: 0px 16px 0px 16px;
+    }
+
+    .image {
+        height: 14px;
+        width: 14px;
+        transition: .25s ease-in-out;
+    }
+}

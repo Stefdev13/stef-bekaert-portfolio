@@ -117,19 +117,41 @@
         width: 90vw;
 
         border: 1px solid var(--var-colour-border);
+        border-radius: 12px;
+    }
+
+    .projectDetails {
+        gap: 2vh;
     }
 
     .header {
         h2 {
-            font-size: 7vw;
+            font-size: 5vw;
         }
     
         p {
-            font-size: 5vw;
+            font-size: 3vw;
+
+            color: var(--var-colour-primary);
         }
     }
 
     .description {
-        font-size: 4vw;
+        font-size: 3.5vw;
+
+        line-height: 1.2;
+
+        margin: 0;
+    }
+
+    .chipsLists {
+        display: none;
+    }
+
+    .image {
+        height: 25vh;
+        max-width: 80vw;
+
+        object-fit: cover;
     }
 }
