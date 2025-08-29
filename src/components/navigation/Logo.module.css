@@ -12,6 +12,7 @@
     padding: 8px 12px 8px 12px;
     margin-left: 2vw;
 
+    width: 15vw;
 }
 
 .logo:hover {
@@ -21,7 +22,7 @@
 /* mobile & portrait tablet */
 @media screen and (width < 992px), (orientation: portrait) {
     .logo {
-        width: 15vw;
+        font-size: 4vw;
     }
 }
 

@@ -15,11 +15,6 @@
     width: 100vw;
 }
 
-/* desktop */
-@media only screen and (width >= 992px) {
-
-}
-
 /* mobile & portrait tablet */
 @media screen and (width < 992px), (orientation: portrait) {
     .header {

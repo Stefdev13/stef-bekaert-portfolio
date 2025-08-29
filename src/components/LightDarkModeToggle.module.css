@@ -24,3 +24,12 @@
     height: 20px;
     width: 20px;
 }
+
+@media only screen and (width < 992px), (orientation: protrait) {
+    .toggleBtn {
+        height: 40px;
+        width: 40px;
+
+        margin-right: 20px;
+    }
+}
