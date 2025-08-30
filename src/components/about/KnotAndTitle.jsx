@@ -14,7 +14,10 @@ const useStyles = createUseStyles({
     paddingRight: "30px",
   },
   topLine: {
-    height: "100px",
+    "@media (max-width: 992px)": {
+      height: "6vh",
+    },
+    height: "10vh",
     width: "3px",
 
     backgroundColor: (props) =>
