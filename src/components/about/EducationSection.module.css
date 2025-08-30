@@ -20,6 +20,7 @@
     text-align: start;
 
     padding-left: 8.2vw;
+    padding-right: 5vw;
 }
 
 .eductionList {
@@ -44,12 +45,36 @@
 }
 
 .year {
-    font-family: var(--font-comment-semibold);
+    font-family: var(--font-comment);
+    font-size: 1.2rem;
+
+    margin-top: 5px;
+}
+
+.dash {
+    font-family: var(--font-comment);
     font-size: 1.2rem;
 
     margin-top: 5px;
 }
 
 @media only screen and (width < 992px), (orientation: portrait) {
+    .eduction {
+        flex-direction: column;
+        gap: 0vw;
 
+        h2 {
+            font-size: 1.3rem;
+        }
+    }
+
+    .year {
+        font-size: 1rem;
+    
+        margin: 0;
+    }
+
+    .dash {
+        display: none;
+    }
 }
