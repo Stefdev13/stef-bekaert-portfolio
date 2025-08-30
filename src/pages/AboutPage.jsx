@@ -4,6 +4,7 @@ import Header from "../components/navigation/Header";
 import AboutMeSection from "../components/about/aboutMeSection";
 import SkillsSection from "../components/about/SkillsSection";
 import TestimonialsSection from "../components/about/TestimonialsSection";
+import EducationSection from "../components/about/EducationSection";
 
 function AboutPage() {
   return (
@@ -12,7 +13,8 @@ function AboutPage() {
 
       <AboutMeSection />
       <SkillsSection />
-      <TestimonialsSection />
+      <EducationSection />
+      {/* <TestimonialsSection /> */}
     </div>
   );
 }

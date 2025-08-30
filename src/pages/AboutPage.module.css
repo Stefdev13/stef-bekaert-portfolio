@@ -30,18 +30,6 @@
   background-color: var(--var-colour-bg-l1);
 }
 
-.bottomSectionWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-
-  width: 100vw;
-
-  padding-bottom: 150px;
-
-  background-color: var(--var-colour-bg-l2);
-}
-
 .aboutImg {
   width: 100%;
   max-width: 450px;
@@ -81,21 +69,6 @@
 
 .extraPadding {
     gap: 12vh;
-}
-
-.bottomSectionContent {
-  flex-grow: 1;
-
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  overflow: hidden;
-
-  text-align: start;
-}
-
-.bottomHeader {
-  padding-left: 8.2vw;
 }
 
 @media only screen and (width < 992px), (orientation: portrait) {
