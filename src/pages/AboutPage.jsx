@@ -14,7 +14,6 @@ function AboutPage() {
       <AboutMeSection />
       <SkillsSection />
       <EducationSection />
-      {/* <TestimonialsSection /> */}
     </div>
   );
 }

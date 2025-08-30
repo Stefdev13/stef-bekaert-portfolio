@@ -1,4 +1,4 @@
-.bottomSectionWrapper {
+.sectionWrapper {
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -10,7 +10,7 @@
     background-color: var(--var-colour-bg-l2);
 }
 
-.bottomSectionContent {
+.sectionContent {
     flex-grow: 1;
 
     display: flex;

@@ -4,9 +4,9 @@ import KnotAndTitle from "./KnotAndTitle";
 
 function EducationSection() {
   return (
-    <div className={styles.bottomSectionWrapper}>
+    <div className={styles.sectionWrapper}>
       <KnotAndTitle title="Education" location="bottom" />
-      <div className={styles.bottomSectionContent}>
+      <div className={styles.sectionContent}>
         <div>
           <h1 className="sectionHeading">Education</h1>
           <p className="comment">//Stuff i've learned over the years</p>

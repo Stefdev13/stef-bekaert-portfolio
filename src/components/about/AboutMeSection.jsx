@@ -1,13 +1,12 @@
 import React from "react";
 import KnotAndTitle from "./KnotAndTitle";
 import CtaBtn from "../../components/CtaBtn";
-import styles from "../../pages/AboutPage.module.css";
+import styles from "./AboutMeSection.module.css";
 import aboutImage from "../../assets/images/about-me-image.svg";
 
 function AboutMeSection() {
   return (
-    //These styles are defined in the AboutPage css module instead of in their own css module for simplicity and reusability
-    <div className={styles.topSectionWrapper}>
+    <div className={styles.sectionWrapper}>
       <div>
         <KnotAndTitle title="Biography" location="top" />
         <div className={styles.contentAndLineWrapper}>
