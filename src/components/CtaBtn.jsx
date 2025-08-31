@@ -79,7 +79,12 @@ function CtaBtn(props) {
   }
 
   return (
-    <button type="button" onClick={onClick} className={getBtnStyle()}>
+    <button
+      type="button"
+      onClick={onClick}
+      className={getBtnStyle()}
+      data-test="cta-btn"
+    >
       {btnText}
       {getImageSource() && (
         <img

@@ -41,18 +41,31 @@ function NavBar() {
       </div>
 
       <div className={styles.navbar}>
-        <NavLink to="/" className={`${styles.navLink} ${displayState}`}>
+        <NavLink
+          to="/"
+          className={`${styles.navLink} ${displayState}`}
+          data-test="home-navlink"
+        >
           Home
         </NavLink>
-        <NavLink to="/about" className={`${styles.navLink} ${displayState}`}>
+        <NavLink
+          to="/about"
+          className={`${styles.navLink} ${displayState}`}
+          data-test="about-navlink"
+        >
           About Me
         </NavLink>
-        <NavLink to="/work" className={`${styles.navLink} ${displayState}`}>
+        <NavLink
+          to="/work"
+          className={`${styles.navLink} ${displayState}`}
+          data-test="work-navlink"
+        >
           Work
         </NavLink>
         <NavLink
           to="/contact"
           className={`${styles.contactBtn} ${displayState}`}
+          data-test="contact-navlink"
         >
           Contact me <img src={theme ? arrowImgLight : arrowImgDark} alt="" />
         </NavLink>
