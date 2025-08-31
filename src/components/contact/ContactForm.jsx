@@ -1,7 +1,7 @@
 import React, { useId, useState } from "react";
 import { useFormStatus } from "react-dom";
 import styles from "./ContactForm.module.css";
-import { sendMessage } from "../../services/message-service";
+import { sendMessage, reportBug } from "../../services/message-service";
 
 function ContactForm(props) {
   const setShowDialog = props.setShowDialog;
@@ -51,6 +51,8 @@ function ContactForm(props) {
         setDialogMessage("An error occured");
         setDialogType("danger");
         setShowDialog(true);
+
+        reportBug({ bug: error.message });
 
         setTimeout(() => {
           setShowDialog(false);

@@ -48,3 +48,18 @@ h1 {
     font-family: var(--font-comment-semibold);
     font-size: 1.5rem;
 }
+
+@media only screen and (width < 992px) {
+    .navLink {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+    
+    img {
+        height: 8vh;
+        width: auto;
+    }
+}
