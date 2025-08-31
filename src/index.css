@@ -100,7 +100,6 @@
   font-size: .8rem;
   font-family: var(--font-comment-semibold);
   color: var(--var-colour-text-muted);
-  margin: 0px;
 }
 
 .text {
@@ -129,6 +128,7 @@ body {
   
   .commentSemibold {
     font-size: 3vw;
+    margin: 0px;
   }
   
   .text {

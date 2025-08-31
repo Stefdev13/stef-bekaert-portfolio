@@ -48,40 +48,40 @@
 
         max-width: fit-content;
     }
+}
 
-    button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+.skillsInActionBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-        background-color: var(--var-colour-primary);
+    background-color: var(--var-colour-primary);
 
-        width: 45px;
-        height: 45px;
+    width: 45px;
+    height: 45px;
 
-        border: none;
-        border-radius: 100%;
-        
-        box-shadow: 3px 3px 12px 2px var(--var-colour-shadow-primary);
-        transition: box-shadow 0.25s ease-in-out;
+    border: none;
+    border-radius: 100%;
+    
+    box-shadow: 3px 3px 12px 2px var(--var-colour-shadow-primary);
+    transition: box-shadow 0.25s ease-in-out;
 
-        img {
-            height: 20px;
-            width: 20px;
-            transition: .25s ease-in-out;
-        }
+    img {
+        height: 20px;
+        width: 20px;
+        transition: .25s ease-in-out;
     }
+}
 
-    button:hover {
-        box-shadow: 3px 3px 40px 15px var(--var-colour-shadow-primary);
-        cursor: pointer;
+.skillsInActionBtn:hover {
+    box-shadow: 3px 3px 40px 15px var(--var-colour-shadow-primary);
+    cursor: pointer;
 
-        img {
-            height: 20px;
-            width: 20px;
-            
-            transform: rotate(-30deg);
-        }
+    img {
+        height: 20px;
+        width: 20px;
+        
+        transform: rotate(-30deg);
     }
 }
 

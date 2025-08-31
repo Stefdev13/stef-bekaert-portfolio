@@ -60,7 +60,10 @@ function SkillsList(props) {
           <div className={styles.headerCTAWrapper}>
             <div></div>
             <p>Skills in action</p>
-            <button onClick={() => navigate("/work")}>
+            <button
+              onClick={() => navigate("/work")}
+              className={styles.skillsInActionBtn}
+            >
               <img
                 src={theme ? arrowImgLight : arrowImgDark}
                 alt="Arrow button icon"
