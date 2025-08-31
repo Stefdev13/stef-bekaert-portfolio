@@ -8,42 +8,61 @@ import ContactPage from "./pages/ContactPage.jsx";
 import WorkPage from "./pages/WorkPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import { ThemeProvider } from "./context/ThemeProvider.jsx";
-import PopupMessage from "./components/PopupMessage.jsx";
+import ErrorPage from "./pages/ErrorPage.jsx";
+
+function fallBackRender() {
+  console.log("we here");
+
+  return <ErrorPage message="something went wrong..." />;
+}
 
 let router = createBrowserRouter([
   {
     path: "/",
-    Component: HomePage,
+    element: (
+      <ErrorBoundary FallbackComponent={fallBackRender}>
+        <HomePage />
+      </ErrorBoundary>
+    ),
   },
   {
     path: "/about",
-    Component: AboutPage,
+    element: (
+      <ErrorBoundary FallbackComponent={fallBackRender}>
+        <AboutPage />
+      </ErrorBoundary>
+    ),
   },
   {
     path: "/work",
-    Component: WorkPage,
+    element: (
+      <ErrorBoundary FallbackComponent={fallBackRender}>
+        <WorkPage />
+      </ErrorBoundary>
+    ),
   },
   {
     path: "/contact",
-    Component: ContactPage,
+    element: (
+      <ErrorBoundary FallbackComponent={fallBackRender}>
+        <ContactPage />
+      </ErrorBoundary>
+    ),
+  },
+  {
+    path: "*",
+    element: (
+      <ErrorBoundary FallbackComponent={fallBackRender}>
+        <ErrorPage message="This page doesn't seem to exist..." />
+      </ErrorBoundary>
+    ),
   },
 ]);
-
-function fallBackRender() {
-  return (
-    <PopupMessage
-      type={"danger"}
-      show={true}
-      dialogMessage={"An error occured"}
-      popupDurationInMs={5000}
-    />
-  );
-}
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ThemeProvider>
-      <ErrorBoundary fallback={fallBackRender}>
+      <ErrorBoundary FallbackComponent={fallBackRender}>
         <RouterProvider router={router} />
       </ErrorBoundary>
     </ThemeProvider>
