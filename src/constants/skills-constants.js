@@ -5,7 +5,7 @@ export const SKILLS_TECHNICAL = [
         lists:[
             {
                 title: 'Currently or recently worked with',
-                list: ['Dart', 'Javascript', 'HTML', 'CSS', 'Typescript'],
+                list: ['Dart', 'Javascript', 'HTML', 'CSS'],
             },
             {
                 title: 'Worked with',
