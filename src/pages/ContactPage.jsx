@@ -58,7 +58,6 @@ function ContactPage() {
       </div>
 
       <PopupMessage
-        message="Message sent"
         type={dialogType}
         show={showDialog}
         dialogMessage={dialogMessage}

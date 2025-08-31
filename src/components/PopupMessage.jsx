@@ -14,7 +14,7 @@ import notificationLight from "../assets/images/notification-light.png";
 import * as Constants from "../constants/styling-constants";
 
 const useStyles = createUseStyles({
-  successMessage: {
+  popUpContainer: {
     position: "fixed",
     right: 0,
     bottom: 0,
@@ -149,7 +149,7 @@ function PopupMessage(props) {
   const classes = useStyles(stylingProps);
 
   return (
-    <div className={`${classes.successMessage} ${show ? classes.drop : ""}`}>
+    <div className={`${classes.popUpContainer} ${show ? classes.drop : ""}`}>
       <img src={getIcon()} alt="icon for popup message" />
       {dialogMessage}
     </div>
