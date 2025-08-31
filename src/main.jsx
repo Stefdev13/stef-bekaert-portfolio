@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import { ErrorBoundary } from "react-error-boundary";
+import { reportBug } from "./services/message-service";
 import "./index.css";
 import HomePage from "./pages/HomePage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
@@ -10,8 +11,8 @@ import AboutPage from "./pages/AboutPage.jsx";
 import { ThemeProvider } from "./context/ThemeProvider.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
 
-function fallBackRender() {
-  console.log("we here");
+function fallBackRender({ error }) {
+  reportBug({ bug: error.message });
 
   return <ErrorPage message="something went wrong..." />;
 }
