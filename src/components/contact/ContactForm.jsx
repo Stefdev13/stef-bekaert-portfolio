@@ -1,4 +1,4 @@
-import React, { useId, useState } from "react";
+import React, { useId, useState, useRef } from "react";
 import { useFormStatus } from "react-dom";
 import styles from "./ContactForm.module.css";
 import { sendMessage, reportBug } from "../../services/message-service";
@@ -14,12 +14,15 @@ function ContactForm(props) {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [captcha, setCaptcha] = useState(false);
+  const [formIsValid, setFormIsValid] = useState(false);
 
   const nameInputId = useId();
   const emailInputId = useId();
   const subjectInputId = useId();
   const messageInputId = useId();
   const captchaInputId = useId();
+
+  const formRef = useRef(null);
 
   function submitForm() {
     console.log("triggered");
@@ -66,7 +69,12 @@ function ContactForm(props) {
   }
 
   return (
-    <form action={submitForm} className={styles.form} data-test="contact-form">
+    <form
+      ref={formRef}
+      action={submitForm}
+      className={styles.form}
+      data-test="contact-form"
+    >
       <section>
         <label htmlFor="">Name</label>
         <input
@@ -77,7 +85,9 @@ function ContactForm(props) {
           placeholder="Enter your name"
           onChange={(e) => {
             setName(e.target.value);
+            setFormIsValid(formRef.current.checkValidity());
           }}
+          data-test="name-input"
         />
       </section>
 
@@ -91,7 +101,9 @@ function ContactForm(props) {
           placeholder="Enter your email address"
           onChange={(e) => {
             setEmail(e.target.value);
+            setFormIsValid(formRef.current.checkValidity());
           }}
+          data-test="email-input"
         />
       </section>
 
@@ -105,7 +117,9 @@ function ContactForm(props) {
           placeholder="Why are you contacting me"
           onChange={(e) => {
             setSubject(e.target.value);
+            setFormIsValid(formRef.current.checkValidity());
           }}
+          data-test="subject-input"
         />
       </section>
 
@@ -118,7 +132,9 @@ function ContactForm(props) {
           placeholder="Type your message"
           onChange={(e) => {
             setMessage(e.target.value);
+            setFormIsValid(formRef.current.checkValidity());
           }}
+          data-test="message-textarea"
         ></textarea>
       </section>
 
@@ -130,24 +146,28 @@ function ContactForm(props) {
           required={true}
           onChange={() => {
             setCaptcha(!captcha);
+            setFormIsValid(formRef.current.checkValidity());
           }}
+          data-test="captche-checkbox"
         />
         <label htmlFor="">I'm not a robot</label>
       </section>
 
-      <SubmitSection />
+      <SubmitSection formIsValid={formIsValid} />
     </form>
   );
 }
 
-function SubmitSection() {
+function SubmitSection(props) {
+  const formIsValid = props.formIsValid;
   const status = useFormStatus();
 
   return (
     <button
       type="submit"
       className={styles.submitBtn}
-      disabled={status.pending}
+      disabled={status.pending ? true : !formIsValid}
+      data-test="submit-btn"
     >
       {status.pending ? "sending message..." : "Send message"}
     </button>

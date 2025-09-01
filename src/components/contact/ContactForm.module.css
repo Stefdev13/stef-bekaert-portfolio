@@ -127,6 +127,24 @@ input[type="checkbox"]:checked {
     border: none;
 }
 
+.submitBtn:disabled {
+    background-color: lightgrey;
+
+    color: grey;
+
+    box-shadow: none;
+}
+
+.submitBtn:disabled:hover {
+    background-color: lightgrey;
+
+    color: grey;
+
+    box-shadow: none;
+
+    cursor: default;
+}
+
 .submitBtn:hover {
     cursor: pointer;
 
