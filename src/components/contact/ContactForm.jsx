@@ -82,6 +82,7 @@ function ContactForm(props) {
           name="name"
           id={nameInputId}
           required={true}
+          pattern=".*[a-zA-Z].*"
           placeholder="Enter your name"
           onChange={(e) => {
             setName(e.target.value);
@@ -114,6 +115,7 @@ function ContactForm(props) {
           name="subject"
           id={subjectInputId}
           required={true}
+          pattern=".*[a-zA-Z].*"
           placeholder="Why are you contacting me"
           onChange={(e) => {
             setSubject(e.target.value);
@@ -129,6 +131,7 @@ function ContactForm(props) {
           name="message"
           id={messageInputId}
           required={true}
+          minLength="20"
           placeholder="Type your message"
           onChange={(e) => {
             setMessage(e.target.value);
@@ -148,7 +151,7 @@ function ContactForm(props) {
             setCaptcha(!captcha);
             setFormIsValid(formRef.current.checkValidity());
           }}
-          data-test="captche-checkbox"
+          data-test="captcha-checkbox"
         />
         <label htmlFor="">I'm not a robot</label>
       </section>
