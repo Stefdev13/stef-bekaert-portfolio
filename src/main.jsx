@@ -12,7 +12,7 @@ import { ThemeProvider } from "./context/ThemeProvider.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
 
 function fallBackRender({ error }) {
-  reportBug({ bug: error.message });
+  // reportBug({ bug: error.message });
 
   return <ErrorPage message="something went wrong..." />;
 }

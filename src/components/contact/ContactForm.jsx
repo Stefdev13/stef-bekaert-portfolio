@@ -25,8 +25,6 @@ function ContactForm(props) {
   const formRef = useRef(null);
 
   function submitForm() {
-    console.log("triggered");
-
     let emailObject = {
       name: name,
       email: email,
@@ -36,18 +34,19 @@ function ContactForm(props) {
 
     sendMessage(emailObject).then(
       (response) => {
-        //On success
-        setDialogMessage("Message sent");
-        setDialogType("success");
-        setShowDialog(true);
+        if (response.status === 200) {
+          //On success
+          setDialogMessage("Message sent");
+          setDialogType("success");
+          setShowDialog(true);
 
-        setTimeout(() => {
-          setShowDialog(false);
-          console.log("ended");
-        }, popupDurationInMs);
+          setTimeout(() => {
+            setShowDialog(false);
 
-        setDialogMessage("");
-        setDialogType("");
+            setDialogMessage("");
+            setDialogType("");
+          }, popupDurationInMs);
+        }
       },
       (error) => {
         //On error
@@ -59,13 +58,14 @@ function ContactForm(props) {
 
         setTimeout(() => {
           setShowDialog(false);
-          console.log("ended");
-        }, popupDurationInMs);
 
-        setDialogMessage("");
-        setDialogType("");
+          setDialogMessage("");
+          setDialogType("");
+        }, popupDurationInMs);
       }
     );
+
+    setFormIsValid(formRef.current.checkValidity());
   }
 
   return (
@@ -131,7 +131,6 @@ function ContactForm(props) {
           name="message"
           id={messageInputId}
           required={true}
-          minLength="20"
           placeholder="Type your message"
           onChange={(e) => {
             setMessage(e.target.value);
