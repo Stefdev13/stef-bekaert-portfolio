@@ -13,7 +13,7 @@ function WorkPage() {
         <h1 className="heading">My work</h1>
         <p className="comment">//A selection of projects I have worked on.</p>
       </div>
-      <div className={styles.projectsWrapper}>
+      <div className={styles.projectsWrapper} data-test="projects-wrapper">
         {Projects.PROJECTS.map((project) => (
           <Project project={project} key={project.id} />
         ))}

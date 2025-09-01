@@ -5,7 +5,7 @@ import styles from "./Header.module.css";
 
 function Header() {
   return (
-    <div className={styles.header}>
+    <div className={styles.header} data-test="header">
       <Logo />
       <NavBar />
     </div>

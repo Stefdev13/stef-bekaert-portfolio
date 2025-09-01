@@ -6,7 +6,7 @@ import aboutImage from "../../assets/images/about-me-image.svg";
 
 function AboutMeSection() {
   return (
-    <div className={styles.sectionWrapper}>
+    <div className={styles.sectionWrapper} data-test="about-section">
       <div>
         <KnotAndTitle title="Biography" location="top" />
         <div className={styles.contentAndLineWrapper}>

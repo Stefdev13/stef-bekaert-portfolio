@@ -4,7 +4,7 @@ import KnotAndTitle from "./KnotAndTitle";
 
 function EducationSection() {
   return (
-    <div className={styles.sectionWrapper}>
+    <div className={styles.sectionWrapper} data-test="education-section">
       <KnotAndTitle title="Education" location="bottom" />
       <div className={styles.sectionContent}>
         <div>

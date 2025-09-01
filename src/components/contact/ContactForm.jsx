@@ -66,7 +66,7 @@ function ContactForm(props) {
   }
 
   return (
-    <form action={submitForm} className={styles.form}>
+    <form action={submitForm} className={styles.form} data-test="contact-form">
       <section>
         <label htmlFor="">Name</label>
         <input
