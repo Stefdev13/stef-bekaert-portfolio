@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./AboutPage.module.css";
 import Header from "../components/navigation/Header";
-import AboutMeSection from "../components/about/aboutMeSection";
-import SkillsSection from "../components/about/SkillsSection";
-import EducationSection from "../components/about/EducationSection";
+import AboutMeSection from "../components/about/aboutMeSection.jsx";
+import SkillsSection from "../components/about/SkillsSection.jsx";
+import EducationSection from "../components/about/EducationSection.jsx";
 
 function AboutPage() {
   return (
