@@ -34,6 +34,7 @@ function LightDarkModeToggle() {
       onClick={() => {
         dispatch();
       }}
+      data-test="theme-toggle"
     >
       {getImage()}
     </div>

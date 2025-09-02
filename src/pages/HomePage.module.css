@@ -9,6 +9,8 @@
   align-items: center;
   justify-content: center;
   gap: 70px;
+
+  background-color: var(--var-colour-bg-l2);
 }
 
 .main:hover {

@@ -149,7 +149,10 @@ function PopupMessage(props) {
   const classes = useStyles(stylingProps);
 
   return (
-    <div className={`${classes.popUpContainer} ${show ? classes.drop : ""}`}>
+    <div
+      className={`${classes.popUpContainer} ${show ? classes.drop : ""}`}
+      data-test="popup-message"
+    >
       <img src={getIcon()} alt="icon for popup message" />
       {dialogMessage}
     </div>

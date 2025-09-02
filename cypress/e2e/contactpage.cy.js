@@ -64,6 +64,9 @@ describe('contact page tests', () => {
         cy.get('[data-test="message-textarea"]').clear().type('a valid message input')
         cy.get('[data-test="captcha-checkbox"]').check()
 
-        cy.get('[data-test="submit-btn"]').should('not.be.disabled')
+        cy.get('[data-test="submit-btn"]').should('not.be.disabled').click().then(() => {
+            cy.get('[data-test="popup-message"]').contains(/message sent/i)
+        })
+
     });
  })

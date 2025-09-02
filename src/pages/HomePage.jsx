@@ -6,7 +6,7 @@ import CtaBtn from "../components/CtaBtn";
 
 function HomePage() {
   return (
-    <div className={styles.main}>
+    <div className={styles.main} data-test="background">
       <Header />
 
       <div className={styles.textSection}>
@@ -23,7 +23,9 @@ function HomePage() {
           ></TextEffect>
         </div>
 
-        <p className="commentSemibold">//and I enjoy doing it :)</p>
+        <p className="commentSemibold" data-test="comment">
+          //and I enjoy doing it :)
+        </p>
       </div>
 
       <CtaBtn btnType="contact" btnText="Contact Me"></CtaBtn>

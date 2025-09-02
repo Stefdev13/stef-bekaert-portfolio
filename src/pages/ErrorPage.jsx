@@ -18,7 +18,7 @@ function ErrorPage(props) {
         <h1>Oops</h1>
         <h1>{message}</h1>
       </div>
-      <NavLink to="/" className={styles.navLink}>
+      <NavLink to="/" className={styles.navLink} data-test="homepage-btn">
         Go to homepage
       </NavLink>
     </div>
