@@ -16,7 +16,7 @@ I’m a software developer based in Belgium, who loves working on both the back 
 
 ## 🛠️ This portfolio
 
-This portfolio is hosted on: 🔗 [Portfolio Website]([URL])
+This portfolio is hosted on: 🔗 [Portfolio Website](https://stef-bekaert.dev)
 
 ### 🛠️ Tech Stack
 
