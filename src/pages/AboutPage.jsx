@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./AboutPage.module.css";
 import Header from "../components/navigation/Header";
-import AboutMeSection from "../components/about/aboutMeSection.jsx";
+import AboutMeSection from "../components/about/AboutMeSection.jsx";
 import SkillsSection from "../components/about/SkillsSection.jsx";
 import EducationSection from "../components/about/EducationSection.jsx";
 
