@@ -37,7 +37,7 @@ function ContactPage() {
           <p className="comment">//Unless I’m on vacation...</p>
         </div>
         <div className={styles.dialogBox}>
-          <DialogBox
+          {/* <DialogBox
             title="Buy me a beer"
             text="This is really just here to show that I can integrate a payment processor, but feel free to buy me a beer anyway."
             dialogType=""
@@ -45,7 +45,7 @@ function ContactPage() {
               btnText: "Buy me a beer",
               onClick: () => buyMeABeerFunction(),
             }}
-          />
+          /> */}
         </div>
         <div className={styles.contactForm}>
           <ContactForm
