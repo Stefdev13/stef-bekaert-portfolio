@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "stef-bekaert.com",
+  "homepage": "https://stef-bekaert.com/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
