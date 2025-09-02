@@ -20,11 +20,9 @@ This portfolio is hosted on: 🔗 [Portfolio Website]([URL])
 
 ### 🛠️ Tech Stack
 
-| Category       | Technologies          |
-| -------------- | --------------------- |
-| **Languages**  | Javascript, HTML, CSS |
-| **Frameworks** | React (Vite)              |
-| **Databases**  | Firebase Firestore    |
-| **API's**      | Faker                 |
-| **Libraries**  | React Router,         |
-| **Tools**      | Git, VS code          |
+| Category      | Technologies               |
+| ------------- | -------------------------- |
+| **Languages** | Javascript, HTML, CSS      |
+| **Frontend**  | React (Vite), JSS, Cypress |
+| **Libraries** | React Router,              |
+| **Tools**     | Git, VS code               |

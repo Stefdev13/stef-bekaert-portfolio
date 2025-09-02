@@ -18,7 +18,7 @@ export const SKILLS_TECHNICAL = [
         lists:[
             {
                 title: 'Currently or recently worked with',
-                list: ['Flutter', 'React.js', 'React Router', 'CSS in JS', 'Bootstrap', 'Tailwind CSS'],
+                list: ['Flutter', 'React.js', 'React Router', 'CSS in JS', 'Bootstrap', 'Tailwind CSS', 'Cypress'],
             },
             {
                 title: 'Worked with',
