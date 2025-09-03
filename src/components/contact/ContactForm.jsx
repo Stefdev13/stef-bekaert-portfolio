@@ -2,6 +2,7 @@ import React, { useId, useState, useRef } from "react";
 import { useFormStatus } from "react-dom";
 import styles from "./ContactForm.module.css";
 import { sendMessage, reportBug } from "../../services/message-service";
+import ReCAPTCHA from "react-google-recaptcha";
 
 function ContactForm(props) {
   const setShowDialog = props.setShowDialog;
@@ -20,17 +21,25 @@ function ContactForm(props) {
   const emailInputId = useId();
   const subjectInputId = useId();
   const messageInputId = useId();
-  const captchaInputId = useId();
 
   const formRef = useRef(null);
+  const recaptchaRef = useRef(null);
 
   function submitForm() {
+    //Save the token from the ReCAPTCHA
+    const token = recaptchaRef.current.getValue();
+
+    //Add the form content and ReCAPTCHA to template params object
     let emailObject = {
       name: name,
       email: email,
       subject: subject,
       message: message,
+      "g-recaptcha-response": token,
     };
+
+    //reset the ReCAPTCHA
+    recaptchaRef.current.reset();
 
     sendMessage(emailObject).then(
       (response) => {
@@ -65,7 +74,7 @@ function ContactForm(props) {
       }
     );
 
-    setFormIsValid(formRef.current.checkValidity());
+    setFormIsValid(false);
   }
 
   return (
@@ -86,7 +95,7 @@ function ContactForm(props) {
           placeholder="Enter your name"
           onChange={(e) => {
             setName(e.target.value);
-            setFormIsValid(formRef.current.checkValidity());
+            setFormIsValid(formRef.current.checkValidity() && captcha);
           }}
           data-test="name-input"
         />
@@ -102,7 +111,7 @@ function ContactForm(props) {
           placeholder="Enter your email address"
           onChange={(e) => {
             setEmail(e.target.value);
-            setFormIsValid(formRef.current.checkValidity());
+            setFormIsValid(formRef.current.checkValidity() && captcha);
           }}
           data-test="email-input"
         />
@@ -119,7 +128,7 @@ function ContactForm(props) {
           placeholder="Why are you contacting me"
           onChange={(e) => {
             setSubject(e.target.value);
-            setFormIsValid(formRef.current.checkValidity());
+            setFormIsValid(formRef.current.checkValidity() && captcha);
           }}
           data-test="subject-input"
         />
@@ -134,25 +143,24 @@ function ContactForm(props) {
           placeholder="Type your message"
           onChange={(e) => {
             setMessage(e.target.value);
-            setFormIsValid(formRef.current.checkValidity());
+            setFormIsValid(formRef.current.checkValidity() && captcha);
           }}
           data-test="message-textarea"
         ></textarea>
       </section>
 
-      <section className={styles.captcha}>
-        <input
-          type="checkbox"
-          name="captcha"
-          id={captchaInputId}
-          required={true}
-          onChange={() => {
-            setCaptcha(!captcha);
-            setFormIsValid(formRef.current.checkValidity());
+      <section>
+        <ReCAPTCHA
+          sitekey="6LfeE70rAAAAAEAlM4c8xfkpPtMWBaxaPzQwJdl9"
+          ref={recaptchaRef}
+          onChange={(value) => {
+            setCaptcha(value === undefined ? false : true);
+            setFormIsValid(
+              formRef.current.checkValidity() &&
+                (value === undefined ? false : true)
+            );
           }}
-          data-test="captcha-checkbox"
         />
-        <label htmlFor="">I'm not a robot</label>
       </section>
 
       <SubmitSection formIsValid={formIsValid} />
