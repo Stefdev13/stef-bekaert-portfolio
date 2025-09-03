@@ -3,8 +3,11 @@ import KnotAndTitle from "./KnotAndTitle";
 import CtaBtn from "../../components/CtaBtn";
 import styles from "./AboutMeSection.module.css";
 import aboutImage from "../../assets/images/about-me-image.svg";
+import { useTheme } from "../../context/ThemeProvider.jsx";
 
 function AboutMeSection() {
+  const theme = useTheme();
+
   return (
     <div className={styles.sectionWrapper} data-test="about-section">
       <div>
@@ -38,7 +41,11 @@ function AboutMeSection() {
           </div>
         </div>
       </div>
-      <img src={aboutImage} alt="Image of me" className={styles.aboutImg} />
+      <img
+        src={theme ? aboutImage : "/images/about-me-image.svg"}
+        alt="Image of me"
+        className={styles.aboutImg}
+      />
     </div>
   );
 }
