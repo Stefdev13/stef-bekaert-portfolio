@@ -1,16 +1,6 @@
 import React from "react";
 import { useTheme } from "../context/ThemeProvider";
 import { createUseStyles } from "react-jss";
-import succesDark from "../assets/images/success-dark.png";
-import succesLight from "../assets/images/success-light.png";
-import infoDark from "../assets/images/info-dark.png";
-import infoLight from "../assets/images/info-light.png";
-import dangerDark from "../assets/images/danger-dark.png";
-import dangerLight from "../assets/images/danger-light.png";
-import warningDark from "../assets/images/warning-dark.png";
-import warningLight from "../assets/images/warning-light.png";
-import notificationDark from "../assets/images/notification-dark.png";
-import notificationLight from "../assets/images/notification-light.png";
 import * as Constants from "../constants/styling-constants";
 
 const useStyles = createUseStyles({
@@ -134,15 +124,17 @@ function PopupMessage(props) {
   function getIcon() {
     switch (type.toLowerCase()) {
       case "info":
-        return theme ? infoDark : infoLight;
+        return theme ? "/images/info-dark.png" : "/images/info-light.png";
       case "danger":
-        return theme ? dangerDark : dangerLight;
+        return theme ? "/images/danger-dark.png" : "/images/danger-light.png";
       case "warning":
-        return theme ? warningDark : warningLight;
+        return theme ? "/images/warning-dark.png" : "/images/warning-light.png";
       case "success":
-        return theme ? succesDark : succesLight;
+        return theme ? "/images/success-dark.png" : "/images/success-light.png";
       default:
-        return theme ? notificationDark : notificationLight;
+        return theme
+          ? "/images/notification-dark.png"
+          : "/images/notification-light.png";
     }
   }
 

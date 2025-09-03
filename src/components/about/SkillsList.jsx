@@ -1,7 +1,5 @@
 import React from "react";
 import styles from "./SkillsList.module.css";
-import arrowImgLight from "../../assets/images/arrow-light-bg.png";
-import arrowImgDark from "../../assets/images/arrow-dark-bg.png";
 import { useTheme } from "../../context/ThemeProvider.jsx";
 import { useNavigate } from "react-router";
 import SkillSet from "./SkillSet";
@@ -65,7 +63,11 @@ function SkillsList(props) {
               className={styles.skillsInActionBtn}
             >
               <img
-                src={theme ? arrowImgLight : arrowImgDark}
+                src={
+                  theme
+                    ? "/images/arrow-light-bg.png"
+                    : "/images/arrow-dark-bg.png"
+                }
                 alt="Arrow button icon"
               />
             </button>

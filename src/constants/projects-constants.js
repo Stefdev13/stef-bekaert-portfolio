@@ -1,5 +1,3 @@
-import project1Img from '../assets/images/project-1.png'
-
 export const PROJECTS = [
     {
         id: 1,
@@ -18,6 +16,6 @@ export const PROJECTS = [
         ],
         projectLink: '',
         projectSourceCode: 'https://github.com/Stefdev13/stef-bekaert-portfolio',
-        projectImg: project1Img,
+        projectImg: '/images/project-1.png',
     },
 ]

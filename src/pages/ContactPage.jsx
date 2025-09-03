@@ -5,8 +5,6 @@ import Header from "../components/navigation/Header";
 import ContactForm from "../components/contact/ContactForm";
 import DialogBox from "../components/DialogBox";
 import PopupMessage from "../components/PopupMessage";
-import bgImgLight from "../assets/images/contact-bg-light.png";
-import bgImgDark from "../assets/images/contact-bg-dark.png";
 
 function ContactPage() {
   const [showDialog, setShowDialog] = useState(false);
@@ -22,7 +20,9 @@ function ContactPage() {
       <Header />
 
       <img
-        src={theme ? bgImgLight : bgImgDark}
+        src={
+          theme ? "/images/contact-bg-light.png" : "/images/contact-bg-dark.png"
+        }
         alt="a backgroud image with a paper plane"
         className={styles.bgImage}
       />
