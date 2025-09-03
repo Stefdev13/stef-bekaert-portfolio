@@ -2,12 +2,6 @@ import React from "react";
 import styles from "./CtaBtn.module.css";
 import { useTheme } from "../context/ThemeProvider.jsx";
 import { useNavigate } from "react-router";
-import arrowImgLight from "../assets/images/arrow-light-bg.png";
-import arrowImgDark from "../assets/images/arrow-dark-bg.png";
-import linkLight from "../assets/images/link-light-bg.png";
-import linkDark from "../assets/images/link-dark-bg.png";
-import linkLightInfo from "../assets/images/link-light-info.png";
-import linkDarkInfo from "../assets/images/link-dark-info.png";
 
 function CtaBtn(props) {
   const theme = useTheme();
@@ -20,13 +14,19 @@ function CtaBtn(props) {
   function getImageSource() {
     switch (btnType) {
       case "contact":
-        return theme ? arrowImgLight : arrowImgDark;
+        return theme
+          ? "/images/arrow-light-bg.png"
+          : "/images/arrow-dark-bg.png";
       case "contact rounded green":
-        return theme ? arrowImgLight : arrowImgDark;
+        return theme
+          ? "/images/arrow-light-bg.png"
+          : "/images/arrow-light-bg.png";
       case "project link":
-        return theme ? linkLight : linkDark;
+        return theme ? "/images/link-light-bg.png" : "/images/link-dark-bg.png";
       case "project source":
-        return theme ? linkDarkInfo : linkLightInfo;
+        return theme
+          ? "/images/link-dark-info.png"
+          : "/images/link-light-info.png";
       default:
         return null;
     }

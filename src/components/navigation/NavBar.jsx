@@ -3,10 +3,6 @@ import { NavLink } from "react-router";
 import styles from "./NavBar.module.css";
 import LightDarkModeToggle from "../LightDarkModeToggle";
 import { useTheme } from "../../context/ThemeProvider";
-import menuBurgerDark from "../../assets/images/menu-burger-dark.png";
-import menuBurgerLight from "../../assets/images/menu-burger-light.png";
-import arrowImgLight from "../../assets/images/arrow-light-bg.png";
-import arrowImgDark from "../../assets/images/arrow-dark-bg.png";
 
 function NavBar() {
   const theme = useTheme();
@@ -36,7 +32,14 @@ function NavBar() {
             handleNavbarToggleOnClick();
           }}
         >
-          <img src={theme ? menuBurgerDark : menuBurgerLight} alt="menu icon" />
+          <img
+            src={
+              theme
+                ? "/images/menu-burger-dark.png"
+                : "/images/menu-burger-light.png"
+            }
+            alt="menu icon"
+          />
         </div>
       </div>
 
@@ -67,7 +70,13 @@ function NavBar() {
           className={`${styles.contactBtn} ${displayState}`}
           data-test="contact-navlink"
         >
-          Contact me <img src={theme ? arrowImgLight : arrowImgDark} alt="" />
+          Contact me{" "}
+          <img
+            src={
+              theme ? "/images/arrow-light-bg.png" : "/images/arrow-dark-bg.png"
+            }
+            alt=""
+          />
         </NavLink>
       </div>
     </div>

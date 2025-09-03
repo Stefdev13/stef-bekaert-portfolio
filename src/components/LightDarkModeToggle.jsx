@@ -1,8 +1,6 @@
 import React from "react";
 import { useTheme, useChangeTheme } from "../context/ThemeProvider.jsx";
 import styles from "./LightDarkModeToggle.module.css";
-import lightModeImg from "../assets/images/light-mode.png";
-import darkModeImg from "../assets/images/dark-mode.png";
 
 function LightDarkModeToggle() {
   const theme = useTheme();
@@ -13,7 +11,7 @@ function LightDarkModeToggle() {
       return (
         <img
           className={styles.image}
-          src={lightModeImg}
+          src="images/light-mode.png"
           alt="toggle dark mode"
         />
       );
@@ -21,7 +19,7 @@ function LightDarkModeToggle() {
       return (
         <img
           className={styles.image}
-          src={darkModeImg}
+          src="images/dark-mode.png"
           alt="toggle light mode"
         />
       );

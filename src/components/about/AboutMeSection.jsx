@@ -2,7 +2,6 @@ import React from "react";
 import KnotAndTitle from "./KnotAndTitle";
 import CtaBtn from "../../components/CtaBtn";
 import styles from "./AboutMeSection.module.css";
-import aboutImage from "../../assets/images/about-me-image.svg";
 import { useTheme } from "../../context/ThemeProvider.jsx";
 
 function AboutMeSection() {
@@ -42,7 +41,7 @@ function AboutMeSection() {
         </div>
       </div>
       <img
-        src={theme ? aboutImage : "/images/about-me-image.svg"}
+        src="/images/about-me-image.svg"
         alt="Image of me"
         className={styles.aboutImg}
       />
