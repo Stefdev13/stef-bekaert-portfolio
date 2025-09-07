@@ -21,7 +21,7 @@
 }
 
 /* mobile & portrait tablet */
-@media screen and (width < 992px), (orientation: portrait) {
+@media screen and (width < 992px) {
     .logo {
         font-size: 4vw;
     }

@@ -34,25 +34,8 @@
   z-index: 1;
 }
 
-.backgroundColouredBlur {
-  position: fixed;
-  left: -15vw;
-  top: 50%;
-
-  z-index: 0;
-
-  background-color: var(--var-colour-primary);
-
-  width: 50vw;
-  height: 35vh;
-
-  border-radius: 100%;
-
-  filter: blur(120px);
-}
-
 /* mobile & portrait tablet */
-@media only screen and (width < 992px), (orientation: portrait) {
+@media only screen and (width < 992px) {
   .main {
     gap: 3vh;
 
@@ -75,5 +58,22 @@
     display: flex;
     flex-direction: column;
     gap: 3vh;
+  }
+
+  .backgroundColouredBlur {
+    position: fixed;
+    left: -15vw;
+    top: 50%;
+
+    z-index: 0;
+
+    background-color: var(--var-colour-primary);
+
+    width: 50vw;
+    height: 35vh;
+
+    border-radius: 100%;
+
+    filter: blur(120px);
   }
 }

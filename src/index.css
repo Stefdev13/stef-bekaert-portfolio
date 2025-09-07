@@ -113,7 +113,7 @@ body {
   margin: 0px;
 }
 
-@media only screen and (width < 992px), (orientation: portrait) {
+@media only screen and (width < 992px) {
   .heading {
     font-size: 8vw;
   }

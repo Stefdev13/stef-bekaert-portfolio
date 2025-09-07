@@ -106,7 +106,7 @@
 }
 
 /* mobile & portrait tablet */
-@media only screen and (width < 992px), (orientation: portrait) {
+@media only screen and (width < 992px) {
     .projectWrapper {
         flex-direction: column;
         align-items: start;

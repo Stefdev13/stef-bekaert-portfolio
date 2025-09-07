@@ -15,7 +15,7 @@
   -webkit-backdrop-filter: blur(16px) saturate(180%);
 }
 
-@media only screen and (width < 992), (orientation: portrait) {
+@media only screen and (width < 992) {
   .textEffect {
     font-size: 6vw
   }

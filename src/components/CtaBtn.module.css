@@ -75,11 +75,11 @@
 }
 
 /* mobile & portrait tablet */
-@media only screen and (width < 992px), (orientation: portrait) {
+@media only screen and (width < 992px) {
     .btnBox {
         height: 40px;
 
-        font-size: 3vw;
+        font-size: .8rem;
 
         gap: 3vw;
 
