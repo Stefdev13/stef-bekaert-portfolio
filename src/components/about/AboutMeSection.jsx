@@ -1,12 +1,8 @@
-import React from "react";
 import KnotAndTitle from "./KnotAndTitle";
 import CtaBtn from "../../components/CtaBtn";
 import styles from "./AboutMeSection.module.css";
-import { useTheme } from "../../context/ThemeProvider.jsx";
 
 function AboutMeSection() {
-  const theme = useTheme();
-
   return (
     <div className={styles.sectionWrapper} data-test="about-section">
       <div>
@@ -41,7 +37,7 @@ function AboutMeSection() {
         </div>
       </div>
       <img
-        src="/images/about-me-image.svg"
+        src="/images/about-me-image.png"
         alt="Image of me"
         className={styles.aboutImg}
       />
