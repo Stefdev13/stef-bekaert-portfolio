@@ -5,29 +5,32 @@ import KnotAndTitle from "./KnotAndTitle";
 function EducationSection() {
   return (
     <div className={styles.sectionWrapper} data-test="education-section">
-      <KnotAndTitle title="Education" location="bottom" />
-      <div className={styles.sectionContent}>
-        <div>
-          <h1 className="sectionHeading">Education</h1>
-          <p className="comment">//Stuff i've learned over the years</p>
-        </div>
-        <div className={styles.eductionList}>
-          <div className={styles.eduction}>
-            <p className={styles.year}>2023</p>
-            <p className={styles.dash}>-</p>
-            <div>
-              <h2>Banaba International Business Management</h2>
-              <p className="comment">//Hogeschool Gent</p>
-            </div>
+      <KnotAndTitle title="Education" location="middle" />
+      <div className={styles.contentAndLineWrapper}>
+        <div className={styles.line} />
+        <div className={styles.sectionContent}>
+          <div>
+            <h1 className="sectionHeading">Education</h1>
+            <p className="comment">//Stuff i've learned over the years</p>
           </div>
-          <div className={styles.eduction}>
-            <p className={styles.year}>2022</p>
-            <p className={styles.dash}>-</p>
-            <div>
-              <h2>
-                Bachelor Toegepaste Informatica: Mobile & Enterprise developer
-              </h2>
-              <p className="comment">//Hogeschool Gent</p>
+          <div className={styles.eductionList}>
+            <div className={styles.eduction}>
+              <p className={styles.year}>2023</p>
+              <p className={styles.dash}>-</p>
+              <div>
+                <h2>Banaba International Business Management</h2>
+                <p className="comment">//Hogeschool Gent</p>
+              </div>
+            </div>
+            <div className={styles.eduction}>
+              <p className={styles.year}>2022</p>
+              <p className={styles.dash}>-</p>
+              <div>
+                <h2>
+                  Bachelor Toegepaste Informatica: Mobile & Enterprise developer
+                </h2>
+                <p className="comment">//Hogeschool Gent</p>
+              </div>
             </div>
           </div>
         </div>
