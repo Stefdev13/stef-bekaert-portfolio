@@ -24,6 +24,27 @@ const useStyles = createUseStyles({
     },
     borderColor: (props) => props.border,
   },
+  technology: {
+    padding: {
+      top: "4px",
+      right: "6px",
+      bottom: "4px",
+      left: "6px",
+    },
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: "5px",
+  },
+  technologyImage: {
+    height: "20px",
+    width: "auto",
+  },
+  technologyName: {
+    margin: "0",
+    fontFamily: Constants.FONT_QUICKSAND,
+    fontWeight: "500",
+  },
 });
 
 function Chip(props) {
@@ -32,7 +53,22 @@ function Chip(props) {
 
   const classes = useStyles(colours);
 
-  return <div className={classes.chip}>{value}</div>;
+  if (typeof value == "string") {
+    return <div className={classes.chip}>{value}</div>;
+  } else {
+    return (
+      <div className={classes.technology}>
+        <img
+          src={value.icon ? value.icon : "/images/technologies/fallback.svg"}
+          alt={`icon for ${value.name ? value.name : `technology`}`}
+          className={classes.technologyImage}
+        />
+        <span className={classes.technologyName}>
+          {value.name ? value.name : "technology"}
+        </span>
+      </div>
+    );
+  }
 }
 
 export default Chip;

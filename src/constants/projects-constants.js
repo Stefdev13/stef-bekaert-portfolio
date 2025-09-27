@@ -1,3 +1,5 @@
+import * as technoglogies from './technologies-constants.js'
+
 export const PROJECTS = [
     {
         id: 1,
@@ -7,11 +9,11 @@ export const PROJECTS = [
         chipLists: [
             {
                 title: 'Languages',
-                chips: ['Javascript', 'HTML', 'CSS']
+                chips: [technoglogies.JAVASCRIPT, technoglogies.HTML, technoglogies.CSS]
             },
             {
                 title: 'Styling',
-                chips: ['CSS', 'JSS', 'CSS modules']
+                chips: [technoglogies.CSS, technoglogies.JSS, technoglogies.CSS_MODULES]
             },
         ],
         projectLink: '',

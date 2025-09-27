@@ -1,88 +1,96 @@
 export const HTML = {
     name: "HTML",
-    icon: "/images/technoglogies/html.svg",
+    icon: "/images/technologies/html.svg",
 }
 export const CSS = {
     name: "CSS",
-    icon: "/images/technoglogies/css.svg",
+    icon: "/images/technologies/css.svg",
 }
 export const ANGULAR = {
     name: "Angular",
-    icon: "/images/technoglogies/angular.svg",
+    icon: "/images/technologies/angular.svg",
 }
 export const BOOTSTRAP = {
     name: "Bootstrap",
-    icon: "/images/technoglogies/bootstrap.svg",
+    icon: "/images/technologies/bootstrap.svg",
 }
 export const CSHARP = {
     name: "C#",
-    icon: "/images/technoglogies/c-sharp.png",
+    icon: "/images/technologies/c-sharp.png",
 }
 export const DART = {
     name: "Dart",
-    icon: "/images/technoglogies/dart.svg",
+    icon: "/images/technologies/dart.svg",
 }
 export const FIREBASE = {
     name: "Firebase",
-    icon: "/images/technoglogies/firebase.svg",
+    icon: "/images/technologies/firebase.svg",
 }
 export const FLUTTER = {
     name: "Flutter",
-    icon: "/images/technoglogies/flutter.svg",
+    icon: "/images/technologies/flutter.svg",
 }
 export const JAVA = {
     name: "Java",
-    icon: "/images/technoglogies/java.svg",
+    icon: "/images/technologies/java.svg",
 }
 export const JAVASCRIPT = {
     name: "JavaScript",
-    icon: "/images/technoglogies/javascript.svg",
+    icon: "/images/technologies/javascript.svg",
 }
 export const KOTLIN = {
     name: "Kotlin",
-    icon: "/images/technoglogies/kotlin.svg",
+    icon: "/images/technologies/kotlin.svg",
 }
 export const LARAVEL = {
     name: "Laravel",
-    icon: "/images/technoglogies/laravel.svg",
+    icon: "/images/technologies/laravel.svg",
 }
 export const MONGO_DB = {
     name: "MongoDB",
-    icon: "/images/technoglogies/mongo-db.svg",
+    icon: "/images/technologies/mongo-db.svg",
 }
 export const MYSQL = {
     name: "MySQL",
-    icon: "/images/technoglogies/mysql.svg",
+    icon: "/images/technologies/mysql.svg",
 }
 export const NODE_JS = {
     name: "Node.js",
-    icon: "/images/technoglogies/node-js.svg",
+    icon: "/images/technologies/node-js.svg",
 }
 export const PHP = {
     name: "php",
-    icon: "/images/technoglogies/php.svg",
+    icon: "/images/technologies/php.svg",
 }
 export const PYTHON = {
     name: "Python",
-    icon: "/images/technoglogies/python.svg",
+    icon: "/images/technologies/python.svg",
 }
 export const REACT_ROUTER = {
     name: "React-Router",
-    icon: "/images/technoglogies/react-router.svg",
+    icon: "/images/technologies/react-router.svg",
 }
 export const REACT = {
     name: "React",
-    icon: "/images/technoglogies/react.svg",
+    icon: "/images/technologies/react.svg",
 }
 export const TAILWIND = {
     name: "Tailwind",
-    icon: "/images/technoglogies/tailwind.svg",
+    icon: "/images/technologies/tailwind.svg",
 }
 export const TYPESCRIPT = {
     name: "TypeScript",
-    icon: "/images/technoglogies/typescript.svg",
+    icon: "/images/technologies/typescript.svg",
 }
 export const VUE = {
     name: "Vue.js",
-    icon: "/images/technoglogies/vue.svg",
+    icon: "/images/technologies/vue.svg",
+}
+export const JSS = {
+    name: "JSS",
+    icon: "/images/technologies/jss.svg",
+}
+export const CSS_MODULES = {
+    name: "CSS modules",
+    icon: "/images/technologies/css.svg",
 }
