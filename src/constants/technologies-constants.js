@@ -94,3 +94,11 @@ export const CSS_MODULES = {
     name: "CSS modules",
     icon: "/images/technologies/css.svg",
 }
+export const CYPRESS = {
+    name: "Cypress",
+    icon: "/images/technologies/cypress.svg",
+}
+export const DOTNET = {
+    name: ".NET",
+    icon: "/images/technologies/dot-net.svg",
+}

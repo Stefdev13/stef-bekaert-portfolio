@@ -1,3 +1,5 @@
+import * as technoglogies from './technologies-constants.js'
+
 export const SKILLS_TECHNICAL = [
     {
         title: 'Languages',
@@ -5,11 +7,11 @@ export const SKILLS_TECHNICAL = [
         lists:[
             {
                 title: 'Currently or recently worked with',
-                list: ['Dart', 'Javascript', 'HTML', 'CSS'],
+                list: [technoglogies.DART, technoglogies.JAVASCRIPT, technoglogies.HTML, technoglogies.CSS],
             },
             {
                 title: 'Worked with',
-                list: ['Java', 'C#', 'PHP', 'Python', 'Kotlin'],
+                list: [technoglogies.JAVA, technoglogies.CSHARP, technoglogies.PHP, technoglogies.PYTHON, technoglogies.KOTLIN],
             },
         ]
     },
@@ -18,11 +20,11 @@ export const SKILLS_TECHNICAL = [
         lists:[
             {
                 title: 'Currently or recently worked with',
-                list: ['Flutter', 'React.js', 'React Router', 'CSS in JS', 'Bootstrap', 'Tailwind CSS', 'Cypress'],
+                list: [technoglogies.FLUTTER, technoglogies.REACT, technoglogies.REACT_ROUTER, technoglogies.JSS, technoglogies.BOOTSTRAP, technoglogies.TAILWIND, technoglogies.CYPRESS],
             },
             {
                 title: 'Worked with',
-                list: ['Vue.js', 'Angular', 'Kotlin', 'Blazor'],
+                list: [technoglogies.VUE, technoglogies.ANGULAR, technoglogies.KOTLIN],
             },
         ]
     },  
@@ -31,11 +33,11 @@ export const SKILLS_TECHNICAL = [
         lists: [
             {
                 title: 'Currently or recently worked with',
-                list: ['Flutter'],
+                list: [technoglogies.FLUTTER],
             },
             {
                 title: 'Worked with',
-                list: ['ASP.NET Core', 'Laravel', 'Node.js', 'Java', 'Kotlin'],
+                list: [technoglogies.DOTNET, technoglogies.LARAVEL, technoglogies.NODE_JS, technoglogies.JAVA, technoglogies.KOTLIN],
             },
         ],
     },
@@ -44,11 +46,11 @@ export const SKILLS_TECHNICAL = [
         lists: [
             {
                 title: 'Currently or recently worked with',
-                list: ['Cloud Firestore'],
+                list: [technoglogies.FIREBASE],
             },
             {
                 title: 'Worked with',
-                list: ['MySQL', 'MongoDB', 'Microsoft SQL Server', 'MariaDB'],
+                list: [technoglogies.MYSQL, technoglogies.MONGO_DB],
             },
         ],
     }

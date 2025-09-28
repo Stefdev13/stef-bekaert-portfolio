@@ -9,6 +9,10 @@ const useStyles = createUseStyles({
       bottom: "1px",
       left: "8px",
     },
+    margin: {
+      right: "6px",
+      bottom: "8px",
+    },
 
     backgroundColor: (props) => props.bg,
 
@@ -43,7 +47,8 @@ const useStyles = createUseStyles({
   technologyName: {
     margin: "0",
     fontFamily: Constants.FONT_QUICKSAND,
-    fontWeight: "500",
+    fontWeight: "550",
+    color: (props) => props.text,
   },
 });
 
