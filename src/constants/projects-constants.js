@@ -2,7 +2,7 @@ import * as technoglogies from './technologies-constants.js'
 
 export const PROJECTS = [
     {
-        id: 1,
+        id: "p1",
         name: 'My portfolio website',
         subTitle: '//UX & UI, web application, responsive design',
         description: 'A portfolio website build in React to showcase a bit of what I can do. The website has a responive design and was made open source.',

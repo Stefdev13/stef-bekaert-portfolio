@@ -11,7 +11,11 @@ function ChipList(props) {
       <p className="comment">//{title}</p>
       <div className={styles.chipList}>
         {listOfChipValues.map((value) => (
-          <Chip key={value} value={value} colours={colours} />
+          <Chip
+            key={typeof value == "string" ? value : value.name}
+            value={value}
+            colours={colours}
+          />
         ))}
       </div>
     </div>

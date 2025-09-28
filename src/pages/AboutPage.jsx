@@ -4,7 +4,7 @@ import Header from "../components/navigation/Header";
 import AboutMeSection from "../components/about/AboutMeSection.jsx";
 import SkillsSection from "../components/about/SkillsSection.jsx";
 import EducationSection from "../components/about/EducationSection.jsx";
-import ExperienceSection from "../components/about/ExperienceSection.jsx";
+import ExperienceSection from "../components/about/experience-section/ExperienceSection.jsx";
 
 function AboutPage() {
   return (

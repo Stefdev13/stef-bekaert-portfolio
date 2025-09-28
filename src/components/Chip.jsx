@@ -41,7 +41,7 @@ const useStyles = createUseStyles({
     gap: "5px",
   },
   technologyImage: {
-    height: "20px",
+    height: "25px",
     width: "auto",
   },
   technologyName: {
