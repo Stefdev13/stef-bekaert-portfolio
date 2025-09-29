@@ -1,0 +1,83 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+
+    border-radius: 12px;
+
+    padding: 10px;
+    transition: padding 0.1s ease-in-out;
+
+    p {
+        margin: 0;
+    }
+}
+
+.wrapper:hover {
+    background-color: var(--var-colour-bg-l3);
+
+    cursor: pointer;
+
+    padding: 12px;
+}
+
+.odd {
+    background-color: var(--var-colour-bg-l1);
+}
+
+.even {
+    background-color: var(--var-colour-bg-l2);
+}
+
+.typeTag {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 0px 10px 0px 10px;
+
+    border-radius: 12px;
+
+    font-family: var(--font-text);
+    font-size: .8rem;
+    font-weight: 700;
+    color: var(--var-colour-bg-l2);
+}
+
+.course {
+    background-color: var(--var-colour-primary);
+}
+
+.project {
+    background-color: var(--var-colour-info);
+}
+
+.name {
+    flex-grow: 1;
+
+    font-family: var(--font-text);
+    font-weight: 550;
+}
+
+.technologiesList {
+    display: flex;
+    flex-direction: row;
+}
+
+.technologyTag {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+
+    padding-left: 15px;
+
+    font-family: var(--font-text);
+    font-weight: 550;
+    font-size: .9rem;
+
+    img {
+        height: 20px;
+        width: auto;
+    }
+}

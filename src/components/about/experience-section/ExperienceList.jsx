@@ -152,9 +152,13 @@ function ExperienceList(props) {
         </div>
       </div>
       <div className={styles.itemList}>
-        {filteredAndSortedItems.map((item) => (
-          <ExperienceItem item={item} key={item.id} />
-        ))}
+        {filteredAndSortedItems.map((item) => {
+          let index = filteredAndSortedItems.indexOf(item);
+
+          return (
+            <ExperienceItem item={item} isEven={index % 2 == 0} key={item.id} />
+          );
+        })}
       </div>
     </div>
   );

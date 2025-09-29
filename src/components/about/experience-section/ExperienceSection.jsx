@@ -11,8 +11,10 @@ function ExperienceSection() {
       <KnotAndTitle title="Education" location="bottom" />
       <div className={styles.sectionContent}>
         <div>
-          <h1 className="sectionHeading">Education</h1>
-          <p className="comment">//Stuff i've learned over the years</p>
+          <h1 className="sectionHeading">Experience</h1>
+          <p className="comment">
+            //A list of all the projects and courses I have completed.
+          </p>
         </div>
         <ExperienceList items={COURSES.concat(PROJECTS)} />
       </div>
