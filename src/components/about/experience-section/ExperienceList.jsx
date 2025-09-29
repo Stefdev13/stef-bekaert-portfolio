@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import styles from "./ExperienceList.module.css";
 import { useTheme } from "../../../context/ThemeProvider.jsx";
 import ExperienceItem from "./ExperienceItem.jsx";
+import ExperienceListSortBtn from "./ExperienceListSortBtn.jsx";
 
 function ExperienceList(props) {
   //Items property, filteredAndSortedItems and resultString
   const items = props.items;
   const [filteredAndSortedItems, setFilteredAndSortedItems] = useState(items);
-  const [resultString, setResultString] = useState("");
 
   //Search variables
   const [searchToggle, setSearchToggle] = useState(false);
@@ -23,14 +23,16 @@ function ExperienceList(props) {
   //Theme and styling
   const theme = useTheme();
 
+  const resultString = makeResultString();
+
   //Run the first load to sort the items on the first load
   useEffect(() => {
-    filterAndSortItems();
+    filterItems();
+    sortItems();
     makeResultString();
   }, []);
 
-  function filterAndSortItems() {}
-
+  // ==== General method ====
   function makeResultString() {
     let sortName;
 
@@ -46,11 +48,23 @@ function ExperienceList(props) {
         break;
     }
 
-    setResultString(
-      `${filteredAndSortedItems.length} item${
-        filteredAndSortedItems ? `s` : ``
-      } found. Sorted by ${sortName}. Click to see details.`
-    );
+    return `${filteredAndSortedItems.length} item${
+      filteredAndSortedItems ? `s` : ``
+    } found. Sorted by ${sortName}. Click to see details.`;
+  }
+
+  // ==== Methods for filtering ====
+  function filterItems() {}
+
+  function handleOnFiltersClick() {
+    setFilterOverlayToggle(!filterOverlayToggle);
+  }
+
+  // ==== Methods for searching ====
+  function handleOnSearchInputChanged(inputString) {
+    setSearchString(inputString);
+
+    filterAndSortItems();
   }
 
   function handleOnSearchClick() {
@@ -58,19 +72,53 @@ function ExperienceList(props) {
     setSearchToggle(!searchToggle);
   }
 
-  function handleOnSearchInputChanged(inputString) {
-    setSearchString(inputString);
+  // ==== Methods for sorting ====
+  function sortItems() {
+    let newSetting = sortSetting + 1 > 3 ? 1 : sortSetting + 1;
 
-    filterAndSortItems();
+    setSortSetting(newSetting);
+
+    //The JSON operations are used to clone the array of items instead of making a shallow copy
+    // where the object from the original are linked to the objects in the copy
+    let copyOfItems = JSON.parse(JSON.stringify(items));
+
+    copyOfItems.sort(function sortFunction(itemA, itemB) {
+      switch (newSetting) {
+        case 2:
+          return compareItemsByType(itemA, itemB);
+        case 3:
+          return compareItemsByDate(itemA, itemB);
+        default:
+          return compareItemsByName(itemA, itemB);
+      }
+    });
+
+    setFilteredAndSortedItems(copyOfItems);
   }
 
-  function handleOnFiltersClick() {
-    setFilterOverlayToggle(!filterOverlayToggle);
+  function compareItemsByType(itemA, itemB) {
+    const aType = itemA.id.includes("p") ? "project" : "course";
+    const bType = itemB.id.includes("p") ? "project" : "course";
+
+    if (aType == bType) {
+      return 0;
+    } else if (aType == "project" && bType == "course") {
+      return -1;
+    } else {
+      return 1;
+    }
   }
 
-  function handleOnSortClick() {
-    setSortSetting(sortSetting + 1 > 3 ? 1 : sortSetting + 1);
-    makeResultString();
+  function compareItemsByDate(itemA, itemB) {
+    if (new Date(itemA.date) > new Date(itemB.date)) {
+      return -1;
+    } else if (new Date(itemA.date) < new Date(itemB.date)) {
+      return 1;
+    } else return 0;
+  }
+
+  function compareItemsByName(itemA, itemB) {
+    return itemA.name.localeCompare(itemB.name);
   }
 
   return (
@@ -100,15 +148,7 @@ function ExperienceList(props) {
               alt="Filter"
             />
           </button>
-          <button
-            className={`${styles.button} ${styles.sortBtn}`}
-            onClick={handleOnSortClick}
-          >
-            <img
-              src={theme ? "/images/sort-dark.png" : "/images/sort-light.png"}
-              alt="Sort"
-            />
-          </button>
+          <ExperienceListSortBtn onSortClickCallbackFunc={sortItems} />
         </div>
       </div>
       <div className={styles.itemList}>

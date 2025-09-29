@@ -19,5 +19,6 @@ export const PROJECTS = [
         projectLink: '',
         projectSourceCode: 'https://github.com/Stefdev13/stef-bekaert-portfolio',
         projectImg: '/images/project-1.png',
+        date: "2025-09"
     },
 ]
