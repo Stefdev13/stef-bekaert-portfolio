@@ -49,7 +49,7 @@ function ExperienceList(props) {
     setResultString(
       `${filteredAndSortedItems.length} item${
         filteredAndSortedItems ? `s` : ``
-      } found. Sorted by ${sortName}. Tap to see details.`
+      } found. Sorted by ${sortName}. Click to see details.`
     );
   }
 
@@ -78,7 +78,10 @@ function ExperienceList(props) {
       <div className={styles.topLine}>
         <p className={styles.itemCount}>{resultString}</p>
         <div className={styles.buttonRow}>
-          <button className={styles.searchBtn} onClick={handleOnSearchClick}>
+          <button
+            className={`${styles.button} ${styles.searchBtn}`}
+            onClick={handleOnSearchClick}
+          >
             <img
               src={
                 theme ? "/images/search-dark.png" : "/images/search-light.png"
@@ -86,7 +89,10 @@ function ExperienceList(props) {
               alt="Search"
             />
           </button>
-          <button className={styles.filterBtn} onClick={handleOnFiltersClick}>
+          <button
+            className={`${styles.button} ${styles.filterBtn}`}
+            onClick={handleOnFiltersClick}
+          >
             <img
               src={
                 theme ? "/images/filter-dark.png" : "/images/filter-light.png"
@@ -94,7 +100,10 @@ function ExperienceList(props) {
               alt="Filter"
             />
           </button>
-          <button className={styles.sortBtn} onClick={handleOnSortClick}>
+          <button
+            className={`${styles.button} ${styles.sortBtn}`}
+            onClick={handleOnSortClick}
+          >
             <img
               src={theme ? "/images/sort-dark.png" : "/images/sort-light.png"}
               alt="Sort"
