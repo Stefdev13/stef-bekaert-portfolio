@@ -3,6 +3,7 @@ import styles from "./ExperienceList.module.css";
 import { useTheme } from "../../../context/ThemeProvider.jsx";
 import ExperienceItem from "./ExperienceItem.jsx";
 import ExperienceListSortBtn from "./ExperienceListSortBtn.jsx";
+import ExperienceListFilterBtn from "./ExperienceListFilterBtn.jsx";
 
 function ExperienceList(props) {
   //Items property, filteredAndSortedItems and resultString
@@ -14,7 +15,6 @@ function ExperienceList(props) {
   const [searchString, setSearchString] = useState(null);
 
   //Filter variables
-  const [filterOverlayToggle, setFilterOverlayToggle] = useState(false);
   const [filters, setFilters] = useState([]);
 
   //Sort variables
@@ -137,17 +137,7 @@ function ExperienceList(props) {
               alt="Search"
             />
           </button>
-          <button
-            className={`${styles.button} ${styles.filterBtn}`}
-            onClick={handleOnFiltersClick}
-          >
-            <img
-              src={
-                theme ? "/images/filter-dark.png" : "/images/filter-light.png"
-              }
-              alt="Filter"
-            />
-          </button>
+          <ExperienceListFilterBtn />
           <ExperienceListSortBtn onSortClickCallbackFunc={sortItems} />
         </div>
       </div>
