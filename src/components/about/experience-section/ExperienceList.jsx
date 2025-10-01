@@ -4,33 +4,27 @@ import { useTheme } from "../../../context/ThemeProvider.jsx";
 import ExperienceItem from "./ExperienceItem.jsx";
 import ExperienceListSortBtn from "./ExperienceListSortBtn.jsx";
 import ExperienceListFilterBtn from "./ExperienceListFilterBtn.jsx";
+import { useFilteredAndSortedItems } from "../../../context/ExperienceListProvider.jsx";
 
-function ExperienceList(props) {
-  //TODO: create the filter function based on the active type and tech names lists
-
-  //Items property, filteredAndSortedItems and resultString
-  const items = props.items;
-  const [filteredAndSortedItems, setFilteredAndSortedItems] = useState(items);
+function ExperienceList() {
+  //TODO: move sorting to the provider
+  //TODO: move resultString to provider
+  const [resultString, setresultString] = useState("");
 
   //Search variables
   const [searchToggle, setSearchToggle] = useState(false);
   const [searchString, setSearchString] = useState(null);
-
-  //Filter variables
-  const [filters, setFilters] = useState([]);
 
   //Sort variables
   const [sortSetting, setSortSetting] = useState(1);
 
   //Theme and styling
   const theme = useTheme();
-
-  const resultString = makeResultString();
+  const items = useFilteredAndSortedItems();
 
   //Run the first load to sort the items on the first load
   useEffect(() => {
-    filterItems();
-    sortItems();
+    // sortItems();
     makeResultString();
   }, []);
 
@@ -50,16 +44,9 @@ function ExperienceList(props) {
         break;
     }
 
-    return `${filteredAndSortedItems.length} item${
-      filteredAndSortedItems ? `s` : ``
+    return `${items.length} item${
+      items.length > 1 ? `s` : ``
     } found. Sorted by ${sortName}. Click to see details.`;
-  }
-
-  // ==== Methods for filtering ====
-  function filterItems() {}
-
-  function handleOnFiltersClick() {
-    setFilterOverlayToggle(!filterOverlayToggle);
   }
 
   // ==== Methods for searching ====
@@ -94,8 +81,6 @@ function ExperienceList(props) {
           return compareItemsByName(itemA, itemB);
       }
     });
-
-    setFilteredAndSortedItems(copyOfItems);
   }
 
   function compareItemsByType(itemA, itemB) {
@@ -144,12 +129,17 @@ function ExperienceList(props) {
         </div>
       </div>
       <div className={styles.itemList}>
-        {filteredAndSortedItems.map((item) => {
-          let index = filteredAndSortedItems.indexOf(item);
-
-          return (
-            <ExperienceItem item={item} isEven={index % 2 == 0} key={item.id} />
-          );
+        {items.map((item) => {
+          let index = items.indexOf(item);
+          if (item.shouldShow) {
+            return (
+              <ExperienceItem
+                item={item}
+                isEven={index % 2 == 0}
+                key={item.id}
+              />
+            );
+          }
         })}
       </div>
     </div>
