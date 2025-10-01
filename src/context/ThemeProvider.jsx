@@ -1,6 +1,5 @@
 import { createContext, useContext, useReducer } from "react";
 import * as Constants from "../constants/styling-constants";
-import React from "react";
 
 //ThemeContext holds a boolean to determine light (true) or dark (false) mode
 const ThemeContext = createContext(null);

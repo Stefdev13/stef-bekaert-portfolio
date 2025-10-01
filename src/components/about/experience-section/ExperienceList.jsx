@@ -6,6 +6,8 @@ import ExperienceListSortBtn from "./ExperienceListSortBtn.jsx";
 import ExperienceListFilterBtn from "./ExperienceListFilterBtn.jsx";
 
 function ExperienceList(props) {
+  //TODO: create the filter function based on the active type and tech names lists
+
   //Items property, filteredAndSortedItems and resultString
   const items = props.items;
   const [filteredAndSortedItems, setFilteredAndSortedItems] = useState(items);
