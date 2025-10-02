@@ -61,16 +61,23 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    flex-grow: 1;
     align-items: center;
+
+    max-width: 35vw;
 
     padding: 0px 5px 0px 5px ;
 
     border-radius: 12px;
 
     background-color: var(--var-colour-bg-l3);
+
+    animation: search-grow .2s ease-in-out;
 }
 
 .searchField {
+    flex-grow: 1;
+
     background-color: transparent;
     border: none;
 
@@ -105,6 +112,10 @@
 
 .hide {
     display: none;
+    width: 0vw;
+    opacity: 0;
+
+    animation: search-shrink .2s ease-in-out;
 }
 
 /* === CSS for Filter === */
@@ -263,5 +274,29 @@
     100% {
         top: 50%;
         opacity: 1;
+    }
+}
+
+@keyframes search-grow {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 32vw;
+        opacity: 1;
+    }
+}
+
+@keyframes search-shrink {
+    0% {
+        width: 32vw;
+        opacity: 1;
+        display: flex;
+    }
+    100% {
+        width: 0;
+        opacity: 0;
+        display: none;
     }
 }
