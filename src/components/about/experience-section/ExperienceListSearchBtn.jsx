@@ -39,7 +39,7 @@ function ExperienceListSearchBtn() {
       >
         <input
           type="text"
-          placeholder="Search"
+          placeholder="Search project and course names"
           className={styles.searchField}
           value={searchText}
           onChange={function updateSearchText(e) {

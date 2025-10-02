@@ -131,6 +131,8 @@
     flex-direction: column;
     gap: 30px;
 
+    animation: slide-in .4s ease-in-out;
+
     position: fixed;
     top: 50%;
     left: 50%;
@@ -246,5 +248,20 @@
     p {
         font-weight: 550;
         color: var(--var-colour-bg-l2);
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        top: 100%;
+        opacity: 0;
+    }
+    50% {
+        top: 75%;
+        opacity: 0;
+    }
+    100% {
+        top: 50%;
+        opacity: 1;
     }
 }

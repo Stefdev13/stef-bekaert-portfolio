@@ -194,10 +194,12 @@ export function useSearchTextSetter() {
 // === Search methods ===
 function searchItems(items, searchText) {
   for (const item of items) {
-    if (item.name.toLowerCase().includes(searchText)) {
-      item.shouldShow = true;
-    } else {
-      item.shouldShow = false;
+    if (item.shouldShow) {
+      if (item.name.toLowerCase().includes(searchText)) {
+        item.shouldShow = true;
+      } else {
+        item.shouldShow = false;
+      }
     }
   }
 }
@@ -287,9 +289,7 @@ function searchFilterAndSortItems(
   sortSetting
 ) {
   filterItems(filteredAndSortedItems, typeFilterOptions, techFilterOptions);
-
   sortItems(filteredAndSortedItems, sortSetting);
-
   searchItems(filteredAndSortedItems, searchText);
 
   return filteredAndSortedItems;
