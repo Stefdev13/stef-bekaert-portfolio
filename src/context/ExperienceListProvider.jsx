@@ -11,6 +11,7 @@ import { TECHNOLOGYLIST } from "../constants/technologies-constants.js";
 
 const TypeFilterOptionsContext = createContext(null);
 const TechFilterOptionsContext = createContext(null);
+const SortFilterContext = createContext(null);
 const ExperienceItemsContext = createContext(null);
 
 function ExperienceListProvider({ children }) {
@@ -22,6 +23,7 @@ function ExperienceListProvider({ children }) {
     techFilterReducer,
     getTechFilterOptions()
   );
+  const [sortSetting, sortSettingDispatch] = useReducer(sortSettingReducer, 1);
   const [filteredAndSortedItems, setFilteredAndSortedItems] = useState(
     initItems()
   );
@@ -31,27 +33,31 @@ function ExperienceListProvider({ children }) {
       ...searchFilterAndSortItems(
         filteredAndSortedItems,
         typeFilterOptions,
-        techFilterOptions
+        techFilterOptions,
+        sortSetting
       ),
     ]);
-  }, [typeFilterOptions, techFilterOptions]);
+  }, [typeFilterOptions, techFilterOptions, sortSetting]);
 
   return (
     <TypeFilterOptionsContext value={{ typeFilterOptions, typeFilterDispatch }}>
       <TechFilterOptionsContext
         value={{ techFilterOptions, techFilterDispatch }}
       >
-        <ExperienceItemsContext
-          value={{ filteredAndSortedItems, setFilteredAndSortedItems }}
-        >
-          {children}
-        </ExperienceItemsContext>
+        <SortFilterContext value={{ sortSetting, sortSettingDispatch }}>
+          <ExperienceItemsContext
+            value={{ filteredAndSortedItems, setFilteredAndSortedItems }}
+          >
+            {children}
+          </ExperienceItemsContext>
+        </SortFilterContext>
       </TechFilterOptionsContext>
     </TypeFilterOptionsContext>
   );
 }
 
-// === Type filter ===
+// ========== filtering ==========
+// === Hooks ===
 export function useTypeFilterOptions() {
   const { typeFilterOptions, typeFilterDispatch } = useContext(
     TypeFilterOptionsContext
@@ -68,7 +74,6 @@ export function useTypeFilterOptionsDispatch() {
   return typeFilterDispatch;
 }
 
-// === Tech filter ===
 export function useTechFilterOptions() {
   const { techFilterOptions, techFilterDispatch } = useContext(
     TechFilterOptionsContext
@@ -85,24 +90,7 @@ export function useTechFilterOptionsDispatch() {
   return techFilterDispatch;
 }
 
-// === Filtered and sorted items ===
-export function useFilteredAndSortedItems() {
-  const { filteredAndSortedItems, setFilteredAndSortedItems } = useContext(
-    ExperienceItemsContext
-  );
-
-  return filteredAndSortedItems;
-}
-
-export function useFilteredAndSortedItemsSetter() {
-  const { filteredAndSortedItems, setFilteredAndSortedItems } = useContext(
-    ExperienceItemsContext
-  );
-
-  return setFilteredAndSortedItems;
-}
-
-// === Functions ===
+// === Reducers ===
 function typeFilterReducer(options, action) {
   return options.map(function unselectOptionIfMatch(t) {
     if (t.name == action.option.name) {
@@ -123,18 +111,7 @@ function techFilterReducer(options, action) {
   });
 }
 
-function searchFilterAndSortItems(
-  filteredAndSortedItems,
-  typeFilterOptions,
-  techFilterOptions
-) {
-  //   console.log(filteredAndSortedItems);
-  filterItems(filteredAndSortedItems, typeFilterOptions, techFilterOptions);
-  //   console.log(filteredAndSortedItems);
-
-  return filteredAndSortedItems;
-}
-
+// === Filter methods ===
 function filterItems(items, typeFilters, techFilters) {
   //Turn these filter lists into names of active filters
   const activeTypeFilterNames = typeFilters
@@ -195,7 +172,99 @@ function filterItems(items, typeFilters, techFilters) {
   }
 }
 
-// === Initialiser (functions) ===
+// ========== Sorting ==========
+// === Hooks ===
+export function useSortSetting() {
+  const { sortSetting, sortSettingDispatch } = useContext(SortFilterContext);
+
+  return sortSetting;
+}
+
+export function useSortSettingDispatch() {
+  const { sortSetting, sortSettingDispatch } = useContext(SortFilterContext);
+
+  return sortSettingDispatch;
+}
+
+// === Reducers ===
+function sortSettingReducer(sortSetting) {
+  return sortSetting + 1 > 3 ? 1 : sortSetting + 1;
+}
+
+// === Sorting function ===
+function sortItems(items, sortSetting) {
+  items.sort(function sortFunction(itemA, itemB) {
+    switch (sortSetting) {
+      case 2:
+        return compareItemsByType(itemA.item, itemB.item);
+      case 3:
+        return compareItemsByDate(itemA.item, itemB.item);
+      default:
+        return compareItemsByName(itemA.item, itemB.item);
+    }
+  });
+}
+
+function compareItemsByType(itemA, itemB) {
+  const aType = itemA.id.includes("p") ? "project" : "course";
+  const bType = itemB.id.includes("p") ? "project" : "course";
+
+  if (aType == bType) {
+    return 0;
+  } else if (aType == "project" && bType == "course") {
+    return -1;
+  } else {
+    return 1;
+  }
+}
+
+function compareItemsByDate(itemA, itemB) {
+  if (new Date(itemA.date) > new Date(itemB.date)) {
+    return -1;
+  } else if (new Date(itemA.date) < new Date(itemB.date)) {
+    return 1;
+  } else return 0;
+}
+
+function compareItemsByName(itemA, itemB) {
+  return itemA.name.localeCompare(itemB.name);
+}
+
+// ========== items ==========
+// === Hooks ===
+export function useFilteredAndSortedItems() {
+  const { filteredAndSortedItems, setFilteredAndSortedItems } = useContext(
+    ExperienceItemsContext
+  );
+
+  return filteredAndSortedItems;
+}
+
+export function useFilteredAndSortedItemsSetter() {
+  const { filteredAndSortedItems, setFilteredAndSortedItems } = useContext(
+    ExperienceItemsContext
+  );
+
+  return setFilteredAndSortedItems;
+}
+
+// === Items functions ===
+function searchFilterAndSortItems(
+  filteredAndSortedItems,
+  typeFilterOptions,
+  techFilterOptions,
+  sortSetting
+) {
+  console.log("its working");
+  console.log(sortSetting);
+  filterItems(filteredAndSortedItems, typeFilterOptions, techFilterOptions);
+
+  sortItems(filteredAndSortedItems, sortSetting);
+
+  return filteredAndSortedItems;
+}
+
+// ========== Initialiser functions ==========
 function getTechFilterOptions() {
   const result = [];
 
