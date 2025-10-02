@@ -1,7 +1,3 @@
-.wrapper {
-
-}
-
 .topLine {
     display: flex;
     flex-direction: row;
@@ -54,17 +50,64 @@
         width: auto;
     }
 }
-
-.searchBtn {
-
+/* === CSS for Search === */
+.searchWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-.itemList {
+.searchBar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
 
+    padding: 0px 5px 0px 5px ;
+
+    border-radius: 12px;
+
+    background-color: var(--var-colour-bg-l3);
+}
+
+.searchField {
+    background-color: transparent;
+    border: none;
+
+    height: 30px;
+}
+
+.searchField:focus {
+    border: none;
+}
+
+.closeSearchBtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    border: none;
+    background-color: transparent;
+
+    img {
+        height: 13px;
+        width: auto;
+    }
+}
+
+.closeSearchBtn:hover {
+    cursor: pointer;
+}
+
+.show {
+    display: flex;
+}
+
+.hide {
+    display: none;
 }
 
 /* === CSS for Filter === */
-
 .overlayOpen {
     display: block;
 

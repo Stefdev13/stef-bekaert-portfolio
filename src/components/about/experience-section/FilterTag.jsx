@@ -5,8 +5,6 @@ import {
 import styles from "./ExperienceList.module.css";
 
 function FilterTag(props) {
-  //TODO: Change the isSelected state variable to the isActive property on the filter object
-  //TODO: onClick => call the update function imported from the context provider
   const option = props.option;
 
   const typeFilterOptionsDispatch = useTypeFilterOptionsDispatch();

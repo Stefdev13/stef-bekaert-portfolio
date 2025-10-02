@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import styles from "./ExperienceList.module.css";
-import { useTheme } from "../../../context/ThemeProvider.jsx";
 import ExperienceItem from "./ExperienceItem.jsx";
 import ExperienceListSortBtn from "./ExperienceListSortBtn.jsx";
 import ExperienceListFilterBtn from "./ExperienceListFilterBtn.jsx";
@@ -8,10 +7,9 @@ import {
   useFilteredAndSortedItems,
   useSortSetting,
 } from "../../../context/ExperienceListProvider.jsx";
+import ExperienceListSearchBtn from "./ExperienceListSearchBtn.jsx";
 
 function ExperienceList() {
-  //Theme and styling
-  const theme = useTheme();
   const items = useFilteredAndSortedItems();
   const sortSetting = useSortSetting();
   const [resultString, setResultString] = useState(makeResultString());
@@ -51,23 +49,16 @@ function ExperienceList() {
   }
 
   return (
-    <div className={styles.wrapper}>
+    <div>
       <div className={styles.topLine}>
         <p className={styles.itemCount}>{resultString}</p>
         <div className={styles.buttonRow}>
-          <button className={`${styles.button} ${styles.searchBtn}`}>
-            <img
-              src={
-                theme ? "/images/search-dark.png" : "/images/search-light.png"
-              }
-              alt="Search"
-            />
-          </button>
+          <ExperienceListSearchBtn />
           <ExperienceListFilterBtn />
           <ExperienceListSortBtn />
         </div>
       </div>
-      <div className={styles.itemList}>
+      <div>
         {items.map((item) => {
           let index = items.indexOf(item);
           if (item.shouldShow) {

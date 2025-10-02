@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./ExperienceList.module.css";
 import { useTheme } from "../../../context/ThemeProvider.jsx";
 import ExperienceListFilterBox from "./ExperienceListFilterBox.jsx";
 
-function ExperienceListFilterBtn(props) {
-  //TODO: Implement global state overlayActive to disable scrolling when the overlay is active
+function ExperienceListFilterBtn() {
   const theme = useTheme();
 
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);

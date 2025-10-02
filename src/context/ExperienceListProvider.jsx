@@ -11,7 +11,8 @@ import { TECHNOLOGYLIST } from "../constants/technologies-constants.js";
 
 const TypeFilterOptionsContext = createContext(null);
 const TechFilterOptionsContext = createContext(null);
-const SortFilterContext = createContext(null);
+const SortContext = createContext(null);
+const SearchContext = createContext(null);
 const ExperienceItemsContext = createContext(null);
 
 function ExperienceListProvider({ children }) {
@@ -24,6 +25,7 @@ function ExperienceListProvider({ children }) {
     getTechFilterOptions()
   );
   const [sortSetting, sortSettingDispatch] = useReducer(sortSettingReducer, 1);
+  const [searchText, setSearchText] = useState("");
   const [filteredAndSortedItems, setFilteredAndSortedItems] = useState(
     initItems()
   );
@@ -34,29 +36,32 @@ function ExperienceListProvider({ children }) {
         filteredAndSortedItems,
         typeFilterOptions,
         techFilterOptions,
+        searchText,
         sortSetting
       ),
     ]);
-  }, [typeFilterOptions, techFilterOptions, sortSetting]);
+  }, [typeFilterOptions, techFilterOptions, searchText, sortSetting]);
 
   return (
     <TypeFilterOptionsContext value={{ typeFilterOptions, typeFilterDispatch }}>
       <TechFilterOptionsContext
         value={{ techFilterOptions, techFilterDispatch }}
       >
-        <SortFilterContext value={{ sortSetting, sortSettingDispatch }}>
-          <ExperienceItemsContext
-            value={{ filteredAndSortedItems, setFilteredAndSortedItems }}
-          >
-            {children}
-          </ExperienceItemsContext>
-        </SortFilterContext>
+        <SortContext value={{ sortSetting, sortSettingDispatch }}>
+          <SearchContext value={{ searchText, setSearchText }}>
+            <ExperienceItemsContext
+              value={{ filteredAndSortedItems, setFilteredAndSortedItems }}
+            >
+              {children}
+            </ExperienceItemsContext>
+          </SearchContext>
+        </SortContext>
       </TechFilterOptionsContext>
     </TypeFilterOptionsContext>
   );
 }
 
-// ========== filtering ==========
+// ========== filtering ==============================
 // === Hooks ===
 export function useTypeFilterOptions() {
   const { typeFilterOptions, typeFilterDispatch } = useContext(
@@ -172,16 +177,41 @@ function filterItems(items, typeFilters, techFilters) {
   }
 }
 
-// ========== Sorting ==========
+// ========== Searching ==============================
+// === Hooks ===
+export function useSearchText() {
+  const { searchText, setSearchText } = useContext(SearchContext);
+
+  return searchText;
+}
+
+export function useSearchTextSetter() {
+  const { searchText, setSearchText } = useContext(SearchContext);
+
+  return setSearchText;
+}
+
+// === Search methods ===
+function searchItems(items, searchText) {
+  for (const item of items) {
+    if (item.name.toLowerCase().includes(searchText)) {
+      item.shouldShow = true;
+    } else {
+      item.shouldShow = false;
+    }
+  }
+}
+
+// ========== Sorting ==============================
 // === Hooks ===
 export function useSortSetting() {
-  const { sortSetting, sortSettingDispatch } = useContext(SortFilterContext);
+  const { sortSetting, sortSettingDispatch } = useContext(SortContext);
 
   return sortSetting;
 }
 
 export function useSortSettingDispatch() {
-  const { sortSetting, sortSettingDispatch } = useContext(SortFilterContext);
+  const { sortSetting, sortSettingDispatch } = useContext(SortContext);
 
   return sortSettingDispatch;
 }
@@ -230,7 +260,7 @@ function compareItemsByName(itemA, itemB) {
   return itemA.name.localeCompare(itemB.name);
 }
 
-// ========== items ==========
+// ========== items ==============================
 // === Hooks ===
 export function useFilteredAndSortedItems() {
   const { filteredAndSortedItems, setFilteredAndSortedItems } = useContext(
@@ -253,16 +283,19 @@ function searchFilterAndSortItems(
   filteredAndSortedItems,
   typeFilterOptions,
   techFilterOptions,
+  searchText,
   sortSetting
 ) {
   filterItems(filteredAndSortedItems, typeFilterOptions, techFilterOptions);
 
   sortItems(filteredAndSortedItems, sortSetting);
 
+  searchItems(filteredAndSortedItems, searchText);
+
   return filteredAndSortedItems;
 }
 
-// ========== Initialiser functions ==========
+// ========== Initialiser functions ==============================
 function getTechFilterOptions() {
   const result = [];
 
