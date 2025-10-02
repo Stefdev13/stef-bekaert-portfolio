@@ -255,8 +255,6 @@ function searchFilterAndSortItems(
   techFilterOptions,
   sortSetting
 ) {
-  console.log("its working");
-  console.log(sortSetting);
   filterItems(filteredAndSortedItems, typeFilterOptions, techFilterOptions);
 
   sortItems(filteredAndSortedItems, sortSetting);

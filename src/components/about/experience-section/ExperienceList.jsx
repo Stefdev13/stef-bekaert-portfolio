@@ -4,46 +4,51 @@ import { useTheme } from "../../../context/ThemeProvider.jsx";
 import ExperienceItem from "./ExperienceItem.jsx";
 import ExperienceListSortBtn from "./ExperienceListSortBtn.jsx";
 import ExperienceListFilterBtn from "./ExperienceListFilterBtn.jsx";
-import { useFilteredAndSortedItems } from "../../../context/ExperienceListProvider.jsx";
+import {
+  useFilteredAndSortedItems,
+  useSortSetting,
+} from "../../../context/ExperienceListProvider.jsx";
 
 function ExperienceList() {
-  //TODO: move sorting to the provider
-  //TODO: move resultString to provider
-  const [resultString, setresultString] = useState("");
-
-  //Search variables
-  const [searchToggle, setSearchToggle] = useState(false);
-  const [searchString, setSearchString] = useState(null);
-
   //Theme and styling
   const theme = useTheme();
   const items = useFilteredAndSortedItems();
+  const sortSetting = useSortSetting();
+  const [resultString, setResultString] = useState(makeResultString());
 
   //Run the first load to sort the items on the first load
-  // useEffect(() => {
-  //   makeResultString();
-  // }, []);
+  useEffect(() => {
+    setResultString(makeResultString());
+  }, [items]);
 
   // ==== General method ====
-  // function makeResultString() {
-  //   let sortName;
+  function makeResultString() {
+    let sortName;
 
-  //   switch (sortSetting) {
-  //     case 2:
-  //       sortName = "type";
-  //       break;
-  //     case 3:
-  //       sortName = "date";
-  //       break;
-  //     default:
-  //       sortName = "name";
-  //       break;
-  //   }
+    switch (sortSetting) {
+      case 2:
+        sortName = "type";
+        break;
+      case 3:
+        sortName = "date";
+        break;
+      default:
+        sortName = "name";
+        break;
+    }
 
-  //   return `${items.length} item${
-  //     items.length > 1 ? `s` : ``
-  //   } found. Sorted by ${sortName}. Click to see details.`;
-  // }
+    let activeItemsLength = items.reduce(function countActiveItems(
+      accumulator,
+      item
+    ) {
+      return item.shouldShow ? accumulator + 1 : accumulator;
+    },
+    0);
+
+    return `${activeItemsLength} item${
+      activeItemsLength > 1 ? `s` : ``
+    } found. Sorted by ${sortName}. Click to see details.`;
+  }
 
   return (
     <div className={styles.wrapper}>
