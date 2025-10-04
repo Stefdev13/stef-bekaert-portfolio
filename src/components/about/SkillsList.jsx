@@ -18,29 +18,6 @@ function SkillsList(props) {
     border: theme ? Constants.LIGHT_BORDER : Constants.DARK_BORDER,
   };
 
-  const accentColours = [
-    {
-      bg: theme ? Constants.ACCENT_PRIMARY_LIGHT : Constants.DARK_BG_L2,
-      text: theme ? Constants.LIGHT_TEXT_HEADER : Constants.ACCENT_PRIMARY,
-      border: theme ? Constants.ACCENT_PRIMARY_DARK : Constants.ACCENT_PRIMARY,
-    },
-    {
-      bg: theme ? Constants.ACCENT_INFO_LIGHT : Constants.DARK_BG_L2,
-      text: theme ? Constants.LIGHT_TEXT_HEADER : Constants.ACCENT_INFO,
-      border: theme ? Constants.ACCENT_INFO_DARK : Constants.ACCENT_INFO,
-    },
-    {
-      bg: theme ? Constants.ACCENT_SUCCESS_LIGHT : Constants.DARK_BG_L2,
-      text: theme ? Constants.LIGHT_TEXT_HEADER : Constants.ACCENT_SUCCESS,
-      border: theme ? Constants.ACCENT_SUCCESS_DARK : Constants.ACCENT_SUCCESS,
-    },
-    {
-      bg: theme ? Constants.ACCENT_WARNING_LIGHT : Constants.DARK_BG_L2,
-      text: theme ? Constants.LIGHT_TEXT_HEADER : Constants.ACCENT_WARNING,
-      border: theme ? Constants.ACCENT_WARNING_DARK : Constants.ACCENT_WARNING,
-    },
-  ];
-
   return (
     <div>
       <div className={styles.header}>
@@ -81,13 +58,7 @@ function SkillsList(props) {
             <SkillSet
               key={skillSet.title}
               skillSet={skillSet}
-              colours={
-                isTechnical
-                  ? accentColours[i]
-                    ? accentColours[i]
-                    : accentColours[0]
-                  : standardColours
-              }
+              colours={standardColours}
             />
           );
         })}
