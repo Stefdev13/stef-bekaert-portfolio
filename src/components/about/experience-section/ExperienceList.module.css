@@ -1,0 +1,407 @@
+.topLine {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+
+    border-bottom: 1px solid var(--var-colour-text-muted);
+
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.itemCount {
+    margin: 0;
+    
+    font-family: var(--font-text);
+    font-weight: 550;
+
+    line-height: 1;
+}
+
+.buttonRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.button {
+    height: 25px;
+
+    background-color: transparent;
+    border: none;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+
+    img {
+        height: 20px;
+        width: auto;
+        transition: height 0.1s ease-in-out;
+    }
+}
+
+
+/* === CSS for Search === */
+.searchWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.searchBar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    align-items: center;
+
+    padding: 0px 5px 0px 5px ;
+
+    border-radius: 12px;
+
+    background-color: var(--var-colour-bg-l3);
+
+    animation: search-grow .2s ease-in-out;
+}
+
+.searchField {
+    flex-grow: 1;
+
+    background-color: transparent;
+    border: none;
+
+    height: 30px;
+}
+
+.searchField:focus {
+    border: none;
+}
+
+.closeSearchBtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    border: none;
+    background-color: transparent;
+
+    img {
+        height: 13px;
+        width: auto;
+    }
+}
+
+.show {
+    display: flex;
+}
+
+.hide {
+    display: none;
+    width: 0vw;
+    opacity: 0;
+
+    animation: search-shrink .2s ease-in-out;
+}
+
+/* === CSS for Filter === */
+.overlayOpen {
+    display: block;
+
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.overlayClosed {
+    display: none;
+}
+
+.filterBox {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    animation: slide-in .4s ease-in-out;
+
+    position: fixed;
+    z-index: 4;
+
+    background-color: var(--var-colour-glass-bg-logo);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+
+    padding: 25px;
+}
+
+.filterBoxClosed {
+    display: none;
+}
+
+.filterHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.clearAllBtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    border: none;
+    background-color: transparent;
+
+    padding-right: 10px;
+
+    p {
+        font-family: var(--font-text);
+        font-weight: 650;
+        color: var(--var-colour-text-muted);
+
+        margin: 0;
+    }
+
+    img {
+        height: 12px;
+        width: auto;
+    }
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    font-family: var(--font-text);
+    font-weight: 650;
+}
+
+.title {
+    margin: 0;
+}
+
+.closeBtn {
+    height: 30px;
+    width: 30px;
+
+    border: none;
+    background-color: transparent;
+
+    img {
+        height: 15px;
+        width: auto;
+    }
+}
+
+.filterCategory {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h3 {
+        margin: 0;
+        font-family: var(--font-text);
+    }
+}
+
+.filterOptionsList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.filterTag {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+
+    border: 1px solid var(--var-colour-text-muted);
+    border-radius: 10px;
+
+    padding: 8px 15px 8px 15px;
+
+    background-color: transparent;
+
+    p {
+        margin: 0;
+
+        font-family: var(--font-text);
+        font-size: .95rem;
+        font-weight: 550;
+        color: var(--var-colour-text-muted);
+    }
+
+    img {
+        height: 20px;
+        width: auto;
+    }
+}
+
+.selected {
+    background-color: var(--var-colour-text-muted);
+
+    p {
+        font-weight: 550;
+        color: var(--var-colour-bg-l2);
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        top: 100%;
+        opacity: 0;
+    }
+    50% {
+        top: 75%;
+        opacity: 0;
+    }
+    100% {
+        top: 50%;
+        opacity: 1;
+    }
+}
+
+@keyframes search-grow {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 32vw;
+        opacity: 1;
+    }
+}
+
+@keyframes search-shrink {
+    0% {
+        width: 32vw;
+        opacity: 1;
+        display: flex;
+    }
+    100% {
+        width: 0;
+        opacity: 0;
+        display: none;
+    }
+}
+
+@media only screen and (width < 992px) {
+    .topLine {
+        margin-bottom: 0;
+
+        align-items: center;
+    }
+
+    .itemCount {
+        display: none;
+    }
+
+    .buttonRow {
+        gap: 10px;
+
+        flex-grow: 1;
+    }
+
+    .searchWrapper {
+        flex-grow: 1;
+    }
+
+    .button {
+        img {
+            height: 20px;
+        }
+    }
+
+    .filterBox {
+        box-sizing: border-box;
+
+        gap: 5vh;
+
+        position: fixed;
+        bottom: 0%;
+        left: 0%;
+
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+
+        width: 100vw;
+    }
+    
+    .filterTag {
+        gap: 5px;
+
+        padding: 6px 10px 6px 10px;
+
+        font-size: .8rem;
+
+        img {
+            height: 18px;
+        }
+
+        p {
+            margin: 0;
+            font-size: .8rem;
+        }
+    }
+}
+
+@media only screen and (width >= 992px){
+    .button:hover {
+        cursor: pointer;
+
+        img {
+            height: 25px;
+            width: auto;
+        }
+    }
+
+    .closeBtn:hover {
+        cursor: pointer;
+    }
+
+    .searchBar {
+        max-width: 35vw;
+    }
+
+    .closeSearchBtn:hover {
+        cursor: pointer;
+    }
+
+    .filterBox {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        border: 1px solid var(--var-colour-border);
+        border-radius: 20px;
+        
+        width: 800px;
+    }
+
+    .filterTag:hover {
+        cursor: pointer;
+
+        background-color: var(--var-colour-text-muted);
+
+        p {
+            font-weight: 550;
+            color: var(--var-colour-bg-l2);
+        }
+    }
+
+    .clearAllBtn:hover {
+        cursor: pointer;
+    }
+}

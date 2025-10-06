@@ -1,5 +1,5 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Quicksand", "IBM_Plex_Mono_Regular";
   line-height: 1.5;
   font-weight: 400;
 
@@ -115,24 +115,24 @@ body {
 
 @media only screen and (width < 992px) {
   .heading {
-    font-size: 8vw;
+    font-size: 2rem;
   }
   
   .sectionHeading {
-    font-size: 7vw;
+    font-size: 1.8rem;
   }
   
   .comment {
-    font-size: 3vw;
+    font-size: .7rem;
   }
   
   .commentSemibold {
-    font-size: 3vw;
+    font-size: .7rem;
     margin: 0px;
   }
   
   .text {
-    font-size: 4vw;
+    font-size: .9rem;
     line-height: 1.2;
   }
 }

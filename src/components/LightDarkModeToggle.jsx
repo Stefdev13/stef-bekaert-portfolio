@@ -1,4 +1,3 @@
-import React from "react";
 import { useTheme, useChangeTheme } from "../context/ThemeProvider.jsx";
 import styles from "./LightDarkModeToggle.module.css";
 

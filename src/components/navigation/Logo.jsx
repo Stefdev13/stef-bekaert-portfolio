@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./Logo.module.css";
 import { useNavigate, useLocation } from "react-router";
 
@@ -7,9 +7,6 @@ function Logo() {
   const location = useLocation();
 
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-  // const baseText = screen.width >= 992 ? "stef.bekaert" : "s.b";
-  // const hoverText = screen.width >= 992 ? "homepage" : "home";
 
   const [baseText, setBaseText] = useState(
     screen.width >= 992 ? "stef.bekaert" : "s.b"

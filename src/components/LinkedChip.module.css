@@ -1,0 +1,71 @@
+.chip {
+    padding: 1.5px 8px 1px 8px;
+    margin-right: 6px;
+    margin-bottom: 8px;
+
+    background-color: var(--var-colour-bg-l3);
+
+    font-family: var(--font-text);
+    font-weight: 500;
+    font-size: .85rem;
+    color: var(--var-colour-text-muted);
+
+    border: 1px solid var(--var-colour-border);
+    border-radius: 8px;
+}
+
+.technology {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+
+    padding: 6px 10px 6px 10px;
+}
+
+.technology:hover {
+    border: 1px solid var(--var-colour-border);
+    border-radius: 12px;
+
+    background-color: var(--var-colour-bg-l2);
+    
+    box-shadow: 3px 3px 12px 2px var(--var-colour-shadow);
+    transition: box-shadow 0.1s ease-in-out;
+
+    cursor: pointer;
+}
+
+.technologyImage {
+    text-align: center;
+
+    height: 25px;
+    width: auto;
+}
+
+.technologyName {
+    margin: 0;
+
+    font-family: var(--font-text);
+    font-weight: 550;
+    color: var(--var-colour-text-muted);
+}
+
+@media only screen and (width < 992px) {
+    .chip {
+        font-size: .8rem;
+    }
+
+    .technology {
+        padding: 4px 6px 4px 6px;
+    }
+
+    .technologyImage {
+        height: 18px;
+    }
+    
+    .technologyName {
+        font-size: .85rem;
+    }
+}

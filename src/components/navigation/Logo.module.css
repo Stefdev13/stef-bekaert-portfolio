@@ -23,7 +23,7 @@
 /* mobile & portrait tablet */
 @media screen and (width < 992px) {
     .logo {
-        font-size: 4vw;
+        font-size: 1.2rem;
     }
 }
 

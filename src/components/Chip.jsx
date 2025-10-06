@@ -1,38 +1,24 @@
-import { createUseStyles } from "react-jss";
-import * as Constants from "../constants/styling-constants.js";
-
-const useStyles = createUseStyles({
-  chip: {
-    padding: {
-      top: "1.5px",
-      right: "8px",
-      bottom: "1px",
-      left: "8px",
-    },
-
-    backgroundColor: (props) => props.bg,
-
-    fontFamily: Constants.FONT_QUICKSAND,
-    fontWeight: "500",
-    fontSize: ".85rem",
-    color: (props) => props.text,
-
-    border: {
-      width: "1px",
-      style: "solid",
-      radius: "8px",
-    },
-    borderColor: (props) => props.border,
-  },
-});
+import styles from "./Chip.module.css";
 
 function Chip(props) {
   const value = props.value;
-  const colours = props.colours;
 
-  const classes = useStyles(colours);
-
-  return <div className={classes.chip}>{value}</div>;
+  if (typeof value == "string") {
+    return <div className={styles.chip}>{value}</div>;
+  } else {
+    return (
+      <div className={styles.technology}>
+        <img
+          src={value.icon ? value.icon : "/images/technologies/fallback.svg"}
+          alt={`icon for ${value.name ? value.name : `technology`}`}
+          className={styles.technologyImage}
+        />
+        <span className={styles.technologyName}>
+          {value.name ? value.name : "technology"}
+        </span>
+      </div>
+    );
+  }
 }
 
 export default Chip;

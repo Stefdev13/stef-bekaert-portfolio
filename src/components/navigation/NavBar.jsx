@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router";
 import styles from "./NavBar.module.css";
 import LightDarkModeToggle from "../LightDarkModeToggle";
