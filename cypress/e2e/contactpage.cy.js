@@ -10,6 +10,7 @@ describe('contact page tests', () => {
         cy.contains(/enter your contact details and a message, and I will get back to you/i)
         cy.get('[data-test="contact-form"]').should('exist')
     });
+    //This test was written before I added the Google reCAPTCHA, and now isn't relevant anymore, but I'm leaving it here as a showcase
     it("form can't be submitted if invalid", () => {
         //===== 1 or more fields not filled in =====
         cy.get('[data-test="submit-btn"]').should('be.disabled')
@@ -55,6 +56,7 @@ describe('contact page tests', () => {
         cy.get('[data-test="captcha-checkbox"]').uncheck()
         cy.get('[data-test="submit-btn"]').should('be.disabled')
     });
+    //This test was written before I added the Google reCAPTCHA, and now isn't relevant anymore, but I'm leaving it here as a showcase
     it('form can be submitted correctly if valid', () => {
         cy.get('[data-test="submit-btn"]').should('be.disabled')
 
