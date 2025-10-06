@@ -74,6 +74,17 @@
 }
 
 @media only screen and (width < 992px), (orientation: portrait) {
+    .contentAndLineWrapper {
+        gap: 6vw;
+    }
+
+    .sectionContent {
+        padding-top: 0;
+        padding-bottom: 8vh;
+
+        gap: 3vh;
+    }
+
     .eduction {
         flex-direction: column;
         gap: 0vw;

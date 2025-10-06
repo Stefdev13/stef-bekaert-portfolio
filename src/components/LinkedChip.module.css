@@ -51,3 +51,21 @@
     font-weight: 550;
     color: var(--var-colour-text-muted);
 }
+
+@media only screen and (width < 992px) {
+    .chip {
+        font-size: .8rem;
+    }
+
+    .technology {
+        padding: 4px 6px 4px 6px;
+    }
+
+    .technologyImage {
+        height: 18px;
+    }
+    
+    .technologyName {
+        font-size: .85rem;
+    }
+}
