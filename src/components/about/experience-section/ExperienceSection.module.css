@@ -22,3 +22,16 @@
     padding-left: 8.2vw;
     padding-right: 5vw;
 }
+
+@media only screen and (width < 992px) {
+    .sectionWrapper {
+        gap: 2vh;
+    }
+
+    .sectionContent {
+        gap: 2vh;
+
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+}

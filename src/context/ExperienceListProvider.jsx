@@ -112,13 +112,6 @@ function typeFilterReducer(options, action) {
         }
       });
   }
-  return options.map(function unselectOptionIfMatch(t) {
-    if (t.name == action.option.name) {
-      return action.option;
-    } else {
-      return t;
-    }
-  });
 }
 
 function techFilterReducer(options, action) {

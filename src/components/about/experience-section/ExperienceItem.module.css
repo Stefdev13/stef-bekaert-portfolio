@@ -13,14 +13,6 @@
     }
 }
 
-.wrapper:hover {
-    background-color: var(--var-colour-bg-l3);
-
-    cursor: pointer;
-
-    padding: 12px;
-}
-
 .odd {
     background-color: var(--var-colour-bg-l1);
 }
@@ -33,7 +25,7 @@
     display: flex;
     flex-direction: row;
     gap: 15px;
-    align-items: start;
+    align-items: center;
 
     flex-grow: 1;
 }
@@ -131,9 +123,6 @@
     flex-direction: column;
 
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 3;
 
     width: 55vw;
@@ -143,7 +132,6 @@
     scrollbar-width: thin;
 
     border: 1px solid var(--var-colour-border);
-    border-radius: 20px;
     background-color: var(--var-colour-glass-bg-logo);
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
@@ -190,15 +178,6 @@
     img {
         height: 15px;
         transition: height 0.2s ease-in-out;
-        width: auto;
-    }
-}
-
-.closeBtn:hover {
-    cursor: pointer;
-    
-    img {
-        height: 18px;
         width: auto;
     }
 }
@@ -310,4 +289,154 @@
 .buttonRow {
     display: flex;
     flex-direction: row;
+}
+
+@media only screen and (width < 992px) {
+    .wrapper {
+        flex-direction: column;
+        gap: 12px;
+
+        border-radius: 0;
+
+        border-bottom: 1px solid var(--var-colour-border);
+    }
+
+    .tagAndName {
+        gap: 8px;
+    }
+
+    .typeTag {
+        padding: 1px 8px 1px 8px;
+
+        border-radius: 12px;
+
+        font-size: .75rem;
+        font-weight: 700;
+    }
+
+    .name {
+        font-weight: 650;
+        font-size: .92rem;
+    }
+
+    .techListWrapper {
+        justify-content: start;
+    }
+
+    .technologyTag {
+        padding-left: 5px;
+
+        font-weight: 450;
+        font-size: .8rem;
+
+        img {
+            height: 15px;
+            width: auto;
+        }
+    }
+
+    .technologiesList {
+        justify-content: start;
+        gap: 5px;
+    }
+
+
+    /* === CSS for detail view === */
+    .detailViewOverlayOpen {
+        bottom: 0%;
+        left: 0%;
+
+        box-sizing: border-box;
+
+        width: 100vw;
+        max-height: 70vh;
+
+        border: none;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+    }
+
+    .completedOn {
+        font-size: .85rem;
+    }
+    
+    .mainContentSection {
+        gap: 3vh;
+    }
+
+    .heroImgSection {
+        margin-bottom: 15px;
+    }
+
+    .headerImage {
+        height: 20vh;
+    }
+
+    .titleSection {
+        h1 {
+            font-size: 1.4rem;
+        }
+
+        p {
+            font-size: .75rem;
+            margin: 0;
+        }
+    }
+
+    .sectionHeader {
+        font-size: 1.2rem;
+    }
+
+    .descriptionSection {
+        p {
+            font-size: .9rem;
+
+            margin: 0;
+        }
+    }
+    
+    .technologyTagDetail {
+        gap: 5px;
+
+        padding: 6px 8px 6px 10px;
+
+        font-size: .8rem;
+
+        img {
+            height: 18px;
+        }
+
+        p {
+            margin: 0;
+            line-height: 1;
+        }
+    }
+}
+
+@media only screen and (width >= 992px) {
+    .detailViewOverlayOpen {
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+
+        border-radius: 20px;
+    }
+
+    .wrapper:hover {
+        background-color: var(--var-colour-bg-l3);
+
+        cursor: pointer;
+
+        padding: 12px;
+    }
+
+    .closeBtn:hover {
+        cursor: pointer;
+        
+        img {
+            height: 18px;
+            width: auto;
+        }
+    }
 }
