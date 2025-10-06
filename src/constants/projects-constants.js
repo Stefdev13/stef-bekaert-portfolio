@@ -8,12 +8,16 @@ export const PROJECTS = [
         description: 'A portfolio website build in React to showcase a bit of what I can do. The website has a responive design and was made open source.',
         chipLists: [
             {
-                title: 'Languages',
-                chips: [technoglogies.JAVASCRIPT, technoglogies.HTML, technoglogies.CSS]
+                title: 'Frontend',
+                chips: [technoglogies.JAVASCRIPT, technoglogies.REACT, technoglogies.HTML, technoglogies.CSS, technoglogies.REACT_ROUTER]
             },
             {
                 title: 'Styling',
                 chips: [technoglogies.CSS, technoglogies.JSS, technoglogies.CSS_MODULES]
+            },
+            {
+                title: 'Testing',
+                chips: [technoglogies.CYPRESS]
             },
         ],
         projectLink: '',

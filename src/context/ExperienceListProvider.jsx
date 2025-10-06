@@ -107,13 +107,21 @@ function typeFilterReducer(options, action) {
 }
 
 function techFilterReducer(options, action) {
-  return options.map(function unselectOptionIfMatch(t) {
-    if (t.name == action.option.name) {
-      return action.option;
-    } else {
-      return t;
-    }
-  });
+  switch (action.type) {
+    case "Clear all":
+      return options.map(function clearAllSelectedOptions(t) {
+        t.isActive = false;
+        return t;
+      });
+    default:
+      return options.map(function unselectOptionIfMatch(t) {
+        if (t.name == action.option.name) {
+          return action.option;
+        } else {
+          return t;
+        }
+      });
+  }
 }
 
 // === Filter methods ===

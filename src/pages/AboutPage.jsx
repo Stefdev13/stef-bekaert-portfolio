@@ -5,16 +5,18 @@ import AboutMeSection from "../components/about/AboutMeSection.jsx";
 import SkillsSection from "../components/about/SkillsSection.jsx";
 import EducationSection from "../components/about/EducationSection.jsx";
 import ExperienceSection from "../components/about/experience-section/ExperienceSection.jsx";
+import ExperienceListProvider from "../context/ExperienceListProvider.jsx";
 
 function AboutPage() {
   return (
     <div className={styles.main}>
-      <Header />
-
-      <AboutMeSection />
-      <SkillsSection />
-      <EducationSection />
-      <ExperienceSection />
+      <ExperienceListProvider>
+        <Header />
+        <AboutMeSection />
+        <SkillsSection />
+        <EducationSection />
+        <ExperienceSection />
+      </ExperienceListProvider>
     </div>
   );
 }

@@ -1,10 +1,8 @@
-import React from "react";
 import ChipList from "../../components/ChipList.jsx";
 import styles from "./SkillSet.module.css";
 
 function SkillSet(props) {
   const skillSet = props.skillSet;
-  const colours = props.colours;
 
   return (
     <div className={styles.skillSet}>
@@ -18,7 +16,7 @@ function SkillSet(props) {
             key={list.title}
             title={list.title}
             listOfChipValues={list.list}
-            colours={colours}
+            isLinkedChipList={true}
           />
         ))}
       </div>

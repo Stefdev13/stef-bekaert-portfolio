@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./ExperienceSection.module.css";
 import KnotAndTitle from "../KnotAndTitle.jsx";
 import ExperienceList from "./ExperienceList.jsx";
-import ExperienceListProvider from "../../../context/ExperienceListProvider.jsx";
 
 function ExperienceSection() {
   return (
@@ -15,9 +14,7 @@ function ExperienceSection() {
             //A list of all the projects and courses I have completed.
           </p>
         </div>
-        <ExperienceListProvider>
-          <ExperienceList />
-        </ExperienceListProvider>
+        <ExperienceList />
       </div>
     </div>
   );

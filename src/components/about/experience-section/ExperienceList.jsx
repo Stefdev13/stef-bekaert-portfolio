@@ -14,7 +14,6 @@ function ExperienceList() {
   const sortSetting = useSortSetting();
   const [resultString, setResultString] = useState(makeResultString());
 
-  //Run the first load to sort the items on the first load
   useEffect(() => {
     setResultString(makeResultString());
   }, [items]);
@@ -49,7 +48,7 @@ function ExperienceList() {
   }
 
   return (
-    <div>
+    <div id="ExperienceList">
       <div className={styles.topLine}>
         <p className={styles.itemCount}>{resultString}</p>
         <div className={styles.buttonRow}>
@@ -59,7 +58,7 @@ function ExperienceList() {
         </div>
       </div>
       <div>
-        {items.map((item) => {
+        {items.map(function renderExprienceItem(item) {
           let index = items.indexOf(item);
           if (item.shouldShow) {
             return (
