@@ -41,6 +41,8 @@ const useStyles = createUseStyles({
       width: "13px",
       height: "13px",
     },
+
+    overflowX: "hidden",
   },
   drop: {
     animationName: "$drop",

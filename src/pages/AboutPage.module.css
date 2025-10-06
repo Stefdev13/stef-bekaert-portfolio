@@ -7,4 +7,6 @@
   align-items: start;
   justify-content: center;
   gap: 0px;
+
+  overflow-x: hidden;
 }

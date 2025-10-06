@@ -11,6 +11,8 @@
     padding-right: 5vw;
   
     background-color: var(--var-colour-bg-l2);
+
+    overflow-x: hidden;
 }
 
 .contentAndLineWrapper {

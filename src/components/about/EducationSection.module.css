@@ -3,8 +3,12 @@
     flex-direction: column;
 
     width: 100vw;
+    
+    box-sizing: border-box;
 
     background-color: var(--var-colour-bg-l2);
+
+    overflow-x: hidden;
 }
 
 .contentAndLineWrapper {

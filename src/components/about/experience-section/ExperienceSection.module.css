@@ -5,9 +5,13 @@
 
     width: 100vw;
 
+    box-sizing: border-box;
+
     padding-bottom: 150px;
 
     background-color: var(--var-colour-bg-l1);
+
+    overflow-x: hidden;
 }
 
 .sectionContent {
