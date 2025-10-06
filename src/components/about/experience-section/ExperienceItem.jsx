@@ -19,18 +19,11 @@ function ExperienceItem(props) {
     }, 0);
 
     function updateLayout() {
-      console.log("in func");
       //Should only update the layout when on desktop or tablet, mobile is always in column
       if (window.innerWidth >= 992) {
         let wrapperWidth =
           experienceItemWrapperRef.current.getBoundingClientRect().width;
         let techItemsWidth = techListRef.current.getBoundingClientRect().width;
-
-        console.log("techItemsWidth");
-        console.log(techItemsWidth);
-        console.log("wrapperWidth");
-        console.log(wrapperWidth);
-        console.log(techItemsWidth / wrapperWidth > 0.54);
 
         //If the list of technologies is too long we want to put in on a line below the name and item
         if (techItemsWidth / wrapperWidth > 0.54) {
