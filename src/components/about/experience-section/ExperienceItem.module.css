@@ -1,7 +1,7 @@
 .wrapper {
     display: flex;
     flex-direction: row;
-    gap: 15px;
+    gap: 20px;
 
     border-radius: 12px;
 
@@ -27,6 +27,15 @@
 
 .even {
     background-color: var(--var-colour-bg-l2);
+}
+
+.tagAndName {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: start;
+
+    flex-grow: 1;
 }
 
 .typeTag {
@@ -59,9 +68,21 @@
     font-weight: 550;
 }
 
-.technologiesList {
+.techListWrapper {
     display: flex;
     flex-direction: row;
+    justify-content: end;
+}
+
+.technologiesList {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: end;
+    flex-wrap: wrap;
+    gap: 10px 0px;
+
+    padding: 0;
+    margin: 0;
 }
 
 .technologyTag {
