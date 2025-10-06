@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./EducationSection.module.css";
 import KnotAndTitle from "./KnotAndTitle";
 

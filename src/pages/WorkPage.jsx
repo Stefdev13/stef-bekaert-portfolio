@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./WorkPage.module.css";
 import Header from "../components/navigation/Header";
 import * as Projects from "../constants/projects-constants.js";

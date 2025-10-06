@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./ExperienceSection.module.css";
 import KnotAndTitle from "../KnotAndTitle.jsx";
 import ExperienceList from "./ExperienceList.jsx";

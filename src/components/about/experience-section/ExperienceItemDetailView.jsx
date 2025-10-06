@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "./ExperienceItem.module.css";
 import CtaBtn from "../../CtaBtn";
 import { useTheme } from "../../../context/ThemeProvider";

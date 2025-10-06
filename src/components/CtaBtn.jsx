@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./CtaBtn.module.css";
 import { useTheme } from "../context/ThemeProvider.jsx";
 import { useNavigate } from "react-router";

@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./ExperienceList.module.css";
 import { useTheme } from "../../../context/ThemeProvider.jsx";
 import { useSortSettingDispatch } from "../../../context/ExperienceListProvider.jsx";

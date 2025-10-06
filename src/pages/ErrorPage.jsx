@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./ErrorPage.module.css";
 import { useTheme } from "../context/ThemeProvider";
 import { NavLink } from "react-router";

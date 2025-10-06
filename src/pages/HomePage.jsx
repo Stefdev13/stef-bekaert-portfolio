@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./HomePage.module.css";
 import TextEffect from "../components/home/TextEffect";
 import Header from "../components/navigation/Header";

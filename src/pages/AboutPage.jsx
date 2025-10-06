@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./AboutPage.module.css";
 import Header from "../components/navigation/Header";
 import AboutMeSection from "../components/about/AboutMeSection.jsx";

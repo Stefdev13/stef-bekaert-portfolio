@@ -1,4 +1,4 @@
-import React, { useId, useState, useRef } from "react";
+import { useId, useState, useRef } from "react";
 import { useFormStatus } from "react-dom";
 import styles from "./ContactForm.module.css";
 import { sendMessage, reportBug } from "../../services/message-service";

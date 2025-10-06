@@ -1,4 +1,3 @@
-import React from "react";
 import { createUseStyles } from "react-jss";
 import { useTheme } from "../context/ThemeProvider.jsx";
 import * as Constants from "../constants/styling-constants.js";

@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useTheme } from "../context/ThemeProvider";
 import styles from "./ContactPage.module.css";
 import Header from "../components/navigation/Header";
 import ContactForm from "../components/contact/ContactForm";
-import DialogBox from "../components/DialogBox";
 import PopupMessage from "../components/PopupMessage";
 
 function ContactPage() {
@@ -36,17 +35,7 @@ function ContactPage() {
           </p>
           <p className="comment">//Unless I’m on vacation...</p>
         </div>
-        <div className={styles.dialogBox}>
-          {/* <DialogBox
-            title="Buy me a beer"
-            text="This is really just here to show that I can integrate a payment processor, but feel free to buy me a beer anyway."
-            dialogType=""
-            primaryBtn={{
-              btnText: "Buy me a beer",
-              onClick: () => buyMeABeerFunction(),
-            }}
-          /> */}
-        </div>
+        <div className={styles.dialogBox}></div>
         <div className={styles.contactForm}>
           <ContactForm
             setShowDialog={setShowDialog}
