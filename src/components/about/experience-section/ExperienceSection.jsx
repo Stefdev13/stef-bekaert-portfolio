@@ -8,7 +8,7 @@ function ExperienceSection() {
 
   return (
     <div className={styles.sectionWrapper}>
-      <KnotAndTitle title="Education" location="bottom" />
+      <KnotAndTitle title="Experience" location="bottom" />
       <div className={styles.sectionContent}>
         <div>
           <h1 className="sectionHeading">Experience</h1>
