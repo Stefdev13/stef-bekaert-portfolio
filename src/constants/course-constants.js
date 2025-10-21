@@ -17,4 +17,20 @@ export const COURSES = [
         date: "2025-09",
         link: 'https://frontendmasters.com/courses/deep-javascript-v3/',
     },
+    {
+        id: "c3",
+        name: 'Bare Metal JavaScript: The JavaScript Virtual Machine',
+        description: "Ever wondered how high-level JavaScript turns into low-level CPU instructions? Learn the fundamentals of CPU mechanics to see how code runs through memory operations, inline caching, and deoptimization. You'll build a mental model of JavaScript's performance characteristics by learning how virtual machines (like Google's V8 engine) work under the hood!",
+        technologyList: [ technoglogies.JAVASCRIPT ],
+        date: "2025-10",
+        link: 'https://frontendmasters.com/courses/javascript-cpu-vm/',
+    },
+    {
+        id: "c4",
+        name: 'The Hard Parts of UI Development',
+        description: "Keeping what the user sees in sync with the app's data can be tricky, particularly in browsers and big apps. UI tools like React, Angular, and Vue help, but they can be hard to use if you don't know what problems they solve. Develop an under-the-hood knowledge of UI dev by learning techniques such as data binding, UI composition, templating, virtual DOM and its reconciliation, and hooks, all from scratch! You'll learn how JavaScript interacts with browser features like the DOM and HTML parser. By the end, you'll have a complete mental model of UI dev that you can apply to any framework!",
+        technologyList: [ technoglogies.JAVASCRIPT ],
+        date: "2025-10",
+        link: 'https://frontendmasters.com/courses/hard-parts-ui-dev/',
+    },
 ]
