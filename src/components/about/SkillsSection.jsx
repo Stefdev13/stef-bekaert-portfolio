@@ -6,6 +6,7 @@ import { useTheme } from "../../context/ThemeProvider";
 
 function SkillsSection() {
   const theme = useTheme();
+
   return (
     <div
       className={`${styles.sectionWrapper} ${theme ? "" : styles.gradientBg}`}

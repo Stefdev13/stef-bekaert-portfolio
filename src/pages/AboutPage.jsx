@@ -6,6 +6,9 @@ import EducationSection from "../components/about/EducationSection.jsx";
 import ExperienceSection from "../components/about/experience-section/ExperienceSection.jsx";
 import ExperienceListProvider from "../context/ExperienceListProvider.jsx";
 
+import { motion, useScroll, useMotionValueEvent } from "motion/react";
+import { useRef, useEffect } from "react";
+
 function AboutPage() {
   return (
     <div className={styles.main}>
