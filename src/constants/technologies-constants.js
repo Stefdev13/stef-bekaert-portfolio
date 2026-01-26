@@ -102,5 +102,9 @@ export const DOTNET = {
     name: ".NET",
     icon: "/images/technologies/dot-net.svg",
 }
+export const DOCKER = {
+    name: "Docker",
+    icon: "/images/technologies/docker-mark-blue.svg",
+}
 
 export const TECHNOLOGYLIST = [DOTNET, CYPRESS, CSS_MODULES, JSS, VUE, TYPESCRIPT, TAILWIND, REACT, REACT_ROUTER, PYTHON, PHP, NODE_JS, MYSQL, MONGO_DB, LARAVEL, KOTLIN, JAVASCRIPT, JAVA,FLUTTER, FIREBASE, DART, CSHARP, BOOTSTRAP, ANGULAR, CSS, HTML];
