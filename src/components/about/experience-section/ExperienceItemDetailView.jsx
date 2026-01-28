@@ -55,6 +55,17 @@ function ExperienceItemDetailView(props) {
     return `${month} ${year}`;
   }
 
+  function getTypeTag() {
+    switch (item.type.toLowerCase()) {
+      case "course":
+        return styles.course;
+      case "project":
+        return styles.project;
+      default:
+        return styles.note;
+    }
+  }
+
   return (
     <div
       className={`${
@@ -63,7 +74,7 @@ function ExperienceItemDetailView(props) {
     >
       <section className={styles.dateAndCloseSection}>
         <span className={styles.completedOn}>
-          Completed:{" "}
+          Date:{" "}
           <span className={styles.completedDate}>
             {formatDate(item.item.date)}
           </span>
@@ -90,15 +101,7 @@ function ExperienceItemDetailView(props) {
         <section className={styles.titleSection}>
           <h1>{item.item.name}</h1>
           {item.item.subTitle && <p>{item.item.subTitle}</p>}
-          <div
-            className={`${styles.typeTag} ${
-              item.type.toLowerCase() == "course"
-                ? styles.course
-                : styles.project
-            }`}
-          >
-            {item.type}
-          </div>
+          <div className={`${styles.typeTag} ${getTypeTag()}`}>{item.type}</div>
         </section>
 
         <section className={styles.descriptionSection}>
@@ -128,15 +131,18 @@ function ExperienceItemDetailView(props) {
         <section className={styles.linksSection}>
           <h2 className={styles.sectionHeader}>Links</h2>
           <div className={styles.buttonRow}>
-            {item.type == "Course" && item.item.link && (
-              <CtaBtn
-                btnType="project link"
-                btnText="Go to course"
-                actionOnClick={() => {
-                  window.open(item.item.link, "_blank");
-                }}
-              />
-            )}
+            {(item.type == "Course" || item.type == "Note") &&
+              item.item.link && (
+                <CtaBtn
+                  btnType="project link"
+                  btnText={
+                    item.type == "Course" ? "Go to course" : "Go to note"
+                  }
+                  actionOnClick={() => {
+                    window.open(item.item.link, "_blank");
+                  }}
+                />
+              )}
             {item.type == "Project" && item.item.projectLink && (
               <CtaBtn
                 btnType="project link"

@@ -1,4 +1,4 @@
-import * as technoglogies from './technologies-constants.js'
+import * as technologies from './technologies-constants.js'
 
 export const PROJECTS = [
     {
@@ -9,15 +9,15 @@ export const PROJECTS = [
         chipLists: [
             {
                 title: 'Frontend',
-                chips: [technoglogies.JAVASCRIPT, technoglogies.REACT, technoglogies.HTML, technoglogies.CSS, technoglogies.REACT_ROUTER]
+                chips: [technologies.JAVASCRIPT, technologies.REACT, technologies.HTML, technologies.CSS, technologies.REACT_ROUTER]
             },
             {
                 title: 'Styling',
-                chips: [technoglogies.CSS, technoglogies.JSS, technoglogies.CSS_MODULES]
+                chips: [technologies.CSS, technologies.JSS, technologies.CSS_MODULES]
             },
             {
                 title: 'Testing',
-                chips: [technoglogies.CYPRESS]
+                chips: [technologies.CYPRESS]
             },
         ],
         projectLink: '',
