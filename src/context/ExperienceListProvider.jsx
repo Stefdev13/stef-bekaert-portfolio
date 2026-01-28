@@ -7,6 +7,7 @@ import {
 } from "react";
 import { COURSES } from "../constants/course-constants.js";
 import { PROJECTS } from "../constants/projects-constants.js";
+import { NOTES } from "../constants/notes-constants.js";
 import { TECHNOLOGYLIST } from "../constants/technologies-constants.js";
 
 const TypeFilterOptionsContext = createContext(null);
@@ -18,17 +19,16 @@ const ExperienceItemsContext = createContext(null);
 function ExperienceListProvider({ children }) {
   const [typeFilterOptions, typeFilterDispatch] = useReducer(
     typeFilterReducer,
-    types
+    types,
   );
   const [techFilterOptions, techFilterDispatch] = useReducer(
     techFilterReducer,
-    getTechFilterOptions()
+    getTechFilterOptions(),
   );
   const [sortSetting, sortSettingDispatch] = useReducer(sortSettingReducer, 1);
   const [searchText, setSearchText] = useState("");
-  const [filteredAndSortedItems, setFilteredAndSortedItems] = useState(
-    initItems()
-  );
+  const [filteredAndSortedItems, setFilteredAndSortedItems] =
+    useState(initItems());
 
   useEffect(() => {
     setFilteredAndSortedItems([
@@ -37,7 +37,7 @@ function ExperienceListProvider({ children }) {
         typeFilterOptions,
         techFilterOptions,
         searchText,
-        sortSetting
+        sortSetting,
       ),
     ]);
   }, [typeFilterOptions, techFilterOptions, searchText, sortSetting]);
@@ -65,7 +65,7 @@ function ExperienceListProvider({ children }) {
 // === Hooks ===
 export function useTypeFilterOptions() {
   const { typeFilterOptions, typeFilterDispatch } = useContext(
-    TypeFilterOptionsContext
+    TypeFilterOptionsContext,
   );
 
   return typeFilterOptions;
@@ -73,7 +73,7 @@ export function useTypeFilterOptions() {
 
 export function useTypeFilterOptionsDispatch() {
   const { typeFilterOptions, typeFilterDispatch } = useContext(
-    TypeFilterOptionsContext
+    TypeFilterOptionsContext,
   );
 
   return typeFilterDispatch;
@@ -81,7 +81,7 @@ export function useTypeFilterOptionsDispatch() {
 
 export function useTechFilterOptions() {
   const { techFilterOptions, techFilterDispatch } = useContext(
-    TechFilterOptionsContext
+    TechFilterOptionsContext,
   );
 
   return techFilterOptions;
@@ -89,7 +89,7 @@ export function useTechFilterOptions() {
 
 export function useTechFilterOptionsDispatch() {
   const { techFilterOptions, techFilterDispatch } = useContext(
-    TechFilterOptionsContext
+    TechFilterOptionsContext,
   );
 
   return techFilterDispatch;
@@ -254,12 +254,39 @@ function sortItems(items, sortSetting) {
 }
 
 function compareItemsByType(itemA, itemB) {
-  const aType = itemA.id.includes("p") ? "project" : "course";
-  const bType = itemB.id.includes("p") ? "project" : "course";
+  let aType = "";
+  switch (itemA.id[0]) {
+    case "p":
+      aType = "project";
+      break;
+    case "c":
+      aType = "course";
+      break;
+    default:
+      aType = "note";
+      break;
+  }
+
+  let bType = "";
+  switch (itemB.id[0]) {
+    case "p":
+      bType = "project";
+      break;
+    case "c":
+      bType = "course";
+      break;
+    default:
+      bType = "note";
+      break;
+  }
 
   if (aType == bType) {
     return 0;
   } else if (aType == "project" && bType == "course") {
+    return -1;
+  } else if (aType == "project" && bType == "note") {
+    return -1;
+  } else if (aType == "note" && bType == "course") {
     return -1;
   } else {
     return 1;
@@ -282,7 +309,7 @@ function compareItemsByName(itemA, itemB) {
 // === Hooks ===
 export function useFilteredAndSortedItems() {
   const { filteredAndSortedItems, setFilteredAndSortedItems } = useContext(
-    ExperienceItemsContext
+    ExperienceItemsContext,
   );
 
   return filteredAndSortedItems;
@@ -290,7 +317,7 @@ export function useFilteredAndSortedItems() {
 
 export function useFilteredAndSortedItemsSetter() {
   const { filteredAndSortedItems, setFilteredAndSortedItems } = useContext(
-    ExperienceItemsContext
+    ExperienceItemsContext,
   );
 
   return setFilteredAndSortedItems;
@@ -302,7 +329,7 @@ function searchFilterAndSortItems(
   typeFilterOptions,
   techFilterOptions,
   searchText,
-  sortSetting
+  sortSetting,
 ) {
   filterItems(filteredAndSortedItems, typeFilterOptions, techFilterOptions);
   sortItems(filteredAndSortedItems, sortSetting);
@@ -330,6 +357,7 @@ function getTechFilterOptions() {
 const types = [
   { name: "Course", type: "Type", isActive: false },
   { name: "Project", type: "Type", isActive: false },
+  { name: "Note", type: "Type", isActive: false },
 ];
 
 function initItems() {
@@ -368,6 +396,17 @@ function initItems() {
       shouldShow: true,
       technologyList: mergedChipLists,
       item: project,
+    });
+  }
+
+  for (const note of NOTES) {
+    result.push({
+      id: note.id,
+      name: note.name,
+      type: "Note",
+      shouldShow: true,
+      technologyList: note.technologyList,
+      item: note,
     });
   }
 

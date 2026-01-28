@@ -29,12 +29,12 @@ function ExperienceItem(props) {
         if (techItemsWidth / wrapperWidth > 0.54) {
           experienceItemWrapperRef.current.style.setProperty(
             "flex-direction",
-            "column"
+            "column",
           );
         } else {
           experienceItemWrapperRef.current.style.setProperty(
             "flex-direction",
-            "row"
+            "row",
           );
         }
       }
@@ -58,6 +58,17 @@ function ExperienceItem(props) {
     setIsOverlayOpen(false);
   }
 
+  function getTypeTag() {
+    switch (item.type.toLowerCase()) {
+      case "course":
+        return styles.course;
+      case "project":
+        return styles.project;
+      default:
+        return styles.note;
+    }
+  }
+
   return (
     <div>
       <div
@@ -75,15 +86,7 @@ function ExperienceItem(props) {
         ref={experienceItemWrapperRef}
       >
         <div className={styles.tagAndName}>
-          <div
-            className={`${styles.typeTag} ${
-              item.type.toLowerCase() == "course"
-                ? styles.course
-                : styles.project
-            }`}
-          >
-            {item.type}
-          </div>
+          <div className={`${styles.typeTag} ${getTypeTag()}`}>{item.type}</div>
           <p className={styles.name}>{item.name}</p>
         </div>
 

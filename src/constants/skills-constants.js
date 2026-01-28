@@ -1,4 +1,4 @@
-import * as technoglogies from './technologies-constants.js'
+import * as technologies from './technologies-constants.js'
 
 export const SKILLS_TECHNICAL = [
     {
@@ -7,11 +7,11 @@ export const SKILLS_TECHNICAL = [
         lists:[
             {
                 title: 'Currently or recently worked with',
-                list: [technoglogies.DART, technoglogies.JAVASCRIPT, technoglogies.HTML, technoglogies.CSS],
+                list: [technologies.DART, technologies.JAVASCRIPT, technologies.HTML, technologies.CSS],
             },
             {
                 title: 'Worked with',
-                list: [technoglogies.JAVA, technoglogies.CSHARP, technoglogies.PHP, technoglogies.PYTHON, technoglogies.KOTLIN],
+                list: [technologies.JAVA, technologies.CSHARP, technologies.PHP, technologies.PYTHON, technologies.KOTLIN],
             },
         ]
     },
@@ -20,11 +20,11 @@ export const SKILLS_TECHNICAL = [
         lists:[
             {
                 title: 'Currently or recently worked with',
-                list: [technoglogies.FLUTTER, technoglogies.REACT, technoglogies.REACT_ROUTER, technoglogies.JSS, technoglogies.BOOTSTRAP, technoglogies.TAILWIND, technoglogies.CYPRESS],
+                list: [technologies.FLUTTER, technologies.REACT, technologies.REACT_ROUTER, technologies.JSS, technologies.BOOTSTRAP, technologies.TAILWIND, technologies.CYPRESS],
             },
             {
                 title: 'Worked with',
-                list: [technoglogies.VUE, technoglogies.ANGULAR, technoglogies.KOTLIN],
+                list: [technologies.VUE, technologies.ANGULAR, technologies.KOTLIN],
             },
         ]
     },  
@@ -33,11 +33,11 @@ export const SKILLS_TECHNICAL = [
         lists: [
             {
                 title: 'Currently or recently worked with',
-                list: [technoglogies.FLUTTER],
+                list: [technologies.FLUTTER],
             },
             {
                 title: 'Worked with',
-                list: [technoglogies.DOTNET, technoglogies.LARAVEL, technoglogies.NODE_JS, technoglogies.JAVA, technoglogies.KOTLIN],
+                list: [technologies.DOTNET, technologies.LARAVEL, technologies.NODE_JS, technologies.JAVA, technologies.KOTLIN],
             },
         ],
     },
@@ -46,11 +46,11 @@ export const SKILLS_TECHNICAL = [
         lists: [
             {
                 title: 'Currently or recently worked with',
-                list: [technoglogies.FIREBASE],
+                list: [technologies.FIREBASE],
             },
             {
                 title: 'Worked with',
-                list: [technoglogies.MYSQL, technoglogies.MONGO_DB],
+                list: [technologies.MYSQL, technologies.MONGO_DB],
             },
         ],
     }
