@@ -46,7 +46,7 @@ export const SKILLS_TECHNICAL = [
         lists: [
             {
                 title: 'Currently or recently worked with',
-                list: [technologies.FIREBASE],
+                list: [technologies.POSTGRESQL, technologies.FIREBASE],
             },
             {
                 title: 'Worked with',
