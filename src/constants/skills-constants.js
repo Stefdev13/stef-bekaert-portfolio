@@ -7,11 +7,11 @@ export const SKILLS_TECHNICAL = [
         lists:[
             {
                 title: 'Currently or recently worked with',
-                list: [technologies.DART, technologies.JAVASCRIPT, technologies.HTML, technologies.CSS],
+                list: [technologies.CSHARP, technologies.JAVASCRIPT, technologies.TYPESCRIPT, technologies.DART, ],
             },
             {
                 title: 'Worked with',
-                list: [technologies.JAVA, technologies.CSHARP, technologies.PHP, technologies.PYTHON, technologies.KOTLIN],
+                list: [technologies.JAVA, technologies.PHP, technologies.PYTHON, technologies.KOTLIN],
             },
         ]
     },
@@ -20,7 +20,7 @@ export const SKILLS_TECHNICAL = [
         lists:[
             {
                 title: 'Currently or recently worked with',
-                list: [technologies.FLUTTER, technologies.REACT, technologies.REACT_ROUTER, technologies.JSS, technologies.BOOTSTRAP, technologies.TAILWIND, technologies.CYPRESS],
+                list: [technologies.HTML, technologies.CSS, technologies.FLUTTER, technologies.REACT, technologies.REACT_ROUTER, technologies.TAILWIND, technologies.CYPRESS],
             },
             {
                 title: 'Worked with',
@@ -33,11 +33,11 @@ export const SKILLS_TECHNICAL = [
         lists: [
             {
                 title: 'Currently or recently worked with',
-                list: [technologies.FLUTTER],
+                list: [technologies.CSHARP, technologies.DOTNET, technologies.FLUTTER],
             },
             {
                 title: 'Worked with',
-                list: [technologies.DOTNET, technologies.LARAVEL, technologies.NODE_JS, technologies.JAVA, technologies.KOTLIN],
+                list: [technologies.LARAVEL, technologies.NODE_JS, technologies.JAVA, technologies.KOTLIN],
             },
         ],
     },
