@@ -7,7 +7,7 @@ export const SKILLS_TECHNICAL = [
         lists:[
             {
                 title: 'Currently or recently worked with',
-                list: [technologies.CSHARP, technologies.JAVASCRIPT, technologies.TYPESCRIPT, technologies.DART, ],
+                list: [technologies.CSHARP, technologies.JAVASCRIPT, technologies.TYPESCRIPT, technologies.PYTHON, technologies.DART],
             },
             {
                 title: 'Worked with',
