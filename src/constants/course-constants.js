@@ -89,4 +89,12 @@ export const COURSES = [
         date: "2026-02",
         link: 'https://frontendmasters.com/courses/practical-python/',
     },
+    {
+        id: "c12",
+        name: 'JavaScript: The Hard Parts v3',
+        description: "Go deep into the foundational mechanics of JavaScript! From higher-order functions and closure to asynchronous code execution and object-oriented programming, build a comprehensive mental model around concepts that even the most experienced developers often lack. Grab a “backpack” as you follow the thread of execution through the call stack, callback queue, and microtask queue. Leverage prototypical inheritance and modern OOP features like classes and private/static fields. Understand the difference between stack and heap memory, and explore metaprogramming and type coercion with symbols.",
+        technologyList: [ technologies.JAVASCRIPT ],
+        date: "2026-03",
+        link: 'https://frontendmasters.com/courses/javascript-hard-parts-v3/',
+    },
 ]
