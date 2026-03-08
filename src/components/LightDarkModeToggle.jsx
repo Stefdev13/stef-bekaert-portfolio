@@ -2,39 +2,34 @@ import { useTheme, useChangeTheme } from "../context/ThemeProvider.jsx";
 import styles from "./LightDarkModeToggle.module.css";
 
 function LightDarkModeToggle() {
-  const theme = useTheme();
+  const isLightMode = useTheme();
   const dispatch = useChangeTheme();
 
-  function getImage() {
-    if (theme) {
-      return (
-        <img
-          className={styles.image}
-          src="images/light-mode.png"
-          alt="toggle dark mode"
-        />
-      );
-    } else {
-      return (
-        <img
-          className={styles.image}
-          src="images/dark-mode.png"
-          alt="toggle light mode"
-        />
-      );
-    }
+  function renderThemeIcon() {
+    const src = isLightMode
+      ? "images/light-mode.png"
+      : "images/dark-mode.png";
+
+    const alt = isLightMode
+      ? "Switch to dark theme"
+      : "Switch to light theme";
+
+    return <img className={styles.image} src={src} alt={alt} />;
   }
 
   return (
-    <div
+    <button
+      type="button"
       className={styles.toggleBtn}
       onClick={() => {
         dispatch();
       }}
+      aria-pressed={!isLightMode}
+      aria-label={isLightMode ? "Switch to dark theme" : "Switch to light theme"}
       data-test="theme-toggle"
     >
-      {getImage()}
-    </div>
+      {renderThemeIcon()}
+    </button>
   );
 }
 
