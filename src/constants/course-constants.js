@@ -97,4 +97,12 @@ export const COURSES = [
         date: "2026-03",
         link: 'https://frontendmasters.com/courses/javascript-hard-parts-v3/',
     },
+    {
+        id: "c13",
+        name: 'React and TypeScript, v3',
+        description: "Write higher-quality code with React and TypeScript. Add critical type safety to hooks and component design systems. Learn patterns for complex state management with reducers and discriminated unions. Validate API schemas at runtime with Zod and create a robust type system that catches errors early and gives your team a better developer experience.",
+        technologyList: [ technologies.TYPESCRIPT, technologies.REACT ],
+        date: "2026-03",
+        link: 'https://frontendmasters.com/courses/react-typescript-v3/',
+    },
 ]
