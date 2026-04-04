@@ -105,4 +105,20 @@ export const COURSES = [
         date: "2026-03",
         link: 'https://frontendmasters.com/courses/react-typescript-v3/',
     },
+    {
+        id: "c14",
+        name: 'React Native, v3',
+        description: "Use your React skills to build feature-rich, native mobile apps for iOS and Android using React Native and Expo. Learn to create UI components like custom buttons and scrollable lists, implement navigation between screens, and persist data using AsyncStorage. Apply your skills by building practical projects such as a shopping list app and a recurring reminder system with push notifications!",
+        technologyList: [ technologies.TYPESCRIPT, technologies.JAVASCRIPT, technologies.REACT ],
+        date: "2026-04",
+        link: 'https://frontendmasters.com/courses/react-native-v3/',
+    },
+    {
+        id: "c15",
+        name: 'Intermediate React Native, v2',
+        description: "Ship production-ready iOS and Android apps with React Native and Expo. Grok creating user onboarding, state management with Zustand, and advanced UI techniques, including full-screen modals and deep linking. Implement native features like image selection and quick actions. Package and deploy your app to stores with proper metadata, splash screens, and icons!",
+        technologyList: [ technologies.TYPESCRIPT, technologies.JAVASCRIPT, technologies.REACT, technologies.ZUSTAND, ],
+        date: "2026-04",
+        link: 'https://frontendmasters.com/courses/intermediate-react-native-v2/',
+    },
 ]

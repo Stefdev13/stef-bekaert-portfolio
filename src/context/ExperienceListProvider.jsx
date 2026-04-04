@@ -25,7 +25,7 @@ function ExperienceListProvider({ children }) {
     techFilterReducer,
     getTechFilterOptions(),
   );
-  const [sortSetting, sortSettingDispatch] = useReducer(sortSettingReducer, 1);
+  const [sortSetting, sortSettingDispatch] = useReducer(sortSettingReducer, 3);
   const [searchText, setSearchText] = useState("");
   const [filteredAndSortedItems, setFilteredAndSortedItems] =
     useState(initItems());
@@ -64,33 +64,25 @@ function ExperienceListProvider({ children }) {
 // ========== filtering ==============================
 // === Hooks ===
 export function useTypeFilterOptions() {
-  const { typeFilterOptions, typeFilterDispatch } = useContext(
-    TypeFilterOptionsContext,
-  );
+  const { typeFilterOptions } = useContext(TypeFilterOptionsContext);
 
   return typeFilterOptions;
 }
 
 export function useTypeFilterOptionsDispatch() {
-  const { typeFilterOptions, typeFilterDispatch } = useContext(
-    TypeFilterOptionsContext,
-  );
+  const { typeFilterDispatch } = useContext(TypeFilterOptionsContext);
 
   return typeFilterDispatch;
 }
 
 export function useTechFilterOptions() {
-  const { techFilterOptions, techFilterDispatch } = useContext(
-    TechFilterOptionsContext,
-  );
+  const { techFilterOptions } = useContext(TechFilterOptionsContext);
 
   return techFilterOptions;
 }
 
 export function useTechFilterOptionsDispatch() {
-  const { techFilterOptions, techFilterDispatch } = useContext(
-    TechFilterOptionsContext,
-  );
+  const { techFilterDispatch } = useContext(TechFilterOptionsContext);
 
   return techFilterDispatch;
 }
@@ -223,13 +215,13 @@ function searchItems(items, searchText) {
 // ========== Sorting ==============================
 // === Hooks ===
 export function useSortSetting() {
-  const { sortSetting, sortSettingDispatch } = useContext(SortContext);
+  const { sortSetting } = useContext(SortContext);
 
   return sortSetting;
 }
 
 export function useSortSettingDispatch() {
-  const { sortSetting, sortSettingDispatch } = useContext(SortContext);
+  const { sortSettingDispatch } = useContext(SortContext);
 
   return sortSettingDispatch;
 }
@@ -245,10 +237,10 @@ function sortItems(items, sortSetting) {
     switch (sortSetting) {
       case 2:
         return compareItemsByType(itemA.item, itemB.item);
-      case 3:
-        return compareItemsByDate(itemA.item, itemB.item);
-      default:
+      case 1:
         return compareItemsByName(itemA.item, itemB.item);
+      default:
+        return compareItemsByDate(itemA.item, itemB.item);
     }
   });
 }
@@ -308,17 +300,13 @@ function compareItemsByName(itemA, itemB) {
 // ========== items ==============================
 // === Hooks ===
 export function useFilteredAndSortedItems() {
-  const { filteredAndSortedItems, setFilteredAndSortedItems } = useContext(
-    ExperienceItemsContext,
-  );
+  const { filteredAndSortedItems } = useContext(ExperienceItemsContext);
 
   return filteredAndSortedItems;
 }
 
 export function useFilteredAndSortedItemsSetter() {
-  const { filteredAndSortedItems, setFilteredAndSortedItems } = useContext(
-    ExperienceItemsContext,
-  );
+  const { setFilteredAndSortedItems } = useContext(ExperienceItemsContext);
 
   return setFilteredAndSortedItems;
 }
